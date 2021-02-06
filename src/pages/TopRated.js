@@ -13,8 +13,6 @@ function TopRated() {
     
     const history = useHistory();
 
-    
-
     const handleGoToDetails = () => {
         history.push("/Details")
     }

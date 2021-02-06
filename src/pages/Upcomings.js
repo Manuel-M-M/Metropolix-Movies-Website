@@ -14,14 +14,14 @@ function Upcomings() {
     
     const history = useHistory();
 
-    const handleIncrement = () => {
+    const handleIncrementUpcomingsMovies = () => {
         if (actualPage<maxPages) {
             setActualPage(actualPage+1);
             setUpcomingMoviesPath(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=${actualPage}`);
         }
       };
 
-    const handleDecrement = () => {
+    const handleDecrementUpcomingsMovies = () => {
         if (actualPage>1) {
             setActualPage(actualPage-1);
             setUpcomingMoviesPath(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=${actualPage}`);
@@ -55,8 +55,8 @@ function Upcomings() {
                 )})}
             </div>
             <div className="row justify-content-center mt-3 mb-3">
-                <button className="btn btn-transparent mr-1" onClick={handleDecrement}>-</button>
-                <button className="btn btn-transparent ml-1" onClick={handleIncrement}>+</button>
+                <button className="btn btn-transparent mr-1" onClick={handleDecrementUpcomingsMovies}>-</button>
+                <button className="btn btn-transparent ml-1" onClick={handleIncrementUpcomingsMovies}>+</button>
             </div>
         </>
     );

@@ -14,7 +14,7 @@ function Popular() {
 
     const history = useHistory();
     
-    const handleIncrement = () => {
+    const handleIncrementPopularMovies = () => {
         
         if (actualPage<maxPages) {
               
@@ -24,7 +24,7 @@ function Popular() {
         }
       };
 
-    const handleDecrement = () => {
+    const handleDecrementPopularMovies = () => {
         
         if (actualPage>1) {
              setActualPage(actualPage-1);  //setActualPage(prevActualPage => prevActualPage-1);
@@ -65,8 +65,8 @@ function Popular() {
                 )})}
             </div>
             <div className="row justify-content-center mt-3 mb-3">
-                <button className="btn btn-transparent mr-1" onClick={() => handleDecrement()}>-</button>
-                <button className="btn btn-transparent ml-1" onClick={() => handleIncrement()}>+</button>
+                <button className="btn btn-transparent mr-1" onClick={() => handleDecrementPopularMovies()}>-</button>
+                <button className="btn btn-transparent ml-1" onClick={() => handleIncrementPopularMovies()}>+</button>
             </div>
         </>
     );

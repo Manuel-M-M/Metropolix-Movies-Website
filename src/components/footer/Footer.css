@@ -24,7 +24,7 @@ footer{
 	font: bold 16px sans-serif;
  
 	padding: 55px 50px;
-	margin-top: 80px;
+	margin-top: 0px;
 }
  
 .footer-distributed .footer-left,
@@ -203,7 +203,7 @@ footer{
 	.footer-distributed .footer-right{
 		display: block;
 		width: 100%;
-		margin-bottom: 40px;
+		margin-bottom: 10px;
 		text-align: center;
 	}
  

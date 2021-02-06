@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import './LateralScroll.css';
 
 function LateralScroll () {
@@ -6,10 +6,18 @@ function LateralScroll () {
     const films = document.querySelectorAll(".film");
     const row = document.querySelector(".container_carousel");
     
-    const leftArrow = document.getElementById("left_arrow");
-    const rightArrow = document.getElementById("right_arrow")
+    // const leftArrow = document.getElementById("left_arrow");
+    // const rightArrow = document.getElementById("right_arrow")
+
+    let leftArrowRef = useRef();
+
+    useEffect(() => {
+
+    }, )
     
     const [actualPage, setActualPage] = useState(Math.ceil(films.length / 5));
+
+    
 
     
 
@@ -76,64 +84,64 @@ function LateralScroll () {
                     <div className="container_carousel">
                         <div className="carousel">
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2j.pg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2j.pg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                             <div className="film">
-                                <img src="../../images/small/pulp2.jpg" alt="Pulp Fiction"></img>
+                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
                             </div>
                         </div>
                     </div>

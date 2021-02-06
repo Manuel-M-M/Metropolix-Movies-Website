@@ -31,6 +31,11 @@ function Header() {
         history.push("/prueba")
     };
 
+    const handleLogin = () => {
+        setActualPage(1);
+        history.push("/Login")
+    };
+
     return(
 
         <header>
@@ -44,6 +49,7 @@ function Header() {
                     <option id="pm" value="#" onClick={handlePopularM}>Popular Movies</option>
                     <option id="um" value="#" onClick={handleUpcomingM}>Upcoming Movies</option>
                     <option id="pr" value="#" onClick={handlePrueba}>Prueba</option>
+                    <option id="lo" value="#" onClick={handleLogin}>Login</option>
                 </select>
                 </nav>
             </div>
