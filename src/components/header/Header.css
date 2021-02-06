@@ -1,0 +1,102 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* #headerTitle {
+    font: normal 46px 'Bebas Neue', cursive;
+} */
+
+#titleSpan {
+    color:  #fff;
+}
+
+#navSelect {
+    text-decoration: none;
+    background-color: black;
+    color:  #21c470;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    padding: 30px 0;
+    background: #000;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Cookie', cursive;
+    font-weight: normal;
+    color: var(--verde);
+    font-size: 40px;
+    text-decoration: none;
+}
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #FFF;
+}
+
+/* ---- ------- ----- Media Queries---- ------ -------- */
+
+@media screen and (max-width:800px) {
+    header .logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .principal-movie {
+        font-size: 14px;
+    }
+
+    .principal-movie .description {
+        max-width: 100%;
+    }
+
+    .recomended-movies .container-carousel {
+        overflow: visible;
+    }
+
+    .recomended-movies .container-carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .recomended-movies .indicators,
+    .recomended-movies .left-arrow,
+    .recomended-movies .right-arrow {
+        display: none;
+    }
+}

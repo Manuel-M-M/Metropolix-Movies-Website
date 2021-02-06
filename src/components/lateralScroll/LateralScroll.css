@@ -1,0 +1,198 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+} 
+
+.container {
+    width: 90%;
+    margin: auto; 
+}
+
+.film:nth-child(1) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(2) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(3) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(4) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(5) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(6) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(7) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(8) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(9) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(10) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(11) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(12) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(13) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(14) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(15) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(16) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(17) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(18) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(19) {
+    background: url(../../images/small/pulp2.jpg);
+}
+.film:nth-child(20) {
+    background: url(../../images/small/pulp2.jpg);
+} 
+
+.container_title_control {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.container_title_control h3 {
+    color: #FFF;
+    font-size: 30px;
+}
+
+.container_title_control .indicators button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.container_title_control .indicators button:hover,
+.container_title_control .indicators button.active {
+    background: red;
+}
+
+/* ---- ------- ----- Principal container and arrows ---- ------ -------- */
+
+#lateralScroll {
+    margin-top: 40px;
+}
+
+.recomended_movies {
+    margin-bottom:  70px;
+}
+
+.recomended_movies .principal_container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.recomended_movies .principal_container .left_arrow,
+.recomended_movies .principal_container .right_arrow {
+    position: absolute;
+    border: none;
+    background: rgb(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #FFF;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.recomended_movies .principal_container .left_arrow:hover,
+.recomended_movies .principal_container .right_arrow:hover {
+    background: rgba(0, 0, 0, .9);
+}
+
+.recomended_movies .principal_container .left_arrow {
+    left: 0;
+}
+
+.recomended_movies .principal_container .right_arrow {
+    right: 0;
+}
+
+/* ---- ------- ----- Carousel ---- ------ -------- */
+
+.recomended_movies .container_carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.recomended_movies .container_carousel .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.recomended_movies .container_carousel .carousel .film {
+    min-width: 20%;
+    transition: .10s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3) ;
+}
+
+.recomended_movies .container_carousel .carousel .film.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.recomended_movies .container_carousel .carousel .film span {
+    width: 100%;
+    
+    vertical-align: top;
+}
+
+/* ---- ------- ----- Media Queries---- ------ -------- */
+
+@media screen and (max-width:800px) {
+
+    .recomended_movies .container_carousel {
+        overflow: visible;
+    }
+
+    .recomended_movies .container_carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .recomended_movies .indicators,
+    .recomended_movies .left_arrow,
+    .recomended_movies .right_arrow {
+        display: none;
+    }
+}
