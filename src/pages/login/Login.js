@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import './Login-Signin.css';
 
 const Login = () => {
 
@@ -21,10 +21,11 @@ const Login = () => {
     const onSubmit = e => {
         e.preventDefault();
 
+        // Validar que no haya campos vacíos
 
+        // Pasarlo al action
 
     }
-
 
 
     return (
@@ -37,7 +38,7 @@ const Login = () => {
                         <input 
                             type="email"
                             id="email"
-                            nema="email"
+                            name="email"
                             placeholder="Your email"
                             value={email}
                             onChange={onChange}
@@ -48,7 +49,7 @@ const Login = () => {
                         <input 
                             type="password"
                             id="password"
-                            nema="password"
+                            name="password"
                             placeholder="Your password"
                             value={password}
                             onChange={onChange}
@@ -61,8 +62,8 @@ const Login = () => {
                     </div>
                 </form>
                 
-                <Link to={'/new-account'} className="account-link">
-                    Get an account
+                <Link to={'/Signin'} className="account-link">
+                    Sign In
                 </Link>
             </div>
         </div>

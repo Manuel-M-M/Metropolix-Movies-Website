@@ -11,7 +11,7 @@
 
 body {
     background: var(--fondo);
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* #headerTitle {
@@ -23,6 +23,8 @@ body {
 }
 
 #navSelect {
+    font-family: "Railway";
+    font-weight: bold;
     text-decoration: none;
     background-color: black;
     color:  #21c470;

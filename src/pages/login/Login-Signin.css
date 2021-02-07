@@ -1,0 +1,116 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414;
+    --blanco: #ffffff;
+    --gris1: #edf2f6;
+    --gris2: #2f3848;
+    --gris3: #1a202d;
+    --negro: #000000; 
+}
+
+body{
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 0 auto 0 auto;  
+    width:100%; 
+    text-align:center;
+    margin: 20px 0px 20px 0px;  
+}
+
+.form-usuario {
+    background:url(../../img/backgrounds/twinStatue.jpg);
+    /* background-position: center center; */
+    background-size: cover;
+    height: 100vh;
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-form {
+    padding: 5rem 3rem;
+    max-width: 500px;
+    width: 95%;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/glassCine.jpg);
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+.contenedor-form h1 {
+    color: var(--verde);
+    font-family: "Raleway";
+    font-weight: bolder;
+    padding-bottom: 32px;
+}
+
+.campo-form {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.campo-form:last-of-type {
+  margin: 0;
+}
+.campo-form label {
+  flex: 0 0 100px;
+  font-family: "Raleway";
+  font-weight: bolder;
+  color: var(--verde);
+}
+.campo-form input[type="password"],
+.campo-form input[type="email"], 
+.campo-form input[type="text"] {
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  flex: 1;
+  font-weight: bold;
+  font-family: "Raleway";
+}
+
+.account-link {
+  margin-top: 2rem;
+  display: block;
+  opacity: .6;
+  color: var(--verde);
+  text-decoration: none;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.account-link:hover {
+  color: var(--verde);
+  opacity: .9;
+  text-decoration: none;
+}
+
+.btn {
+    margin-top: 2rem;
+    font-family: "Raleway";
+    font-weight: bolder;
+    padding: 1.5rem;
+    font-size: 1.4;
+    font-weight: 400;
+    border-radius: .5rem;
+    border: none;
+    transition: background-color .3s ease;
+  }
+  .btn:hover {
+    cursor: pointer;
+  }
+  .btn-primario {
+    background-color: var(--verde);
+    opacity: 0.6;
+    color: var(--blanco);
+  }
+  .btn-primario:hover {
+    background: var(--verde);
+    color: var(--blanco);
+    opacity: 1;
+    color: var(--negro);
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+

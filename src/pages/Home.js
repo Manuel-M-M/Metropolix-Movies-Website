@@ -2,7 +2,7 @@ import {useContext} from "react";
 import { useHistory } from 'react-router-dom';
 import Carousel from '../components/carousel/Carousel';
 import LateralScroll from '../components/lateralScroll/LateralScroll';
-import { Context } from '../Context';
+import { Context } from '../context/Context';
 
 const api_key = "73335406cba0f2d2b6be748d34df365b";
 const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;

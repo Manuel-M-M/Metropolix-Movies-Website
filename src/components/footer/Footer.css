@@ -40,6 +40,7 @@ footer{
 
 .footer-left a {
 	text-decoration: none;
+	font-family: "Raleway";
 }
 
 
@@ -65,19 +66,21 @@ footer{
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;
-  color:  inherit;
-  margin-right: 8px;
+    color:  inherit;
+    margin-right: 8px;
 }
  
 .footer-distributed .footer-company-name {
 	color:  var(--verde);
 	font-size: 14px;
 	font-weight: normal;
+	font-family: "Roboto";
 	margin: 0;
 }
 
 .footer-distributed .footer-company-name span {
 	color: #fff;
+	font-family: "Roboto";
 }
 
 
@@ -107,6 +110,7 @@ footer{
  
 .footer-distributed .footer-center p{
 	display: inline-block;
+	font-family: "Roboto";
 	color: var(--verde);
 	vertical-align: middle;
 	margin:0;

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useContext } from 'react';
-import { Context } from '../../Context';
+import { Context } from '../../context/Context';
 import './Header.css';
 import Logo from '../../img/logos/cuadrado_verdeNegro.png';
 
@@ -36,6 +36,11 @@ function Header() {
         history.push("/Login")
     };
 
+    const handleNewAccount = () => {
+        setActualPage(1);
+        history.push("/Login")
+    };
+
     return(
 
         <header>
@@ -50,6 +55,7 @@ function Header() {
                     <option id="um" value="#" onClick={handleUpcomingM}>Upcoming Movies</option>
                     <option id="pr" value="#" onClick={handlePrueba}>Prueba</option>
                     <option id="lo" value="#" onClick={handleLogin}>Login</option>
+                    <option id="na" value="#" onClick={handleNewAccount}>New Account</option>
                 </select>
                 </nav>
             </div>
