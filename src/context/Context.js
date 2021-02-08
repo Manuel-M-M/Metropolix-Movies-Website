@@ -25,6 +25,8 @@ const ContextProvider = (props) => {
             })
             .catch(error => alert("Algo no funciona correctamente..."))
     }, [searchPath]);
+    
+
 
     const [popularMoviesPath, setPopularMoviesPath] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`)
     const [popularMoviesArray, setPopularMoviesArray] = useState([]);
@@ -47,6 +49,27 @@ const ContextProvider = (props) => {
             .catch(error => alert("Algo no funciona..."))
     }, [popularMoviesPath]);
 
+    const handleIncrementPopularMovies = () => {
+        
+        if (actualPage<maxPages) {
+              
+            setActualPage(actualPage+1); // setActualPage(prevActualPage => prevActualPage+1);
+            console.log(actualPage);
+            setPopularMoviesPath(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=${actualPage}`);
+        }
+      };
+
+    const handleDecrementPopularMovies = () => {
+        
+        if (actualPage>1) {
+             setActualPage(actualPage-1);  //setActualPage(prevActualPage => prevActualPage-1);
+             console.log(actualPage);
+             setPopularMoviesPath(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=${actualPage}`);
+        }
+      };
+
+
+
     const [upcomingMoviesPath, setUpcomingMoviesPath] = useState("https://api.themoviedb.org/3/movie/upcoming?api_key=73335406cba0f2d2b6be748d34df365b&language=en-US&page=1")
     const [upcomingMoviesArray, setUpcomingMoviesArray] = useState([]);
 
@@ -65,6 +88,22 @@ const ContextProvider = (props) => {
                 })
                 .catch(error => alert("Algo no funciona..."))
     }, [upcomingMoviesPath]);
+
+    const handleIncrementUpcomingsMovies = () => {
+        if (actualPage<maxPages) {
+            setActualPage(actualPage+1);
+            setUpcomingMoviesPath(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=${actualPage}`);
+        }
+      };
+
+    const handleDecrementUpcomingsMovies = () => {
+        if (actualPage>1) {
+            setActualPage(actualPage-1);
+            setUpcomingMoviesPath(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=${actualPage}`);
+        }
+      };
+
+
 
     const [topRatedMoviesPath, setTopRatedMoviesPath] = useState(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`) 
     const [topRatedMoviesArray, setTopRatedMoviesArray] = useState([]);
@@ -100,11 +139,15 @@ const ContextProvider = (props) => {
         }
       };
 
+
+
     return (
         <Context.Provider value={{api_key, getImage, searchPath, setSearchPath, searchArray,setSearchArray,
-            popularMoviesPath, setPopularMoviesPath, popularMoviesArray, setPopularMoviesArray, maxPages,
-            setMaxPages, actualPage, setActualPage, handleIncrementTopRatedMovies, handleDecrementTopRatedMovies, upcomingMoviesPath, setUpcomingMoviesPath, upcomingMoviesArray,
-            setUpcomingMoviesArray, topRatedMoviesPath, setTopRatedMoviesPath, topRatedMoviesArray, setTopRatedMoviesArray}}>
+            popularMoviesPath, setPopularMoviesPath, popularMoviesArray, setPopularMoviesArray, handleIncrementPopularMovies, 
+            handleDecrementPopularMovies, maxPages, setMaxPages, actualPage, setActualPage, handleIncrementTopRatedMovies, 
+            handleDecrementTopRatedMovies, upcomingMoviesPath, setUpcomingMoviesPath, upcomingMoviesArray,
+            setUpcomingMoviesArray, handleIncrementUpcomingsMovies, handleDecrementUpcomingsMovies, topRatedMoviesPath, 
+            setTopRatedMoviesPath, topRatedMoviesArray, setTopRatedMoviesArray}}>
             {props.children}
         </Context.Provider>
     )

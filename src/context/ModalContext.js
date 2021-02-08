@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
 
 export const ModalContext = createContext();
 
@@ -9,10 +10,7 @@ const ModalProvider = (props) => {
 
     const [MovieId, saveMovieId] = useState(null);
     const [MovieDetails, saveMovieDetails] = useState({});
-
-    // Error 404 en el catch no reconoce el MovieId con el fetch
-    // const [MovieDetailsPath, setMovieDetailsPath] = useState(`https://api.themoviedb.org/3/movie/${MovieId}?api_key=${api_key}&language=en-US`);
-
+    
     useEffect(() => {
 
         const getMovieDetails = async () => {
@@ -27,38 +25,52 @@ const ModalProvider = (props) => {
         getMovieDetails();
     
     }, [MovieId]);
-     
+         console.log(MovieDetails);
 
-//---------------------FETCH (No reconoce el id)----------------------------------     
-    // fetch(MovieDetailsPath)
-    // .then(response => {
-    //     if (!response.ok) {
-    //         throw new Error("Algo no funciona...");
-    //     }
-    //     return response.json();
-    // })
-    // .then(data => {
-    //     setMovieDetails(data.results);
-                
-    // })
-    // .catch(error => alert("Algo no funciona correctamente..."))
+        const [modalStyle] = useState(getModalStyle);
+        const [open, setOpen] = useState(false);
+    
+        function getModalStyle() {
+            const top = 50 ;
+            const left = 50;
+          
+            return {
+              top: `${top}%`,
+              left: `${left}%`,
+              transform: `translate(-${top}%, -${left}%)`,
+            };
+        }
+        
+        const useStyles = makeStyles(theme => ({
+            paper: {
+              position: 'absolute',
+              width: 700, 
+              backgroundColor: theme.palette.background.paper,
+              boxShadow: theme.shadows[5],
+              padding: theme.spacing(2, 4, 3),
+              overflow: 'scroll',
+              height: '100%',
+              maxHeight: 700,
+              display: 'block'
+            },
+            header: {
+                padding: '12px 0',
+                borderBottom: '1px solid darkgrey'
+                },
+                content: {
+                padding: "12px 0",
+                overflow: 'scroll'
+                }
+            
+        }));
 
-//--------------------FETCH ASYNC/AWAIT (Da error) ---------------------------
-    //  async function getMovieDetails() {
-    //     if (!MovieId) return;
+        const classes = useStyles();
 
-    //     const response = await fetch(`https://api.themoviedb.org/3/movie/${MovieId}?api_key=${api_key}&language=en-US`);
-    //     const movies = await response.json();  return movies;
-    //     console.log(movies);
-    //   }
-      
-    //   getMovieDetails().then(movies => {
-    //     movies; // fetched movies
-    //   });
 
     return (
         <ModalContext.Provider
-            value={{api_key, MovieId, saveMovieId, MovieDetails, saveMovieDetails}}
+            value={{api_key, MovieId, saveMovieId, MovieDetails, saveMovieDetails, modalStyle, classes, 
+            open, setOpen }}
         >
             {props.children}
         </ModalContext.Provider>

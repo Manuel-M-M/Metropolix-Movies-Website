@@ -27,7 +27,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     background-color: black;
-    color:  #21c470;
+    color: var(--verde);
 }
 
 .container {
@@ -51,6 +51,12 @@ header .logo {
     color: var(--verde);
     font-size: 40px;
     text-decoration: none;
+    
+}
+
+header .logo:hover {
+    transform: scale(1.2);
+    transform-origin: center;
 }
 
 header nav a {

@@ -36,9 +36,9 @@ function Header() {
         history.push("/Login")
     };
 
-    const handleNewAccount = () => {
+    const handleSignin = () => {
         setActualPage(1);
-        history.push("/Login")
+        history.push("/Signin")
     };
 
     return(
@@ -54,8 +54,8 @@ function Header() {
                     <option id="pm" value="#" onClick={handlePopularM}>Popular Movies</option>
                     <option id="um" value="#" onClick={handleUpcomingM}>Upcoming Movies</option>
                     <option id="pr" value="#" onClick={handlePrueba}>Prueba</option>
-                    <option id="lo" value="#" onClick={handleLogin}>Login</option>
-                    <option id="na" value="#" onClick={handleNewAccount}>New Account</option>
+                    <option id="lo" value="#" onClick={handleLogin}>Log In</option>
+                    <option id="si" value="#" onClick={handleSignin}>Sign In</option>
                 </select>
                 </nav>
             </div>
