@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import TopRated from './pages/sections/TopRated';
 import Upcomings from './pages/sections/Upcomings';
 import Popular from './pages/sections/Popular';
-import Details from './pages/sections/Details';
+import Details from './pages/Details/Details';
 import Login from './pages/login/Login';
 import prueba from './pages/sections/prueba';
 import Signin from './pages/Signin/Signin';

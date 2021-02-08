@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from '../../context/Context';
 import { ModalContext } from '../../context/ModalContext';
 import { useHistory } from 'react-router-dom';
@@ -12,21 +12,63 @@ const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
 function TopRated() {
 
-    const {topRatedMoviesPath, setTopRatedMoviesPath, topRatedMoviesArray, setTopRatedMoviesArray,
-    maxPages, setMaxPages, actualPage, setActualPage, handleIncrementTopRatedMovies, handleDecrementTopRatedMovies} = useContext(Context);
+    // const {topRatedMoviesPath, setTopRatedMoviesPath, topRatedMoviesArray, setTopRatedMoviesArray,
+    // maxPages, setMaxPages, actualPage, setActualPage, handleIncrementTopRatedMovies, handleDecrementTopRatedMovies} = useContext(Context);
 
     const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
     open, setOpen, classes} = useContext(ModalContext);
     
     const history = useHistory();
 
-    // const handleGoToDetails = () => {
-    //     history.push("/Details")
+    const handleGoToDetails = () => {
+        history.push("/Details")
+    }
+
+    // const handleOpen = () => {
+    //     setOpen(true);
     // }
 
-    const handleOpen = () => {
-        setOpen(true);
-    }
+
+    const [topRatedMoviesPath, setTopRatedMoviesPath] = useState(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`) 
+    const [topRatedMoviesArray, setTopRatedMoviesArray] = useState([]);
+    const [actualPage, setActualPage] = useState(1);
+
+    const maxPages = 16
+
+    useEffect(() => {
+        console.log(topRatedMoviesPath);
+
+
+        //const newUrl = URL + "&page=${}"
+        fetch(topRatedMoviesPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                setTopRatedMoviesArray(data.results);
+                //setMaxPages(data.total_pages);
+            })
+            .catch(error => alert("Algo no funciona..."))
+    }, [topRatedMoviesPath]);
+
+    const handleIncrementTopRatedMovies = () => {
+        if (actualPage<maxPages) {
+            let nextPage = actualPage +1
+            setActualPage(nextPage);
+            setTopRatedMoviesPath(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=${nextPage}`);
+        }
+      };
+
+    const handleDecrementTopRatedMovies = () => {
+        if (actualPage>1) {
+            let nextPage = actualPage -1
+            setActualPage(actualPage-1);
+            setTopRatedMoviesPath(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=${nextPage}`);
+        }
+      };
     
 
     return (
@@ -47,13 +89,13 @@ function TopRated() {
                             <div key={movie.id} className="wrap">
                                 <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
                                     saveMovieId(movie.id);
-                                    handleOpen();
+                                    handleGoToDetails();
+                                    // handleOpen();
                                 }} 
                                 />
                                 
                                 <h4 className="movie_list_title">{movie.title}</h4>
                                 <p className="movie_list_date">{movie.release_date}</p>
-                                <p className="movie_overview">id: {movie.id}</p>
                             </div>
                     )})}
                     <MovieDetailsModal />

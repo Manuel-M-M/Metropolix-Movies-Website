@@ -25,7 +25,7 @@ const ModalProvider = (props) => {
         getMovieDetails();
     
     }, [MovieId]);
-         console.log(MovieDetails);
+         //console.log(MovieDetails);
 
         const [modalStyle] = useState(getModalStyle);
         const [open, setOpen] = useState(false);

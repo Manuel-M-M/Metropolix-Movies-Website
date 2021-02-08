@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Carousel from '../components/carousel/Carousel';
 import LateralScroll from '../components/lateralScroll/LateralScroll';
 import { Context } from '../context/Context';
+import { ModalContext } from '../context/ModalContext';
 
 const api_key = "73335406cba0f2d2b6be748d34df365b";
 const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
@@ -11,6 +12,8 @@ function Home() {
 
     const {searchPath, setSearchPath, searchArray, setSearchArray} = useContext(Context);
 
+    const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
+        open, setOpen, classes} = useContext(ModalContext);
     
     const history = useHistory();
     
@@ -41,7 +44,11 @@ function Home() {
             <div className="container mt-4 mb-4">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-6">
-                        <input className="form-control" type="text" onChange={handleSearch}  placeholder="Search" aria-label="Search"></input>
+                        <input className="form-control" type="text"  placeholder="Search" aria-label="Search"
+                            onChange={handleSearch}
+                        >
+
+                        </input>
                     </div>
                 </div>
             </div>
@@ -56,10 +63,13 @@ function Home() {
                     {searchArray.map((movie) => {
                         return (
                             <div key={movie.id} className="wrap">
-                                <img className="clickable" src={getImage(movie.poster_path)} onClick={handleGoToDetails} />
+                                <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
+                                    saveMovieId(movie.id);
+                                    handleGoToDetails();
+                                    // handleOpen();
+                                }}  />
                                 <h4 className="movie_list_title">{movie.title}</h4>
                                 <p className="movie_list_date">{movie.release_date}</p>
-                                <p className="movie_overview">{movie.overview}</p>
                             </div>
                     )})}
                 </div> 
