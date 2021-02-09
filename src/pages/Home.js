@@ -44,7 +44,11 @@ function Home() {
             <div className="container mt-4 mb-4">
                 <div className="row justify-content-center align-items-center">
                     <div className="col-6">
-                        <input className="form-control" type="text" onChange={handleSearch}  placeholder="Search" aria-label="Search"></input>
+                        <input className="form-control" type="text"  placeholder="Search" aria-label="Search"
+                            onChange={handleSearch}
+                        >
+
+                        </input>
                     </div>
                 </div>
             </div>
@@ -66,7 +70,6 @@ function Home() {
                                 }} />
                                 <h4 className="movie_list_title">{movie.title}</h4>
                                 <p className="movie_list_date">{movie.release_date}</p>
-                                <p className="movie_overview">{movie.overview}</p>
                             </div>
                     )})}
                 </div> 

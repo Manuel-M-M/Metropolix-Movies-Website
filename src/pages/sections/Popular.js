@@ -92,7 +92,6 @@ function Popular() {
                             }} />
                             <h4 className="movie_list_title">{movie.title}</h4>
                             <p className="movie_list_date">{movie.release_date}</p>
-                            <p className="movie_overview">{movie.overview}</p>
                         </div>
                 )})}
                 
