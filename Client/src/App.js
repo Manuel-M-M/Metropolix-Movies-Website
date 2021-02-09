@@ -6,7 +6,7 @@ import Upcomings from './pages/sections/Upcomings';
 import Popular from './pages/sections/Popular';
 import Details from './pages/details/Details';
 import Login from './pages/login/Login';
-import prueba from './pages/sections/prueba';
+import Favourites from './pages/sections/Favourites';
 import Signin from './pages/Signin/Signin';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -29,7 +29,7 @@ function App() {
           <Route path="/Popular" exact component={Popular} />
           <Route path="/Upcomings" exact component={Upcomings} />
           <Route path="/Details" exact component={Details} />
-          <Route path="/prueba" exact component={prueba} />
+          <Route path="/Favourites" exact component={Favourites} />
           <Route path="/Login" exact component={Login} />
           <Route path="/Signin" exact component={Signin} />
 

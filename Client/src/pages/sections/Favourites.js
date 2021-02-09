@@ -1,6 +1,6 @@
 
 
-function prueba () {
+function Favourites () {
 
 
     return (
@@ -44,4 +44,4 @@ function prueba () {
         </>
     )
 };
-export default prueba;
+export default Favourites;

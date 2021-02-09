@@ -26,9 +26,9 @@ function Header() {
         history.push("/Upcomings")
     };
 
-    const handlePrueba = () => {
+    const handleFavourites = () => {
         setActualPage(1);
-        history.push("/prueba")
+        history.push("/Favourites")
     };
 
     const handleLogin = () => {
@@ -53,7 +53,7 @@ function Header() {
                     <option id="tm" value="#" onClick={handleTopRatedM}>Top Rated Movies</option>
                     <option id="pm" value="#" onClick={handlePopularM}>Popular Movies</option>
                     <option id="um" value="#" onClick={handleUpcomingM}>Upcoming Movies</option>
-                    <option id="pr" value="#" onClick={handlePrueba}>Prueba</option>
+                    <option id="fa" value="#" onClick={handleFavourites}>Favourites</option>
                     <option id="lo" value="#" onClick={handleLogin}>Log In</option>
                     <option id="si" value="#" onClick={handleSignin}>Sign In</option>
                 </select>

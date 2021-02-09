@@ -64,6 +64,7 @@ function Upcomings() {
     const handleGoToDetails = () => {
         history.push("/Details")
     }
+    
 
     return (
         <>
