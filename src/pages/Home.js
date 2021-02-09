@@ -1,4 +1,5 @@
 import {useContext} from "react";
+import { ModalContext } from '../context/ModalContext';
 import { useHistory } from 'react-router-dom';
 import Carousel from '../components/carousel/Carousel';
 import LateralScroll from '../components/lateralScroll/LateralScroll';
@@ -10,8 +11,10 @@ const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 function Home() {
 
     const {searchPath, setSearchPath, searchArray, setSearchArray} = useContext(Context);
-
     
+    const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
+        open, setOpen, classes} = useContext(ModalContext);
+
     const history = useHistory();
     
     
@@ -56,7 +59,11 @@ function Home() {
                     {searchArray.map((movie) => {
                         return (
                             <div key={movie.id} className="wrap">
-                                <img className="clickable" src={getImage(movie.poster_path)} onClick={handleGoToDetails} />
+                                <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
+                                    saveMovieId(movie.id);
+                                    handleGoToDetails();
+                                    // handleOpen();
+                                }} />
                                 <h4 className="movie_list_title">{movie.title}</h4>
                                 <p className="movie_list_date">{movie.release_date}</p>
                                 <p className="movie_overview">{movie.overview}</p>
