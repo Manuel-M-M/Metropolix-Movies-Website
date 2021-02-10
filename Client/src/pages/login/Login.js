@@ -22,6 +22,7 @@ const Login = () => {
         e.preventDefault();
 
         // Validar que no haya campos vacíos
+        // localhost:3000/login
 
         // Pasarlo al action
 
