@@ -28,7 +28,7 @@ body{
 }
 
 .contenedor-form {
-    padding: 5rem 3rem;
+    padding: 3rem 3rem;
     max-width: 500px;
     width: 95%;
     background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/glassCine.jpg);
@@ -84,7 +84,7 @@ body{
 }
 
 .btn {
-    margin-top: 2rem;
+    margin-top: 6rem;
     font-family: "Raleway";
     font-weight: bolder;
     padding: 1.5rem;

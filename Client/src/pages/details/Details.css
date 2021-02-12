@@ -109,3 +109,13 @@
 .ec-stars-wrapper > a:hover ~ a {
 	color: #888;
 }
+
+#textareaComent {
+    border-radius: 1rem;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%);
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    font-weight: bold;
+    padding: 15px 15px 15px 15px;
+}

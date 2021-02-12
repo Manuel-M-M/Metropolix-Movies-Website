@@ -1,11 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../context/Context';
+//import { CSSTransition } from "react-transition-group";
 import './Header.css';
 import Logo from '../../img/logos/cuadrado_verdeNegro.png';
+import logo from "../../img/logos/watch-movie.png";
+
 
 function Header() {
+
+    // const [isNavVisible, setNavVisibility] = useState(false);
+    // const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     const {actualPage, setActualPage} = useContext(Context);
 
@@ -31,33 +37,65 @@ function Header() {
         history.push("/Favourites")
     };
 
-    const handleLogin = () => {
-        setActualPage(1);
-        history.push("/Login")
-    };
+    // useEffect(() => {
+    //     const mediaQuery = window.matchMedia("(max-width: 700px)");
+    //     mediaQuery.addListener(handleMediaQueryChange);
+    //     handleMediaQueryChange(mediaQuery);
+    
+    //     return () => {
+    //       mediaQuery.removeListener(handleMediaQueryChange);
+    //     };
+    //   }, []);
+    
+    //   const handleMediaQueryChange = mediaQuery => {
+    //     if (mediaQuery.matches) {
+    //       setIsSmallScreen(true);
+    //     } else {
+    //       setIsSmallScreen(false);
+    //     }
+    //   };
+    
+    //   const toggleNav = () => {
+    //     setNavVisibility(!isNavVisible);
+    //   };
 
-    const handleSignin = () => {
-        setActualPage(1);
-        history.push("/Signin")
-    };
 
     return(
 
         <header>
-            <div className="container">
+            <div className="Container">
                 <a href="https://www.themoviedb.org" target="_blank"><img className="header_logo" src={Logo} alt="logo"/></a>
                 <NavLink to="/Home" exact className="logo" activeClassName="active"><h1 id="headerTitle">Metropoli<span id="titleSpan">X</span></h1></NavLink>
-                <nav>
-                <select name="" id="navSelect">Sections
-                    <option value="#" disabled selected >Sections:</option>
-                    <option id="tm" value="#" onClick={handleTopRatedM}>Top Rated Movies</option>
-                    <option id="pm" value="#" onClick={handlePopularM}>Popular Movies</option>
-                    <option id="um" value="#" onClick={handleUpcomingM}>Upcoming Movies</option>
-                    <option id="fa" value="#" onClick={handleFavourites}>Favourites</option>
-                    <option id="lo" value="#" onClick={handleLogin}>Log In</option>
-                    <option id="si" value="#" onClick={handleSignin}>Sign In</option>
-                </select>
-                </nav>
+                {/* <CSSTransition
+                    in={!isSmallScreen || isNavVisible}
+                    timeout={350}
+                    classNames="NavAnimation"
+                    unmountOnExit
+                > */}
+                    {/* <div  key="CSSTransition"> */}
+                        <div className="signHeader">
+                            <NavLink to="/Signin" exact className="headerSignin" activeClassName="active"><p className="signinP">Sign In</p></NavLink>
+                            <span>/</span>
+                            <NavLink to="/Signup" exact className="headerSignup" activeClassName="active"><p className="signupP">Sign Up</p></NavLink>
+                        </div>
+                        <nav>
+                        <select name="" id="navSelect">Sections
+                            <option value="#" disabled selected >Sections:</option>
+                            <option id="tm" value="#" onClick={handleTopRatedM}>Top Rated Movies</option>
+                            <option id="pm" value="#" onClick={handlePopularM}>Popular Movies</option>
+                            <option id="um" value="#" onClick={handleUpcomingM}>Upcoming Movies</option>
+                            <option id="fa" value="#" onClick={handleFavourites}>Favourites</option>
+                        </select>
+                        </nav>
+                        <div className="userAccount">
+                            <a href="#" target="_blank"><img className="headerAccount" src={logo} alt="logo"/></a>
+                            <span>Username</span>
+                        </div>
+                    {/* </div> */}
+                {/* </CSSTransition> */}
+                {/* <button onClick={toggleNav} className="Burger">
+                    
+                </button> */}
             </div>
         </header>
     )

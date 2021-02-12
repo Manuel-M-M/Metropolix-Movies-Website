@@ -34,11 +34,13 @@ router.get("/", verifyToken, (req, res) => {
         
 });
 
+
+
 router.post("/", (req, res) => {
     const body = req.body;
 
     const user = new User({
-        // username: body.username,
+        username: body.username,
         email: body.email,
         password: bcrypt.hashSync(body.password, 10),
         role: body.role

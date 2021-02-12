@@ -35,15 +35,24 @@ const userSchema = new Schema({
             ref: 'Movie'
         }
     ],
-    seen_movies: {
-        type: String
-    },
-    favourite_movies: {
-        type: String
-    },
-    critics: {
-        type: String
-    },
+    seen_movies: [
+        {
+            type: Schema.Types.ObjectId, 
+            ref: 'Movie'
+        }
+    ],
+    favourite_movies: [
+        {
+            type: Schema.Types.ObjectId, 
+            ref: 'Movie'
+        }
+    ],
+    valorations: [
+        {
+            type: Schema.Types.ObjectId, 
+            ref: 'Movie'
+        }
+    ],
     state: {
         type: Boolean,
         default: true

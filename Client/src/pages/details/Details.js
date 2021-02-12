@@ -62,6 +62,8 @@ function Details() {
                                     <a href="#" data-value="10" title="Vote 10 stars">&#9733;</a>
                                 </div>
                             </div>
+                            <textarea name="textareaComent" id="textareaComent" cols="50" rows="8" placeholder="Add your comment"></textarea>
+
                             <div className="linkDetails">
                                 <p>
                                 <Link to={'/Media'} className="account-link">

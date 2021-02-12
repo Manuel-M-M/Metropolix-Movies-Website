@@ -16,6 +16,18 @@ background: var(--fondo);
   pointer-events: none;
 }
 
+.alert-ok {
+  background-color: var(--verde);
+  color: #fff;
+}
+
+.alert-error {
+  position: absolute;
+  margin-top: 300px;
+  background-color: rgb(230, 78, 78);
+  color: #fff;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
