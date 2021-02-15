@@ -68,7 +68,7 @@ const Signin = () => {
                     </div>
 
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block"
+                        <input type="submit" className="btn-sign btn-primario btn-block"
                         value="Sign In" />
                     </div>
                 </form>

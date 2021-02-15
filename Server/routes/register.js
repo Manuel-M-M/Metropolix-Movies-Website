@@ -16,7 +16,7 @@ router.post("/register", async(req, res) => {
         role: body.role
     });
 
-    await user.save((error, userDB) => {
+     /*await*/ user.save((error, userDB) => {
         if (error) {
             res.status(400).json({
                 ok: false,
@@ -28,7 +28,7 @@ router.post("/register", async(req, res) => {
     console.log(user.email)
 
 
-    const usuario = await User.findOne({ email: user.email });
+    // const usuario = await User.findOne({ email: user.email });
 
     console.log(usuario)
 
@@ -51,7 +51,7 @@ router.post("/register", async(req, res) => {
     }
 
     const token = jwt.sign({
-        user: usuario
+        user: userDB
     },
         process.env.SEED, { expiresIn: process.env.TOKEN_EXPIRY }
     )

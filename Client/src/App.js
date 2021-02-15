@@ -1,6 +1,6 @@
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 import './css/App.css';
-import Home from './pages/Home';
+import Home from './pages/home/Home';
 import TopRated from './pages/sections/TopRated';
 import Upcomings from './pages/sections/Upcomings';
 import Popular from './pages/sections/Popular';

@@ -1,9 +1,10 @@
 import {useContext} from "react";
-import { ModalContext } from '../context/ModalContext';
+import { ModalContext } from '../../context/ModalContext';
 import { useHistory } from 'react-router-dom';
-import Carousel from '../components/carousel/Carousel';
-import LateralScroll from '../components/lateralScroll/LateralScroll';
-import { Context } from '../context/Context';
+import Carousel from '../../components/carousel/Carousel';
+import LateralScroll from '../../components/lateralScroll/LateralScroll';
+import { Context } from '../../context/Context';
+import "./Home.css"
 
 const api_key = "73335406cba0f2d2b6be748d34df365b";
 const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
@@ -24,14 +25,16 @@ function Home() {
             setSearchPath(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=${e.target.value}`);
             document.getElementById("carousel").classList.add("carouselDisplayNone")
             document.getElementById("searchDiv").classList.remove("carouselDisplayNone")
-            document.getElementById("lateralScroll").classList.add("lateralScrollDisplayNone")
+            // document.getElementById("lateralScroll").classList.add("lateralScrollDisplayNone")
             document.getElementById("searchDiv").classList.remove("lateralScrollDisplayNone")
         } else {
             document.getElementById("carousel").classList.remove("carouselDisplayNone")
-            document.getElementById("searchDiv").classList.add("carouselDisplayNone")
-            document.getElementById("lateralScroll").classList.remove("lateralScrollDisplayNone")
+            //document.getElementById("searchDiv").classList.add("carouselDisplayNone")
+            //document.getElementById("lateralScroll").classList.remove("lateralScrollDisplayNone")
             document.getElementById("searchDiv").classList.add("lateralScrollDisplayNone")
+           // document.getElementById("movie-container-display").classList.add("movie-container-display-none")
         }
+        
       };
 
     const handleGoToDetails = () => {
@@ -41,9 +44,9 @@ function Home() {
     return (
         <>
            
-            <div className="container mt-4 mb-4">
+            <div className="container mt-2 mb-2">
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-6">
+                    <div className="div-searcher col-6">
                         <input className="form-control" type="text"  placeholder="Search" aria-label="Search"
                             onChange={handleSearch}
                         >
@@ -55,11 +58,11 @@ function Home() {
             <div id="carousel" className="carouselDisplayActive">
                 <Carousel />
             </div>
-            <div id="lateralScroll" className="lateralScrollDisplayActive">
+            {/* <div id="lateralScroll" className="lateralScrollDisplayActive">
                 <LateralScroll />
-            </div>
-            <div>
-                <div id="searchDiv" className="grid">
+            </div> */}
+            <div id="movie-container-display" className="movie-container home-margin">
+                <div id="searchDiv" className="flex">
                     {searchArray.map((movie) => {
                         return (
                             <div key={movie.id} className="wrap">
@@ -73,6 +76,10 @@ function Home() {
                             </div>
                     )})}
                 </div> 
+            </div>
+            <div className="row justify-content-center mt-3 mb-3">
+                    <button className="btn btn-transparent mr-1" /* onClick={() => handleDecrementPopularMovies()}*/>-</button>
+                    <button className="btn btn-transparent ml-1" /* onClick={() => handleIncrementPopularMovies() }*/>+</button>
             </div>
         </>
     );

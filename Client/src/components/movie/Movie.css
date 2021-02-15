@@ -1,0 +1,33 @@
+.wrap {
+    background-size: cover;
+    background-position: center;
+    flex: 0 0 30vh;
+}
+
+.wrap h4 {
+    word-break: break-all;
+}
+
+.wrap img {
+    width: 150px;
+    
+}
+
+.movie_list_title {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: x-small;
+    margin-top: 5px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.movie_list_date {
+    color: whitesmoke;
+    font-weight:bold;
+    font-size: x-small;
+}
+
+.clickable {
+    cursor:pointer;
+}

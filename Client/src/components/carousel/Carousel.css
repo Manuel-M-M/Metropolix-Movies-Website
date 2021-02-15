@@ -18,6 +18,10 @@
   .carousel .carousel-item {
     background-repeat: no-repeat;
   }
+
+  .carousel-caption h5, .carousel-caption p {
+      font-size: small;
+  }
   
   .carousel .carousel-item:nth-child(1) {
     background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/bigCarousel/ran.jpg);

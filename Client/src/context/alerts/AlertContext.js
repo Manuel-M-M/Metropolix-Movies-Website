@@ -1,4 +1,4 @@
-import { createContext, createCOntext } from "react";
+import { createContext } from "react";
 
 const AlertContext = createContext();
 

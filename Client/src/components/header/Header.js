@@ -2,10 +2,8 @@ import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
 import { Context } from '../../context/Context';
-//import { CSSTransition } from "react-transition-group";
 import './Header.css';
-import Logo from '../../img/logos/cuadrado_verdeNegro.png';
-import logo from "../../img/logos/watch-movie.png";
+import logo from "../../img/logos/icons8-male-user-48.png";
 
 
 function Header() {
@@ -64,7 +62,7 @@ function Header() {
 
         <header>
             <div className="Container">
-                <a href="https://www.themoviedb.org" target="_blank"><img className="header_logo" src={Logo} alt="logo"/></a>
+                {/* <a href="https://www.themoviedb.org" target="_blank"><img className="header_logo" src={Logo} alt="logo"/></a> */}
                 <NavLink to="/Home" exact className="logo" activeClassName="active"><h1 id="headerTitle">Metropoli<span id="titleSpan">X</span></h1></NavLink>
                 {/* <CSSTransition
                     in={!isSmallScreen || isNavVisible}
@@ -89,7 +87,7 @@ function Header() {
                         </nav>
                         <div className="userAccount">
                             <a href="#" target="_blank"><img className="headerAccount" src={logo} alt="logo"/></a>
-                            <span>Username</span>
+                            {/* <span>Username</span> */}
                         </div>
                     {/* </div> */}
                 {/* </CSSTransition> */}

@@ -1,0 +1,92 @@
+/* body {
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../fondos/shining.jpg);;
+
+} */
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.title-page {
+    margin: 0 auto;
+    padding: 0 auto;
+    /* height: 100vh; */
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.movie-container {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: whitesmoke;
+}
+
+.flex {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    box-sizing: border-box;
+}
+
+.wrap {
+    background-size: cover;
+  background-position: center;
+  flex: 0 0 30vh;
+}
+
+/* .wrap {
+    display:inline-block;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    word-break: normal;
+    height: 300;
+    width: 50px;
+} */
+
+.wrap h4 {
+    word-break: break-all;
+}
+
+.wrap img {
+    width: 150px;
+    
+}
+
+
+.movie_list_title {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: x-small;
+    margin-top: 5px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.movie_list_date {
+    color: whitesmoke;
+    font-weight:bold;
+    font-size: x-small;
+}
+
+.clickable {
+    cursor:pointer;
+}
+
+
+
+

@@ -25,6 +25,7 @@ body {
 #navSelect {
     font-family: "Railway";
     font-weight: bold;
+    font-size: x-small;
     text-decoration: none;
     background-color: black;
     color: var(--verde);
@@ -36,9 +37,16 @@ body {
     max-width: 2500;
 }
 
+.Container a {
+  margin-top: 0;
+}
+
 header {
-    padding: 30px 0;
     background: #000;
+}
+
+#headerTitle {
+  margin-bottom: 0;
 }
 header .Container {
     display: flex;
@@ -48,16 +56,20 @@ header .Container {
 
 header .logo {
     font-family: 'Cookie', cursive;
-    font-weight: normal;
+    font-weight: lighter;
     color: var(--verde);
-    font-size: 40px;
+    font-size: small;
     text-decoration: none;
-    
 }
 
 header .logo:hover {
     transform: scale(1.2);
     transform-origin: center;
+}
+
+header .logo a {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 header nav a {
@@ -77,10 +89,9 @@ header nav a.active {
 
 .signHeader span {
     color: var(--blanco);
-    size: 10px;
+    font-size: small;
     font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: bolder;
+    font-weight:lighter;
 }
 
 .headerSignin, .headerSignup,
@@ -93,8 +104,8 @@ header nav a.active {
     display: inline;
     color: var(--verde);
     font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: bolder;
+    font-size: x-small;
+    font-weight: bold;
 }
 
 .headerSignin p:hover {
@@ -108,8 +119,8 @@ header nav a.active {
     text-decoration: none;
     color: var(--verde);
     font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: bolder;
+    font-size: x-small;
+    font-weight: bold;
 }
 
 .headerSignup p:hover {
@@ -128,7 +139,7 @@ header nav a.active {
 
 .userAccount span {
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 /* ---- ------- ----- Media Queries---- ------ -------- */
@@ -139,10 +150,10 @@ header nav a.active {
     }
 }     
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:600px) {
     header .logo {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin-top: 0px;
+        
         font-size: 30px;
     }
 
@@ -152,7 +163,7 @@ header nav a.active {
     }
 
     nav {
-        margin: 20px 0 20px 0;
+        margin: 10px 0 10px 0;
     }
 
     .principal-movie {
