@@ -28,8 +28,8 @@ body{
 }
 
 .contenedor-form {
-    padding: 3rem 3rem;
-    max-width: 500px;
+    padding: 2rem 3rem;
+    max-width: 400px;
     width: 95%;
     background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/glassCine.jpg);
     background-size: cover;
@@ -39,14 +39,16 @@ body{
 .contenedor-form h1 {
     color: var(--verde);
     font-family: "Raleway";
+    font-size: medium;
     font-weight: bolder;
-    padding-bottom: 32px;
+    padding-bottom: 20px;
 }
 
 .campo-form {
     display: flex;
     margin-bottom: 2rem;
     align-items: center;
+    font-size: x-small;
 }
 .campo-form:last-of-type {
   margin: 0;
@@ -55,41 +57,45 @@ body{
   flex: 0 0 100px;
   font-family: "Raleway";
   font-weight: bolder;
+  font-size: smaller;
   color: var(--verde);
 }
 .campo-form input[type="password"],
 .campo-form input[type="email"], 
 .campo-form input[type="text"] {
   border: 1px solid #e1e1e1;
-  padding: 1rem;
+  padding: 0.5rem;
   flex: 1;
   font-weight: bold;
   font-family: "Raleway";
+  font-size: smaller;
 }
 
 .account-link {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: block;
   opacity: .6;
   color: var(--verde);
   text-decoration: none;
   font-family: "Roboto";
   font-weight: bold;
+  font-size: smaller;
 }
 
 .account-link:hover {
   color: var(--verde);
   opacity: .9;
   text-decoration: none;
+  font-size: smaller;
 }
 
 .btn-sign {
-    margin-top: 6rem;
+    margin-top: 2rem;
     font-family: "Raleway";
     font-weight: bolder;
-    padding: 1.5rem;
-    font-size: 1.4;
-    font-weight: 400;
+    padding: 0.5rem;
+    font-size:small;
+    /* font-weight: 400; */
     border-radius: .5rem;
     border: none;
     transition: background-color .3s ease;
@@ -111,6 +117,12 @@ body{
 
   .btn-block {
     display: block;
-    width: 100%;
+    width: 80%;
+  }
+
+  .alert-error {
+    margin-bottom: 100px;
+    font-size: smaller;
+    padding: 0.5rem;
   }
 

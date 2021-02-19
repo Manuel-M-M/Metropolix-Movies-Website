@@ -13,7 +13,7 @@
     padding: 0 auto;
     /* height: 100vh; */
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .movie-container {
@@ -25,6 +25,7 @@
 }
 
 .h1 {
+    font-size: large;
     font-family: 'Bebas Neue', sans-serif;
     color: whitesmoke;
 }
