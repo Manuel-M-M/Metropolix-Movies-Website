@@ -62,6 +62,7 @@ a .header_logo {
   opacity: 0.9;
   color: black;
   font-family: "Railway", sans-serif;
+  font-size: x-small;
 }
 
 .btn-transparent:hover {
