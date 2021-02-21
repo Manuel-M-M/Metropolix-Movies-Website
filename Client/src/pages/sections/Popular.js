@@ -72,7 +72,7 @@ function Popular() {
 
     return (
         <>
-            <container>
+            <div className="container">
                 <div className="title-page d-flex justify-content-center align-items-center mt-4">
                     <button className="btn btn-transparent mr-5"
                         onClick={() => {
@@ -103,7 +103,7 @@ function Popular() {
                     <button className="btn btn-transparent mr-1" onClick={() => handleDecrementPopularMovies()}>-</button>
                     <button className="btn btn-transparent ml-1" onClick={() => handleIncrementPopularMovies()}>+</button>
                 </div>
-            </container>
+            </div>
         </>
     );
 }

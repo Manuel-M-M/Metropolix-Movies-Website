@@ -61,25 +61,27 @@ function Home() {
             {/* <div id="lateralScroll" className="lateralScrollDisplayActive">
                 <LateralScroll />
             </div> */}
-            <div id="movie-container-display" className="movie-container home-margin">
-                <div id="searchDiv" className="flex">
-                    {searchArray.map((movie) => {
-                        return (
-                            <div key={movie.id} className="wrap">
-                                <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
-                                    saveMovieId(movie.id);
-                                    handleGoToDetails();
-                                    // handleOpen();
-                                }} />
-                                <h4 className="movie_list_title">{movie.title}</h4>
-                                <p className="movie_list_date">{movie.release_date}</p>
-                            </div>
-                    )})}
-                </div> 
-            </div>
-            <div className="row justify-content-center mt-3 mb-3">
-                    <button className="btn btn-transparent mr-1" /* onClick={() => handleDecrementPopularMovies()}*/>-</button>
-                    <button className="btn btn-transparent ml-1" /* onClick={() => handleIncrementPopularMovies() }*/>+</button>
+            <div className="container">
+                <div id="movie-container-display" className="movie-container home-margin">
+                    <div id="searchDiv" className="flex">
+                        {searchArray.map((movie) => {
+                            return (
+                                <div key={movie.id} className="wrap">
+                                    <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
+                                        saveMovieId(movie.id);
+                                        handleGoToDetails();
+                                        // handleOpen();
+                                    }} />
+                                    <h4 className="movie_list_title">{movie.title}</h4>
+                                    <p className="movie_list_date">{movie.release_date}</p>
+                                </div>
+                        )})}
+                    </div>
+                </div>
+                <div className="row justify-content-center mt-3 mb-3">
+                        <button className="btn btn-transparent mr-1" /* onClick={() => handleDecrementPopularMovies()}*/>-</button>
+                        <button className="btn btn-transparent ml-1" /* onClick={() => handleIncrementPopularMovies() }*/>+</button>
+                </div>
             </div>
         </>
     );

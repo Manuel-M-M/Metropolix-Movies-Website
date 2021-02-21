@@ -49,7 +49,15 @@ function DetailsMovie () {
                             <span>{MovieDetails.vote_average}</span>
                         </p>
                         <p>
-                            <span>Add to favourites: </span>
+                            <span>Favourite: </span>
+                            <input type="checkbox" id="favourite" name="favourite" value="favourite"></input>
+                        </p>
+                        <p>
+                            <span>Seen: </span>
+                            <input type="checkbox" id="favourite" name="favourite" value="favourite"></input>
+                        </p>
+                        <p>
+                            <span>See later: </span>
                             <input type="checkbox" id="favourite" name="favourite" value="favourite"></input>
                         </p>
                         <StarRating />
