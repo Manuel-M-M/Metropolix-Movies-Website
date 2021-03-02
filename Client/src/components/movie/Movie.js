@@ -1,21 +1,30 @@
 import { useState, useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import { MovieContext } from "../../context/movie/MovieContext";
+import { useHistory } from 'react-router-dom';
 import "./Movie.css";
 
 
 //const api_key = "73335406cba0f2d2b6be748d34df365b";
 const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
-function Movie () {
+function Movie ({movie}) {
 
-   // const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
-      // open, setOpen, classes} = useContext(ModalContext);
+    const history = useHistory();
 
-    const { handleGoToDetails, api_key, MovieId, saveMovieId, MovieDetails, saveMovieDetails,
-        topRatedMoviesArray, setTopRatedMoviesArray } = useContext(MovieContext);
+    const handleGoToDetails = () => {
+        history.push("/Details")
+    }
 
-    const [movie, setMovie] = useState[{}];
+    // console.log(movie);
+
+      const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
+      open, setOpen, classes} = useContext(ModalContext);
+
+    // const { handleGoToDetails, api_key, MovieId, saveMovieId, MovieDetails, saveMovieDetails,
+    //     topRatedMoviesArray, setTopRatedMoviesArray } = useContext(MovieContext);
+
+    // const [movie, setMovie] = useState[{}];
 
     return(
         <div key={movie.id} className="wrap">

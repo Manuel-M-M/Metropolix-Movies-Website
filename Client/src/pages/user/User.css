@@ -1,0 +1,18 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414;
+}
+
+
+.title {
+    margin-top: 10px;
+    border-bottom: 2px solid var(--verde);
+}
+
+.userList {
+    margin-top: 20px;
+}
+
+/* .userList ul {
+    
+} */

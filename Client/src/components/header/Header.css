@@ -6,7 +6,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 body {
@@ -24,11 +24,29 @@ body {
 
 #navSelect {
     font-family: "Railway";
+    border: transparent;
     font-weight: bold;
     font-size: x-small;
-    text-decoration: none;
+    text-decoration: transparent;
     background-color: black;
     color: var(--verde);
+}
+
+.drop {
+  font-family: "Railway";
+  font-weight: bold;
+  font-size: x-small;
+  text-decoration: transparent;
+  background-color: black;
+  color: var(--verde);
+  border: var(--verde) solid 1px;
+  border-radius: 1em;
+}
+
+option {
+  text-decoration: transparent;
+  border: transparent;
+  border-radius: 1em;
 }
 
 .Container {
@@ -72,7 +90,7 @@ header .logo a {
   margin-top: 0;
 }
 
-header nav a {
+/* header nav a {
     color: #AAA;
     text-decoration: none;
     margin-right: 20px;
@@ -81,7 +99,7 @@ header nav a {
 header nav a:hover,
 header nav a.active {
     color: #FFF;
-}
+} */
 
 .signHeader {
     display: inline;
@@ -128,8 +146,9 @@ header nav a.active {
     color: var(--verde);
 }
 
-.headerAccount img {
+.userAccount img {
     color: wheat;
+    border-radius: 90px;
 }
 
 .userAccount {
@@ -141,6 +160,10 @@ header nav a.active {
   color: #fff;
   font-weight: normal;
 }
+
+/* .menu-trigger img {
+  border-radius: 90px;
+} */
 
 /* ---- ------- ----- Media Queries---- ------ -------- */
 

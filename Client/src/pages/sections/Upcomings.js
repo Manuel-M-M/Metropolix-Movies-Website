@@ -1,12 +1,15 @@
 import { useContext, useState, useEffect } from "react";
-import { Context } from '../../context/Context';
+// import { Context } from '../../context/Context';
 import { ModalContext } from '../../context/ModalContext';
 import { useHistory } from 'react-router-dom';
 import '../../css/sections.css';
+import Movie from "../../components/movie/Movie";
+import HeaderBody from "../../components/headerBody/HeaderBody";
+
+
 
 const api_key = "73335406cba0f2d2b6be748d34df365b";
 const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
-
 
 
 function Upcomings() {
@@ -57,43 +60,20 @@ function Upcomings() {
 
     const history = useHistory();
 
-    // const handleOpen = () => {
-    //     setOpen(true);
-    // }
-
     const handleGoToDetails = () => {
         history.push("/Details")
     }
     
-
     return (
         <>
             <div className="container">
-                <div className="title-page d-flex justify-content-center align-items-center mt-4">
-                    <button className="btn btn-transparent mr-5"
-                        onClick={() => {
-                            history.push("/Home")
-                            }}
-                    >Home
-                    </button>
-                    <h1 className="h1">UPCOMING MOVIES</h1>
-                </div>
+                <HeaderBody title="Upcomings Movies"/>               
                 <div className="movie-container">
                     <div className="flex">
                         {upcomingMoviesArray.map((movie) => {
                             return (
-                                <div key={movie.id} className="wrap">
-                                    <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
-                                            saveMovieId(movie.id);
-                                            handleGoToDetails();
-                                            // handleOpen();
-                                    }} />
-                                    <h4 className="movie_list_title">{movie.title}</h4>
-                                    <p className="movie_list_date">{movie.release_date}</p>
-                                </div>
-                        )})}
-                        
-                    
+                                <Movie movie={movie}/>
+                            )})}         
                     </div>
                 </div>
                 <div className="row justify-content-center mt-3 mb-3">

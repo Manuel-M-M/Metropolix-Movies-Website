@@ -77,6 +77,10 @@
     text-align: start;
 }
 
+.linkDetails p:first-child {
+    margin-bottom: 20px;
+}
+
 .linkDetails p:last-child {
     margin-left: 40px;
 }

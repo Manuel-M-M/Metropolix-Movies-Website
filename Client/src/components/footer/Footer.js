@@ -19,13 +19,13 @@ function Footer() {
             ><h3 className="footerH3">Metropoli<span>X</span></h3>
             </a>
 		    
-		    <p className="footer-links">
+		    {/* <p className="footer-links">
                 
                 <a href="#">Blog</a>
                 <a href="#">About</a>
                 <a href="#">Faq</a>
                 <a href="#">Contact</a>
-		    </p>
+		    </p> */}
 		    <p className="footer-company-name"><span>Created by:</span> Manuel Moraga Molina &copy; 2021</p>
 		</div>
 		<div className="footer-center">

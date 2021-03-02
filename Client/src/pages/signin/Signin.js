@@ -6,44 +6,44 @@ import './Signup-Signin.css';
 const Signin = () => {
 
 
-    const authContext = useContext(AuthContext);
-    const { signInUser } = authContext;
+    // const authContext = useContext(AuthContext);
+    // const { signInUser } = authContext;
 
-    const [user, saveUser] = useState({
-        email: "",
-        password: ""
-    });
+    // const [user, saveUser] = useState({
+    //     email: "",
+    //     password: ""
+    // });
 
-    const { email, password } = user;
+    // const { email, password } = user;
 
-    const onChange = (e) => {
-        saveUser({
-            ...user,
-            [e.target.name] : e.target.value
-        })
-    }
+    // const onChange = (e) => {
+    //     saveUser({
+    //         ...user,
+    //         [e.target.name] : e.target.value
+    //     })
+    // }
 
-    const onSubmit = e => {
-        e.preventDefault();
+    // const onSubmit = e => {
+    //     e.preventDefault();
 
         // Validar que no haya campos vacíos
         // localhost:3000/login
 
         // Pasarlo al action
 
-        signInUser({
-            email: user.email,
-            password: user.password
-        });
+        // signInUser({
+        //     email: user.email,
+        //     password: user.password
+        // });
 
-    };
+    // };
 
 
     return (
         <div className="form-usuario">
             <div className="contenedor-form sombra-dark">
                 <h1>Sign In</h1>
-                <form onSubmit={onSubmit}>
+                <form>      {/* <form onSubmit={onSubmit}> */}
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 
@@ -51,8 +51,8 @@ const Signin = () => {
                             id="email"
                             name="email"
                             placeholder="Your email"
-                            value={email}
-                            onChange={onChange}
+                            // value={email}
+                            // onChange={onChange}
                         />
                     </div>
                     <div className="campo-form">
@@ -62,8 +62,8 @@ const Signin = () => {
                             id="password"
                             name="password"
                             placeholder="Your password"
-                            value={password}
-                            onChange={onChange}
+                            // value={password}
+                            // onChange={onChange}
                         />
                     </div>
 
@@ -74,7 +74,7 @@ const Signin = () => {
                 </form>
                 
                 <Link to={'/Signup'} className="account-link">
-                    Sign up
+                    Go to Sign up
                 </Link>
             </div>
         </div>

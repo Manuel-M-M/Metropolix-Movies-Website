@@ -15,15 +15,20 @@ function Movies () {
                 <div className="flex">
                     {popularMoviesArray.map((movie) => {
                         return (
-                            <div key={movie.id} className="wrap" /*onClick={handleSaveId(movie.id)}*/>
-                                <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
-                                        saveMovieId(movie.id);
-                                        handleGoToDetails();
-                                        // handleOpen();
-                                }} />
-                                <h4 className="movie_list_title">{movie.title}</h4>
-                                <p className="movie_list_date">{movie.release_date}</p>
-                            </div>
+
+                            <Movie 
+                                {movie.id}
+                            />
+
+                            // <div key={movie.id} className="wrap" /*onClick={handleSaveId(movie.id)}*/>
+                            //     <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
+                            //             saveMovieId(movie.id);
+                            //             handleGoToDetails();
+                            //             // handleOpen();
+                            //     }} />
+                            //     <h4 className="movie_list_title">{movie.title}</h4>
+                            //     <p className="movie_list_date">{movie.release_date}</p>
+                            // </div>
                     )})}
                     
                 </div>

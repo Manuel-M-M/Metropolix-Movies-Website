@@ -49,6 +49,8 @@ footer{
 	color:  var(--verde);
 	font: normal 25px 'Cookie', cursive;
 	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
  
 .footer-distributed h3 span{
@@ -73,6 +75,7 @@ footer{
 }
  
 .footer-distributed .footer-company-name {
+	margin-top: 20px;
 	color:  var(--verde);
 	font-size: 10px;
 	font-weight: normal;
@@ -81,6 +84,7 @@ footer{
 }
 
 .footer-distributed .footer-company-name span {
+	margin-top: 20px;
 	color: #fff;
 	font-family: "Roboto";
 }
@@ -208,11 +212,15 @@ footer{
  
 	.footer-distributed .footer-left,
 	.footer-distributed .footer-center,
-	.footer-distributed .footer-right{
+	.footer-distributed {
 		display: block;
 		width: 100%;
 		margin-bottom: 10px;
 		text-align: center;
+	}
+
+	.footer-right {
+		margin-bottom: 40px;
 	}
  
 	.footer-distributed .footer-center i{

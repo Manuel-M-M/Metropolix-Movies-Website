@@ -5,6 +5,7 @@ import { ModalContext } from '../../context/ModalContext';
 import { Context } from '../../context/Context';
 import CommentBox from "../commentBox/CommentBox";
 import StarRating from "../starRating/StarRating";
+import '../../css/sections.css';
 
 const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
@@ -19,6 +20,7 @@ function DetailsMovie () {
         <div className="mainDetails">
             <div className="containerDetails details">
                <img className="imgDetails" src={getImage(MovieDetails.backdrop_path)} alt={MovieDetails.title}/>
+               
                     <h2 className="mt-2">{MovieDetails.title}</h2>
                     <div className="overview">
                         <p>{MovieDetails.overview}</p>
@@ -74,6 +76,12 @@ function DetailsMovie () {
                                 </Link>
                             </p>
                         </div>
+                        <button className="btn btn-transparent mr-5"
+                onClick={() => {
+                    window.history.back();
+                }}
+                >Go Back
+                </button>
                     </div>
                         
             </div>

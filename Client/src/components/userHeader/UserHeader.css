@@ -1,0 +1,11 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414;
+}
+
+
+nav .userLink {
+    margin-top: 30px;
+    color: var(--verde);
+    /* border-bottom: 2px solid var(--verde); */
+}
