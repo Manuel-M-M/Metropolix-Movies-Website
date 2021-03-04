@@ -1,3 +1,8 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414;
+}
+
 .wrap {
     background-size: cover;
     background-position: center;
@@ -13,8 +18,12 @@
     
 }
 
+/* .cardData {
+    background:black;
+} */
+
 .movie_list_title {
-    color: whitesmoke;
+    color: #fff;
     font-weight: bold;
     font-size: x-small;
     margin-top: 5px;
@@ -23,7 +32,7 @@
 }
 
 .movie_list_date {
-    color: whitesmoke;
+    color: #fff;
     font-weight:bold;
     font-size: x-small;
 }

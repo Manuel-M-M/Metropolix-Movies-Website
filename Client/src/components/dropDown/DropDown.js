@@ -8,7 +8,7 @@ import { Context } from '../../context/Context';
 
 const DropDown = () => {
 
-    const {actualPage, setActualPage} = useContext(Context);
+    const { setActualPage} = useContext(Context);
 
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);

@@ -34,8 +34,10 @@ function Movie ({movie}) {
             }}
             />
                 
-            <h4 className="movie_list_title">{movie.title}</h4>
-            <p className="movie_list_date">{movie.release_date}</p>
+            <div className="cardData">
+                <h4 className="movie_list_title">{movie.title}</h4>
+                <p className="movie_list_date">{movie.release_date}</p>
+            </div>
         </div>
     )
 }

@@ -1,3 +1,11 @@
+.container {
+    z-index: 1;
+}
+
+.wrapSearcher {
+    z-index: 1;
+}
+
 .home-margin {
     margin-top: 20px;
 }
