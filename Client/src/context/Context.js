@@ -7,6 +7,7 @@ const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
 const ContextProvider = (props) => {
 
+    const [show, setShow] = useState(false);
     const [searchPath, setSearchPath] = useState(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=original_title&page=1`);
     const [searchArray, setSearchArray] = useState([]);
 
@@ -52,7 +53,7 @@ const ContextProvider = (props) => {
 
     
     return (
-        <Context.Provider value={{api_key, getImage, searchPath, setSearchPath, searchArray,
+        <Context.Provider value={{api_key, getImage, show, setShow, searchPath, setSearchPath, searchArray,
         setSearchArray, actualPage, setActualPage}}>
             {props.children}
         </Context.Provider>

@@ -2,6 +2,7 @@
 import { BrowserRouter, Redirect, Route, useHistory } from 'react-router-dom';
 import './css/App.css';
 import Home from './pages/home/Home';
+import {useState} from 'react';
 import TopRated from './pages/sections/TopRated';
 import Upcomings from './pages/sections/Upcomings';
 import Popular from './pages/sections/Popular';
@@ -16,12 +17,13 @@ import Searcher from './components/searcher/Searcher';
 import Footer from './components/footer/Footer';
 import ContextProvider from './context/Context';
 import ModalProvider from './context/ModalContext';
+import ModalSearchs from './components/modalSearchs/ModalSearchs';
 // import AlertState from "./context/alerts/AlertState";
 // import AuthState from "./context/auth/AuthState";
 
 function App() {
   
-
+  const [show, setShow] = useState(false)
   // const { searchArray } = useContext(Context);
 
   return (
@@ -32,7 +34,7 @@ function App() {
         <BrowserRouter>
           <Header />
           {/* <Searcher /> */}
-      
+          
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>

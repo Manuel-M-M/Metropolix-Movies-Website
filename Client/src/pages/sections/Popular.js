@@ -4,6 +4,7 @@ import { ModalContext } from '../../context/ModalContext';
 // import { useHistory } from 'react-router-dom';
 import FlexBody from '../../components/flexBody/FlexBody';
 import Movie from '../../components/movie/Movie';
+import Searcher from '../../components/searcher/Searcher';
 import '../../css/sections.css';
 import HeaderBody from "../../components/headerBody/HeaderBody";
 
@@ -29,6 +30,11 @@ function Popular() {
     const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
     open, setOpen, classes} = useContext(ModalContext);
 
+    const { show } = useContext(Context);
+
+    
+
+    
     // const history = useHistory();
 
     useEffect(() => {
@@ -66,6 +72,10 @@ function Popular() {
         }
       };
 
+    //   if (show === true) {
+    //     popularMoviesArray([]);
+    // }
+
     
 
     //   const handleGoToDetails = () => {
@@ -81,31 +91,32 @@ function Popular() {
     return (
         <>
             <div className="container">
-
-                <HeaderBody title="Popular Movies"/>
-                {/* <div className="title-page d-flex justify-content-center align-items-center mt-4">
-                    <button className="btn btn-transparent mr-5"
-                        onClick={() => {
-                            history.push("/Home")
-                        }}
-                    >Home
-                    </button>
-                    <h1 className="h1">POPULAR MOVIES</h1>
-                </div> */}
-
-                {/* <FlexBody  flexBody={flexBody}/> */}
-                <div className="movie-container">
-                    <div className="flex">
-                        {popularMoviesArray.map((movie) => {
-                            return (
-                                <Movie movie={movie}/>
-                        )})}
+                <Searcher />
+                <div className="body-wrap">
+                    <HeaderBody title="Popular Movies"/>
+                    {/* <div className="title-page d-flex justify-content-center align-items-center mt-4">
+                        <button className="btn btn-transparent mr-5"
+                            onClick={() => {
+                                history.push("/Home")
+                            }}
+                        >Home
+                        </button>
+                        <h1 className="h1">POPULAR MOVIES</h1>
+                    </div> */}
+                    {/* <FlexBody  flexBody={flexBody}/> */}
+                    <div className="movie-container">
+                        <div className="flex">
+                            {popularMoviesArray.map((movie) => {
+                                return (
+                                    <Movie movie={movie}/>
+                            )})}
                     
+                        </div>
                     </div>
-                </div>
-                <div className="row justify-content-center mt-3 mb-3">
-                    <button className="btn btn-transparent mr-1" onClick={() => handleDecrementPopularMovies()}>-</button>
-                    <button className="btn btn-transparent ml-1" onClick={() => handleIncrementPopularMovies()}>+</button>
+                    <div className="row justify-content-center mt-3 mb-3">
+                        <button className="btn btn-transparent mr-1" onClick={() => handleDecrementPopularMovies()}>-</button>
+                        <button className="btn btn-transparent ml-1" onClick={() => handleIncrementPopularMovies()}>+</button>
+                    </div>
                 </div>
             </div>
         </>

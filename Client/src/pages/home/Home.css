@@ -1,3 +1,10 @@
+.modal-container {
+   display: flex;
+   /* flex-flow: column; */
+   align-items: center;
+   justify-content: center; 
+}
+
 .home-margin {
     margin-top: 20px;
 }

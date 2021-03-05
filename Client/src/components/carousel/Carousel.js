@@ -1,7 +1,17 @@
+import {useContext, useState} from "react";
+import { Context } from '../../context/Context';
 import './Carousel.css';
 
 
 function Carousel() {
+
+    const { show } = useContext(Context);
+
+    if (show === true) {
+        return null
+    }
+
+
     return (
         <div id="carouselHeaderControls" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner h-100">
