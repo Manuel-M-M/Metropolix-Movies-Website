@@ -4,69 +4,127 @@ import '../signin/Signup-Signin.css';
 import AlertContext from "../../context/alerts/AlertContext";
 import AuthContext from "../../context/auth/AuthContext";
 
-const Signup = (props) => {
+import { useState } from 'react';
 
-    // const alertContext = useContext(AlertContext);
-    // const { alert, showAlert } = alertContext;
+function Signup({setUer}){
+    const [username, setusername] = useState("");
+    const [email, setemail] = useState("");
+    const [password, setpassword] = useState("");
 
-    // const authContext = useContext(AuthContext);
-    // const { signUpUser, message, authenticate } = authContext;
+    const handleSubmit = (event)=>{
+        event.preventDefault();
 
-    // If user is authenticated or signup or a duplicate signup
-    // useEffect(() => {
-    //     if(authenticate) {
-    //         props.history.push("/Home");
-    //     }
-    // }, [message, authenticate, props.history]);
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('email', email);
+        formData.append('password', password);
 
-    // const [user, saveUser] = useState({
-    //     username: "",
-    //     email: "",
-    //     password: "",
-    //     confirm: ""
-    // });
+        fetch('http://localhost:8000/contacto', {
+            method: 'POST',
+            mode: 'cors',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(
+            resp => {
+                console.log(resp);
+                setContactos(users => {
+                    const newArray = users.slice();
+                    newArray.push(resp);
+                    return newArray;
+                });
 
-    // const { username, email, password, confirm } = user;
+                // vaciar los campos:
+                setUsername("");
+                setEmail("");
+                setPassword("");
+                
+            } 
+        ).catch( error => console.log(error) );
+        
+    }
 
-    // const onChange = (e) => {
-    //     saveUser({
-    //         ...user,
-    //         [e.target.name] : e.target.value
-    //     })
-    // }
+    const handleUsername = (evento)=>{
+        setUsername(evento.target.value);
+    }
+    const handleEmail = (evento)=>{
+        setEmail(evento.target.value);
+    }
+    const handlePassword = (evento)=>{
+        setPassword(evento.target.value);
+    }
+    const handlePassword = (evento)=>{
+        setPassword(evento.target.value);
+    }
+}
+    
 
-    // const onSubmit = e => {
-    //     e.preventDefault();
+
+// const Signup = (props) => {
+
+//     // const alertContext = useContext(AlertContext);
+//     // const { alert, showAlert } = alertContext;
+
+//     // const authContext = useContext(AuthContext);
+//     // const { signUpUser, message, authenticate } = authContext;
+
+//     // If user is authenticated or signup or a duplicate signup
+//     // useEffect(() => {
+//     //     if(authenticate) {
+//     //         props.history.push("/Home");
+//     //     }
+//     // }, [message, authenticate, props.history]);
+
+//     const [user, saveUser] = useState({
+//         username: "",
+//         email: "",
+//         password: "",
+//         confirm: ""
+//     });
+
+//     const { username, email, password, confirm } = user;
+
+//     const onChange = (e) => {
+//         saveUser({
+//             ...user,
+//             [e.target.name] : e.target.value
+//         })
+//     }
+
+//     const onSubmit = e => {
+//         e.preventDefault();
 
 
-        // Validar que no haya campos vacíos
-        // if ( username.trim() === "" || 
-        //     email.trim() === "" ||
-        //     password.trim() === "" ||
-        //     confirm.trim() === "" ) {
-        //         showAlert("All fields are required", "alert-error");
-        //         return;
-        // }
+//         //Validar que no haya campos vacíos
+//         if ( username.trim() === "" || 
+//             email.trim() === "" ||
+//             password.trim() === "" ||
+//             confirm.trim() === "" ) {
+//                 showAlert("All fields are required", "alert-error");
+//                 return;
+//         }
 
-        // Password mínimo de 6 caracteres
-        // if (password.length < 10) {
-        //     showAlert("Password cannot be less than 10 characters long.", "alert-error")
-        //     return;
-        // }
+//         //Password mínimo de 6 caracteres
+//         // if (password.length < 10) {
+//         //     showAlert("Password cannot be less than 10 characters long.", "alert-error")
+//         //     return;
+//         // }
 
-        // Los dos password han de ser iguales
-        // if (password !== confirm) {
-        //     showAlert("Passwords are not the same", "alert-error");
-        //     return
-        // }
+//         //Los dos password han de ser iguales
+//         if (password !== confirm) {
+//             showAlert("Passwords are not the same", "alert-error");
+//             return
+//         }
 
-        // Pasarlo al action
-        // signUpUser({
-        //     username,
-        //     email,
-        //     password
-        // });
-    // }
+
+
+//         // Pasarlo al action
+//         signUpUser({
+//             username,
+//             email,
+//             password
+//         });
+//     }
 
     
     return (
@@ -74,38 +132,32 @@ const Signup = (props) => {
             { alert ? (<div className={`alert ${alert.category}`}>{alert.message}</div>) : null }
             <div className="contenedor-form sombra-dark">
                 <h1>Sign up</h1>
-                <form>   {/* <form onSubmit={onSubmit}> */}
+                <form onSubmit={onSubmit}>
                     <div className="campo-form">
                         <label htmlFor="username">Username</label>
                         <input 
-                            type="text"
-                            id="username"
-                            name="username"
+                            type="text" 
                             placeholder="Your username"
-                            // value={username}
-                            // onChange={onChange}
+                            value={username}
+                            onChange={handleUsername}
                         />
                     </div>
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 
                             type="email"
-                            id="email"
-                            name="email"
                             placeholder="Your email"
-                            // value={email}
-                            // onChange={onChange}
+                            value={email}
+                            onChange={handleEmail}
                         />
                     </div>
                     <div className="campo-form">
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password"
-                            id="password"
-                            name="password"
                             placeholder="Your password"
-                            // value={password}
-                            // onChange={onChange}
+                            value={password}
+                            onChange={handlePassword}
                         />
                     </div>
                     <div className="campo-form">
@@ -115,8 +167,8 @@ const Signup = (props) => {
                             id="confirm"
                             name="confirm"
                             placeholder="Repeat your password"
-                            // value={confirm}
-                            // onChange={onChange}
+                            value={confirm}
+                            onChange={onChange}
                         />
                     </div>
                     <div className="campo-form">

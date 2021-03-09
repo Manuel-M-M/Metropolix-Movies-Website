@@ -1,10 +1,58 @@
 import {useState, useContext} from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
 import AuthContext from "../../context/auth/AuthContext";
 import './Signup-Signin.css';
 
 const Signin = () => {
 
+    const history = useHistory();
+    let email= "";
+    let password= "";
+    function emailF(e) {
+        email = e.target.value;
+    }
+
+    function passwordF(e) {
+        password = e.target.value;
+    }
+
+    function handleLogin(e) {
+
+        e.preventDefault();
+
+        const config = {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username: email , password: password})
+        };
+
+        const request = new Request('http://localhost:8000/login', config);
+            fetch(request)
+            .then( response => response.json()
+            .then(
+                response => {
+                console.log('hola');
+                localStorage.setItem('token', response.token); // guardar token en localstorage
+                console.log('adios');
+                history.push("/User");
+
+                // var decoded = jwt_decode(response.token); //decodificar el token con la librería jwt_decode
+                // console.log(decoded);
+            
+                // var decodedHeader = jwt_decode(response.token, { header: true }); //decodificar con las cabeceras
+                // console.log('Header del token:' ,decodedHeader); 
+            }
+            )
+            .catch(
+                error => console.log('Erorr: ', error)
+            ));
+
+    }
 
     // const authContext = useContext(AuthContext);
     // const { signInUser } = authContext;
@@ -51,6 +99,7 @@ const Signin = () => {
                             id="email"
                             name="email"
                             placeholder="Your email"
+                            onChange={(e)=>emailF(e)}
                             // value={email}
                             // onChange={onChange}
                         />
@@ -62,6 +111,7 @@ const Signin = () => {
                             id="password"
                             name="password"
                             placeholder="Your password"
+                            onChange={(e)=>passwordF(e)}
                             // value={password}
                             // onChange={onChange}
                         />
@@ -69,7 +119,7 @@ const Signin = () => {
 
                     <div className="campo-form">
                         <input type="submit" className="btn-sign btn-primario btn-block"
-                        value="Sign In" />
+                        value="Sign In" onClick={(e)=>handleLogin(e)} />
                     </div>
                 </form>
                 
