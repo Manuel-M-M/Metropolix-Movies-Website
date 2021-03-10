@@ -3,6 +3,65 @@
     --fondo: #141414;
 }
 
+.img-head {
+    background-image: url(../../img/backgrounds/Collage.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.img-head img {
+    min-height: 400px;
+    /* background-image: url(../../img/backgrounds/Collage.jpg); */
+}
+
+/* .wrap-btn {
+    display: flex;
+    justify-content:end;
+    align-items: flex-end;
+    margin-bottom: 20px;
+} */
+
+.btn-delete {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-text {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-text h6, .user-text h5 {
+    color: #fff;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Roboto";
+    text-align: justify;
+}
+
+h6 a  {
+    text-decoration: none;
+    color: var(--verde);
+    opacity: .7;
+}
+
+h6 a:hover {
+    text-decoration: none;
+    color: var(--verde);
+    opacity: 1;
+}
+
+
+
+
+.user-header {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
 
 .title {
     margin-top: 10px;
@@ -12,6 +71,8 @@
 .userList {
     margin-top: 20px;
 }
+
+
 
 /* .userList ul {
     
