@@ -13,7 +13,7 @@ function Carousel() {
 
 
     return (
-        <div id="carouselHeaderControls" className="carousel slide" data-ride="carousel">
+        <div id="carouselHeaderControls" className="carousel slide" data-interval="4000" data-ride="carousel" data-pause="false">
             <div className="carousel-inner h-100">
                 <div className="carousel-item h-100 active">
                     <div className="carousel-caption d-md-block">
