@@ -1,8 +1,55 @@
 import UserHeader from '../../components/userHeader/UserHeader';
 import './User.css';
 import HeaderBody from '../../components/headerBody/HeaderBody';
+import jwt_decode from 'jwt-decode';
+import { useHistory } from 'react-router-dom';
 
 function User () {
+
+    const history = useHistory();
+
+    const handleSubmit = (e)=>{
+         e.preventDefault();
+
+        var token = localStorage.getItem('token');
+
+        // var tokenDecoded = jwt_decode(token)
+
+        // console.log(tokenDecoded);
+
+        // const email = encodeURIComponent(tokenDecoded.username);
+        fetch(`http://localhost:8000/deleteUser`, {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(response => response.json())
+        .then(
+            resp => {
+
+                
+                history.push("/Home")
+
+
+                // console.log(resp);
+                // setUser(users => {
+                //     const newArray = users.slice();
+                //     newArray.push(resp);
+                //     return newArray;
+                // });
+
+                // // vaciar los campos:
+                // setUsername("");
+                // setEmail("");
+                // setPassword("");
+                // setConfirm("");
+                
+            } 
+        ).catch( error => console.log(error) );
+        
+     }
 
     return (
         <>
@@ -11,9 +58,9 @@ function User () {
                 {/* <div className="wrap-btn"> */}
                     <div className="btn-delete">
                         <button className="btn btn-transparent mr-2"
-                        // onClick={() => {
-                        //     window.history.back();
-                        // }}
+                        onClick={(e) => {
+                           handleSubmit(e);
+                        }}
                         >Delete your account
                         </button>
                     </div>

@@ -17,7 +17,8 @@ function Header() {
 
     const history = useHistory();
 
-    const handleGoToUser = () => {
+    const handleGoToUser = (e) => {
+        e.preventDefault();
         history.push("/User")
     }
 
@@ -95,9 +96,9 @@ function Header() {
                         </select> */}
                         </nav>
                         <div className="userAccount">
-                            <a href="#"><img className="headerAccount" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-                            alt="User avatar" onClick={() =>
-                                handleGoToUser()
+                            <a href="#w34243"><img className="headerAccount" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
+                            alt="User avatar" onClick={(e) =>
+                                handleGoToUser(e)
                             }      
                             />
                             </a>

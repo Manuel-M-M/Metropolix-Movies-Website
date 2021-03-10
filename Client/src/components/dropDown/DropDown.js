@@ -16,17 +16,20 @@ const DropDown = () => {
 
     const history = useHistory();
 
-    const handleTopRatedM = () => {
-         setActualPage(1);
+    const handleTopRatedM = (e) => {
+        e.preventDefault();
+        setActualPage(1);
         history.push("/TopRated")
     };
 
-    const handlePopularM = () => {
+    const handlePopularM = (e) => {
+        e.preventDefault();
         setActualPage(1);
         history.push("/Popular")
     };
 
-    const handleUpcomingM = () => {
+    const handleUpcomingM = (e) => {
+        e.preventDefault();
         setActualPage(1);
         history.push("/Upcomings")
     };

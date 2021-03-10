@@ -1,4 +1,5 @@
 import {useState, useContext, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../signin/Signup-Signin.css';
 import AlertContext from "../../context/alerts/AlertContext";
@@ -6,57 +7,67 @@ import AuthContext from "../../context/auth/AuthContext";
 
 // import { useState } from 'react';
 
- function Signup({setUer}){
-//     const [username, setusername] = useState("");
-//     const [email, setemail] = useState("");
-//     const [password, setpassword] = useState("");
+ function Signup({setUser}){
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirm, setConfirm] = useState("");
 
-//     const handleSubmit = (event)=>{
-//         event.preventDefault();
+    const history = useHistory();
 
-//         const formData = new FormData();
-//         formData.append('username', username);
-//         formData.append('email', email);
-//         formData.append('password', password);
+    const handleSubmit = (event)=>{
+        event.preventDefault();
 
-//         fetch('http://localhost:8000/contacto', {
-//             method: 'POST',
-//             mode: 'cors',
-//             body: formData
-//         })
-//         .then(response => response.json())
-//         .then(
-//             resp => {
-//                 console.log(resp);
-//                 setContactos(users => {
-//                     const newArray = users.slice();
-//                     newArray.push(resp);
-//                     return newArray;
-//                 });
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('email', email);
+        formData.append('password', password);
+        formData.append('confirm', confirm);
 
-//                 // vaciar los campos:
-//                 setUsername("");
-//                 setEmail("");
-//                 setPassword("");
+        fetch('http://localhost:8000/register', {
+            method: 'POST',
+            mode: 'cors',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(
+            resp => {
+
                 
-//             } 
-//         ).catch( error => console.log(error) );
-        
-//     }
+                history.push("/Signin")
 
-//     const handleUsername = (evento)=>{
-//         setUsername(evento.target.value);
-//     }
-//     const handleEmail = (evento)=>{
-//         setEmail(evento.target.value);
-//     }
-//     const handlePassword = (evento)=>{
-//         setPassword(evento.target.value);
-   // }
-    // const handlePassword = (evento)=>{
-    //     setPassword(evento.target.value);
-    // }
-//}
+
+                // console.log(resp);
+                // setUser(users => {
+                //     const newArray = users.slice();
+                //     newArray.push(resp);
+                //     return newArray;
+                // });
+
+                // // vaciar los campos:
+                // setUsername("");
+                // setEmail("");
+                // setPassword("");
+                // setConfirm("");
+                
+            } 
+        ).catch( error => console.log(error) );
+        
+    }
+
+    const handleUsername = (event)=>{
+        setUsername(event.target.value);
+    }
+    const handleEmail = (event)=>{
+        setEmail(event.target.value);
+    }     
+    const handlePassword = (event)=>{
+        setPassword(event.target.value);
+    }
+    const handleConfirm = (event)=>{
+        setConfirm(event.target.value);
+    }
+
     
 
 
@@ -128,61 +139,61 @@ import AuthContext from "../../context/auth/AuthContext";
 
     
     return (
-        // <div className="form-usuario">
-        //     { alert ? (<div className={`alert ${alert.category}`}>{alert.message}</div>) : null }
-        //     <div className="contenedor-form sombra-dark">
-        //         <h1>Sign up</h1>
-        //         <form onSubmit={onSubmit}>
-        //             <div className="campo-form">
-        //                 <label htmlFor="username">Username</label>
-        //                 <input 
-        //                     type="text" 
-        //                     placeholder="Your username"
-        //                     value={username}
-        //                     onChange={handleUsername}
-        //                 />
-        //             </div>
-        //             <div className="campo-form">
-        //                 <label htmlFor="email">Email</label>
-        //                 <input 
-        //                     type="email"
-        //                     placeholder="Your email"
-        //                     value={email}
-        //                     onChange={handleEmail}
-        //                 />
-        //             </div>
-        //             <div className="campo-form">
-        //                 <label htmlFor="password">Password</label>
-        //                 <input 
-        //                     type="password"
-        //                     placeholder="Your password"
-        //                     value={password}
-        //                     onChange={handlePassword}
-        //                 />
-        //             </div>
-        //             <div className="campo-form">
-        //                 <label htmlFor="confirm">Confirm Password</label>
-        //                 <input 
-        //                     type="password"
-        //                     id="confirm"
-        //                     name="confirm"
-        //                     placeholder="Repeat your password"
-        //                     value={confirm}
-        //                     onChange={onChange}
-        //                 />
-        //             </div>
-        //             <div className="campo-form">
-        //                 <input type="submit" className="btn-sign btn-primario btn-block"
-        //                 value="Sign Up" />
-        //             </div>
-        //         </form>
+        <div className="form-usuario">
+            { alert ? (<div className={`alert ${alert.category}`}>{alert.message}</div>) : null }
+            <div className="contenedor-form sombra-dark">
+                <h1>Sign up</h1>
+                <form onSubmit={handleSubmit}> 
+                    <div className="campo-form">
+                        <label htmlFor="username">Username</label>
+                        <input 
+                            type="text" 
+                            placeholder="Your username"
+                            value={username}
+                            onChange={handleUsername}
+                        />
+                    </div>
+                    <div className="campo-form">
+                        <label htmlFor="email">Email</label>
+                        <input 
+                            type="email"
+                            placeholder="Your email"
+                            value={email}
+                            onChange={handleEmail}
+                        />
+                    </div>
+                    <div className="campo-form">
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            type="password"
+                            placeholder="Your password"
+                            value={password}
+                            onChange={handlePassword}
+                        />
+                    </div>
+                    <div className="campo-form">
+                        <label htmlFor="confirm">Confirm Password</label>
+                        <input 
+                            type="password"
+                            id="confirm"
+                            name="confirm"
+                            placeholder="Repeat your password"
+                            value={confirm}
+                            onChange={handleConfirm}
+                        />
+                    </div>
+                    <div className="campo-form">
+                        <input type="submit" className="btn-sign btn-primario btn-block"
+                        value="Sign Up" />
+                    </div>
+                </form>
                 
-        //         <Link to={'/Signin'} className="account-link">
-        //            Go to Sign in
-        //         </Link>
-        //     </div>
-        //</div>
-        <h1>signup</h1>
+                <Link to={'/Signin'} className="account-link">
+                   Go to Sign in
+                </Link>
+            </div>
+        </div>
+        // <h1>signup</h1>
     )
 }
 
