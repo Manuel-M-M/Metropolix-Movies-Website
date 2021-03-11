@@ -10,6 +10,7 @@ import "../../css/sections.css";
 import "../../components/searcher/Searcher";
 // import Movie from "../../components/movie/Movie";
 import Searcher from "../../components/searcher/Searcher";
+import Movie from "../../components/movie/Movie";
 // import ModalSearchs from "../../components/modalSearchs/ModalSearchs";
 
 
@@ -19,7 +20,28 @@ import Searcher from "../../components/searcher/Searcher";
 
 function Home() {
 
-    const { setSearchPath, searchArray, show, setShow } = useContext(Context);
+    const { setSearchPath, searchArray, show, setShow, homeMoviesArray, setHomeMoviesArray, handleDecrementMovies, handleIncrementMovies } = useContext(Context);
+
+    // const moviesPath = '';
+    // const [homeMoviesArray, setHomeMoviesArray] = useState([]);
+
+    // useEffect(() => {
+    //     console.log(topRatedMoviesPath);
+
+    //     //const newUrl = URL + "&page=${}"
+    //     fetch(topRatedMoviesPath)
+    //         .then(response => {
+    //             if (!response.ok) {
+    //                 throw new Error("Algo no funciona...");
+    //             }
+    //             return response.json();
+    //         })
+    //         .then(data => {
+    //             setTopRatedMoviesArray(data.results);
+    //             //setMaxPages(data.total_pages);
+    //         })
+    //         .catch(error => alert("Algo no funciona..."))
+    // }, [topRatedMoviesPath]);
 
     // const [carouselShow, setCarouselShow] = useState(true);
 
@@ -81,17 +103,20 @@ function Home() {
                     <LateralScroll />
                 </div> */}
                 
-                {/* <div className="container">
+                <div className="container">
                     <div id="movie-container-display" className="movie-container home-margin">
                         <div id="searchDiv" className="flex">
-                            {searchArray.map((movie) => {
+                            {homeMoviesArray.map((movie) => {
                                 return (
                                     <Movie movie={movie}/>
                                 )})}
                         </div>
                     </div>
-                    <div className="row justify-content-center mt-3 mb-3"></div>
-                </div> */}
+                    <div className="row justify-content-center mt-3 mb-3">
+                        <button className="btn btn-transparent mr-1" onClick={handleDecrementMovies}>-</button>
+                        <button className="btn btn-transparent ml-1" onClick={handleIncrementMovies}>+</button>
+                    </div>
+                </div>
             {/* </div> */}
         </>
     );

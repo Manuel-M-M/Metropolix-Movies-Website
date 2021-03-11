@@ -6,7 +6,7 @@ import "./Movie.css";
 
 
 //const api_key = "73335406cba0f2d2b6be748d34df365b";
-const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+// const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
 function Movie ({movie}) {
 
@@ -28,7 +28,7 @@ function Movie ({movie}) {
 
     return(
         <div key={movie.id} className="wrap">
-            <img className="clickable" src={getImage(movie.poster_path)} onClick={() => {
+            <img className="clickable" src={(movie.poster_path)} onClick={() => {
                 saveMovieId(movie.id);
                 handleGoToDetails();
             }}
