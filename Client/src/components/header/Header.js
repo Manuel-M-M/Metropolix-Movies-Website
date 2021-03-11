@@ -1,5 +1,7 @@
+import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { Context } from '../../context/Context';
 // import { useContext, useState, useEffect } from 'react';
 // import { Context } from '../../context/Context';
 // import Select from '../select/Select';
@@ -14,12 +16,18 @@ import './Header.css';
 function Header() {
 
     // const {actualPage, setActualPage} = useContext(Context);
+    const { isLogin, setIslogin } = useContext(Context);
 
     const history = useHistory();
 
     const handleGoToUser = (e) => {
         e.preventDefault();
+         if (isLogin === true) {
         history.push("/User")
+         } else {
+             history.push("/Error")
+         }
+
     }
 
     // const handleTopRatedM = () => {

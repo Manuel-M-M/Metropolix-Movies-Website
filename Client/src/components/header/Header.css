@@ -212,6 +212,10 @@ header nav a.active {
     .recomended-movies .right-arrow {
         display: none;
     }
+
+    .headerAccount {
+      margin-bottom: 5px;
+    }
 }
 
 /*----------Modal responsive button-------------------*/

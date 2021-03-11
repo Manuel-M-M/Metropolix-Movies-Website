@@ -54,7 +54,7 @@ function Searcher () {
 
     return (
         <>
-        <div className="container mt-2 mb-2">
+        <div className="container mt-3">
             <div className="row justify-content-center align-items-center wrapSearcher">
                 <div className="div-searcher col-6">
                     <input className="form-control" type="text"  placeholder="Search" aria-label="Search"

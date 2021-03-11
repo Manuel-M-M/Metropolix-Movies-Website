@@ -55,25 +55,32 @@ h6 a:hover {
     opacity: 1;
 }
 
-
-
-
 .user-header {
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
 .title {
-    margin-top: 10px;
-    border-bottom: 2px solid var(--verde);
+    margin-top: 20px;
+    border-bottom: 2px solid#fff;
+    color: #fff;
 }
 
 .userList {
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userList ul li {
+    color: #fff;
+    text-align: justify;
+    text-decoration: none;
 }
 
 
 
-/* .userList ul {
-    
-} */

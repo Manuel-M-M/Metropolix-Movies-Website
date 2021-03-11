@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, NavLink, Route, useHistory } from 'react-router-dom';
 import Favourites from '../../pages/user/pages/Favourites';
 import Seens from '../../pages/user/pages/Seens';
@@ -6,12 +7,23 @@ import './UserHeader.css';
 
 function UserHeader () {
 
+    const [toggle, setToggle] = useState(true);
+
+    const handleRoute = () => {
+        if (toggle === true) {
+            setToggle(false)
+        } else {
+            setToggle(true)
+        }
+    }
+       
+
     return (
         <BrowserRouter>
             <nav className="row justify-content-around bg-transparent">
-                <NavLink to="/Favourites" exact className="font-weight-bold  text-decoration-none userLink h-100" activeClassName="active">Favourites</NavLink>
-                <NavLink to="/Seens" exact className="font-weight-bold  text-decoration-none userLink" activeClassName="active">Seens</NavLink>
-                <NavLink to="/Pendings" exact className="font-weight-bold  text-decoration-none userLink" activeClassName="active">Pendings</NavLink>
+                <NavLink to="/Favourites" onClick={handleRoute} exact className="font-weight-bold  text-decoration-none userLink h-100" activeClassName="active">Favourites</NavLink>
+                <NavLink to="/Seens" onClick={handleRoute} exact className="font-weight-bold  text-decoration-none userLink" activeClassName="active">Seens</NavLink>
+                <NavLink to="/Pendings" onClick={handleRoute} exact className="font-weight-bold  text-decoration-none userLink" activeClassName="active">Pendings</NavLink>
             </nav>
 
             <Route path="/Favourites" exact component={Favourites} />
@@ -19,7 +31,8 @@ function UserHeader () {
             <Route path="/Pendings" exact component={Pendings} />
         </BrowserRouter>
 
-    );
+    )
+
 }
 
 export default UserHeader;

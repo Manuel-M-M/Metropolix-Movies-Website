@@ -51,7 +51,7 @@ const ModalSearchs = props => {
                     This is modal content
                 </div> */}
                 <div className="modal-footer">
-                    <button  onClick={props.onClose} className="modal-close-btn">Close</button>
+                    <button  onClick={props.onClose} className="btn btn-transparent mr-2">Close</button>
                 </div>
             </div>
         //  </div>

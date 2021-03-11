@@ -23,7 +23,7 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5 >La última noche de Boris Grushenko. Woody Allen</h5>
+                        <h5 >Love and death. Woody Allen</h5>
                         <p>1975</p>
                     </div>
                 </div>
@@ -35,13 +35,13 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>El mundo de Apu. Satyajit Ray</h5>
+                        <h5>Apur sansar. Satyajit Ray</h5>
                         <p>1959</p>
                     </div>
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Carretera perdida. David Lynch</h5>
+                        <h5>Lost highway. David Lynch</h5>
                         <p>1997</p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Cielo sobre Berlín. Win Wenders</h5>
+                        <h5>Wings of desire. Win Wenders</h5>
                         <p>1987</p>
                     </div>
                 </div>
@@ -71,13 +71,13 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>2001: Una odisea del espacio. Stanley Kubrick</h5>
+                        <h5>2001: A space odyssey. Stanley Kubrick</h5>
                         <p>1968</p>
                     </div>
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Fellini, ocho y medio. Federico Fellini</h5>
+                        <h5>Otto e mezzo. Federico Fellini</h5>
                         <p>1963</p>
                     </div>
                 </div>
@@ -95,19 +95,19 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Lazzaro feliz. Alice Rohrwacher</h5>
+                        <h5>Lazzaro felice. Alice Rohrwacher</h5>
                         <p>2018</p>
                     </div>
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>El precio del poder. Brian De Palma</h5>
+                        <h5>Scarface. Brian De Palma</h5>
                         <p>1983</p>
                     </div>
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>El gran Lebowski. Joel & Ethan Coen</h5>
+                        <h5>The big Lebowski. Joel & Ethan Coen</h5>
                         <p>1998</p>
                     </div>
                 </div>
@@ -119,13 +119,13 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Metrópolis. Fritz Lang</h5>
+                        <h5>Metropolis. Fritz Lang</h5>
                         <p>1927</p>
                     </div>
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Cómo ser John Malkovich. Spike Jonze</h5>
+                        <h5>Being John Malkovich. Spike Jonze</h5>
                         <p>1999</p>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Los caballeros de la mesa cuadrada y sus locos seguidores. Monty Python</h5>
+                        <h5>Monty Python and the holy grail. Monty Python</h5>
                         <p>1975</p>
                     </div>
                 </div>
@@ -155,7 +155,7 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>El séptimo sello. Ingmar Bergman</h5>
+                        <h5>The seventh seal. Ingmar Bergman</h5>
                         <p>1957</p>
                     </div>
                 </div>
@@ -167,13 +167,13 @@ function Carousel() {
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>Vértigo. Alfred Hitchcock</h5>
+                        <h5>Vertigo. Alfred Hitchcock</h5>
                         <p>1958</p>
                     </div>
                 </div>
                 <div className="carousel-item h-100">
                     <div className="carousel-caption d-md-block">
-                        <h5>La casa de Jack. Lars Von Trier</h5>
+                        <h5>The house that Jack built. Lars Von Trier</h5>
                         <p>2018</p>
                     </div>
                 </div>

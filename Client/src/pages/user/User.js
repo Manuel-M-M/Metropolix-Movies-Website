@@ -1,10 +1,14 @@
+import { useState, useContext } from 'react';
 import UserHeader from '../../components/userHeader/UserHeader';
+import { Context } from '../../context/Context';
 import './User.css';
 import HeaderBody from '../../components/headerBody/HeaderBody';
 import jwt_decode from 'jwt-decode';
 import { useHistory } from 'react-router-dom';
 
 function User () {
+
+    const { setIslogin } = useContext(Context);
 
     const history = useHistory();
 
@@ -29,7 +33,8 @@ function User () {
         .then(
             resp => {
 
-                
+                setIslogin(true);
+
                 history.push("/Home")
 
 
@@ -63,6 +68,7 @@ function User () {
                         }}
                         >Delete your account
                         </button>
+                        <button className="btn btn-transparent mr-2">Sign Out</button>
                     </div>
                 {/* </div> */}
                 <div className="img-head">

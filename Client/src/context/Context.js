@@ -10,6 +10,7 @@ const ContextProvider = (props) => {
     const [show, setShow] = useState(false);
     const [searchPath, setSearchPath] = useState(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=original_title&page=1`);
     const [searchArray, setSearchArray] = useState([]);
+    const [isLogin, setIslogin] = useState(false);
 
     useEffect(() => {
 
@@ -54,7 +55,7 @@ const ContextProvider = (props) => {
     
     return (
         <Context.Provider value={{api_key, getImage, show, setShow, searchPath, setSearchPath, searchArray,
-        setSearchArray, actualPage, setActualPage}}>
+        setSearchArray, actualPage, setActualPage, isLogin, setIslogin}}>
             {props.children}
         </Context.Provider>
     )

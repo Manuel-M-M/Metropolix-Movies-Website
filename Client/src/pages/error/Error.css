@@ -1,0 +1,38 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414;
+}
+
+.error-body {
+    background-image: url(../../img/backgrounds/naranja_mecanica.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.title {
+    text-decoration: none;
+    border: none;
+    color: #fff;
+}
+
+.error-body img {
+    min-height: 400px;
+}
+
+.user-text {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+h5 a  {
+    text-decoration: none;
+    color: var(--verde);
+    opacity: .7;
+}
+
+h5 a:hover {
+    text-decoration: none;
+    color: var(--verde);
+    opacity: 1;
+}
