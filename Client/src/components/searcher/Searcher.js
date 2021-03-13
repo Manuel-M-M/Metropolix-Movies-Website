@@ -12,7 +12,7 @@ const api_key = "73335406cba0f2d2b6be748d34df365b";
 
 function Searcher () {
 
-    const { setSearchPath, searchArray, show, setShow } = useContext(Context);
+    const { setSearchPath, searchArray, show, setShow, moviesPath, setMoviesPath } = useContext(Context);
 
     
 
@@ -30,7 +30,7 @@ function Searcher () {
         if (e.target.value !== "") {
             // history.push("/Searchs")
             setShow(true);
-            setSearchPath(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=${e.target.value}`);
+            setSearchPath(`'http://localhost:8000/getDetails?title=${e.target.value}`);
             
             // document.getElementById("carousel").classList.add("carouselDisplayNone")
             // document.getElementById("searchDiv").classList.remove("carouselDisplayNone")
