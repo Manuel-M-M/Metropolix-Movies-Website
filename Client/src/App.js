@@ -13,6 +13,7 @@ import Signup from './pages/signup/Signup';
 import Searchs from './pages/searchs/Searchs';
 import User from './pages/user/User';
 import Error from './pages/error/Error';
+import MChat from './pages/mchat/MChat';
 import Header from './components/header/Header';
 import Searcher from './components/searcher/Searcher';
 import Footer from './components/footer/Footer';
@@ -49,7 +50,7 @@ function App() {
           <Route path="/Searchs" exact component={Searchs} />
           <Route path="/User" exact component={User} />
           <Route path="/Error" exact component={Error} />
-
+          <Route path="/MChat" exact component={MChat} />
 
           <Footer />
         </BrowserRouter>

@@ -1,44 +1,80 @@
-import { useState } from 'react';
-import './index.css';
+import { useState, useEffect } from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+import Button from './Button.js';
 
+firebase.initializeApp({  
+    apiKey: "AIzaSyDSxvaoK61bf3wmxD6nI7wEV0dPmgVegvk",
+    authDomain: "metropolix-chat.firebaseapp.com",
+    projectId: "metropolix-chat",
+    storageBucket: "metropolix-chat.appspot.com",
+    messagingSenderId: "610836054578",
+    appId: "1:610836054578:web:f35c15936f71f2ef05b22b"
+});
 
-function Chat () {
-  
-    const [id, setId] = useState("");
-    const [nameInput, setNameInput] = useState("");
-    const [room, setRoom] = useState("");
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        if (!nameInput) {
-        return alert("Name can't be empty");
+function Chat() {
+
+    const [chatUser, setChatUser] = useState(() => auth.currentChatUser);
+    const [initializing, setInitializing] = useState(true);
+
+    useEffect(() => {
+       const unsubscribe = auth.onAuthStateChanged(chatUser => {
+           if (chatUser) {
+               setChatUser(chatUser);
+           } else {
+               setChatUser(null)
+           }
+           if (initializing) {
+               setInitializing(false);
+           }
+       })
+
+       //Clean up subscription
+       return unsubscribe;
+    }, [])
+
+    const signInWithGoogle = async () => {
+        //Retrieve Google provider object
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        //Set language in the default browser preferrence
+        auth.useDeviceLanguage();
+
+        //Start sign in process
+        try {
+            await auth.signInWithPopup(provider);
+        } catch(error) {
+            console.error(error);
         }
-        setId(name);
-        socket.emit("join", name, room);
     };
 
-    return id !== '' ? (
-        <div>Hello</div>
-    ) : (
-        <div style={{ textAlign: "center", margin: "30vh auto", width: "70%" }}>
-            <form onSubmit={event => handleSubmit(event)}>
-                <input
-                    id="name"
-                    onChange={e => setNameInput(e.target.value.trim())}
-                    required
-                    placeholder="What is your name .."
-                />
-                <br />
-                <input
-                    id="room"
-                    onChange={e => setRoom(e.target.value.trim())}
-                    placeholder="What is your room .."
-                />
-                <br />
-                <button type="submit">Submit</button>
-            </form>
+    const signOut = async () => {
+        try {
+            await firebase.auth().signOut();
+        } catch(error) {
+            console.log(error.message);
+        }
+    };
+
+    if (initializing) return "Loading...";
+
+    return (
+        <div>
+            {chatUser ? (
+                <>
+                    <button onClick={signOut}>Sign out</button>
+                    <p>Welcome to the Metroplix chat</p>
+                </>
+            ) : ( 
+                <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+            )}
         </div>
-  );
-};
+    );
+
+}
 
 export default Chat;
