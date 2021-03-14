@@ -3,18 +3,19 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import Button from './Button.js';
+import Channel from './Channel.js';
 
 firebase.initializeApp({  
-    apiKey: "AIzaSyDSxvaoK61bf3wmxD6nI7wEV0dPmgVegvk",
-    authDomain: "metropolix-chat.firebaseapp.com",
-    projectId: "metropolix-chat",
-    storageBucket: "metropolix-chat.appspot.com",
-    messagingSenderId: "610836054578",
-    appId: "1:610836054578:web:f35c15936f71f2ef05b22b"
+    apiKey: "AIzaSyD13daBMdlDdGkoDiYfjmvVwvuSpUFId5g",
+    authDomain: "rt-metropolix-chat.firebaseapp.com",
+    projectId: "rt-metropolix-chat",
+    storageBucket: "rt-metropolix-chat.appspot.com",
+    messagingSenderId: "277745636705",
+    appId: "1:277745636705:web:0023cdfea3751b560de120"
+
 });
 
 const auth = firebase.auth();
-const db = firebase.firestore();
 
 function Chat() {
 
@@ -35,7 +36,7 @@ function Chat() {
 
        //Clean up subscription
        return unsubscribe;
-    }, [])
+    }, [initializing])
 
     const signInWithGoogle = async () => {
         //Retrieve Google provider object
@@ -66,8 +67,8 @@ function Chat() {
         <div>
             {chatUser ? (
                 <>
-                    <button onClick={signOut}>Sign out</button>
-                    <p>Welcome to the Metroplix chat</p>
+                    <Button onClick={signOut}>Sign out</Button>
+                    <Channel chatUser={chatUser} />
                 </>
             ) : ( 
                 <Button onClick={signInWithGoogle}>Sign in with Google</Button>

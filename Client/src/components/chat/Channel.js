@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
+import Message from './Message';
 
-const Channel = ({ user = null, db = null }) => {
+const db = firebase.firestore();
+
+                             
+const Channel = ({ chatUser = null,  db = null }) => {
 
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
@@ -30,11 +34,24 @@ const Channel = ({ user = null, db = null }) => {
     }, [db]);
 
     const handleOnChange = e => {
-        setMessage(e.target.value);
+        setNewMessage(e.target.value);
     };
 
     const handleOnSubmit = e => {
         e.preventDefault();
+
+        // const trimmedMessage = newMessage.trim();
+        // if (trimmedMessage) {
+        //     //Add new message in Firestore
+        //     messagesRef.add({
+        //         text: trimmedMessage,
+        //         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        //         uid,
+        //         displayName
+        //     });
+        //     //Clear input field
+        //     setNewMessage('');
+        //}
 
         if (db) {
             db.collection('messages').add({
@@ -57,7 +74,8 @@ const Channel = ({ user = null, db = null }) => {
                 ))}
             </ul>
             <form onSubmit={handleOnSubmit}>
-                    <input 
+                    <input
+                        // ref={inputRef} 
                         type="text"
                         value={newMessage}
                         onChange={handleOnChange}
