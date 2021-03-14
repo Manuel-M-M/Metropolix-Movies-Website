@@ -146,6 +146,29 @@ header nav a.active {
     color: var(--verde);
 }
 
+.wrapChatHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatHeader, .chatHeader:hover {
+  font-family: "Roboto", sans-serif;
+  font-size: x-small;
+  font-weight:bold;
+  text-decoration: none;
+  color: var(--verde);
+}
+
+.chatHeader p {
+  display: inline;
+}
+
+/* .chatHeader:hover {
+  text-decoration: none;
+  color: var(--verde);
+} */
+
 .userAccount img {
     color: wheat;
     border-radius: 90px;
@@ -215,6 +238,10 @@ header nav a.active {
 
     .headerAccount {
       margin-bottom: 5px;
+    }
+
+    .chatHeader {
+      font-size: x-small;
     }
 }
 

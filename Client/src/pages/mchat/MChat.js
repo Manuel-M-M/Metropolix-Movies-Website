@@ -1,11 +1,11 @@
 import Chat from '../../components/chat/Chat';
 
-function MChat () {
+// function MChat () {
 
 
-    return(
-        <Chat />
-    );
-}
+//     return(
+//         <Chat />
+//     );
+// }
 
-export default MChat;
+// export default MChat;

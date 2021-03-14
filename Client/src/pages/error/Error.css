@@ -10,14 +10,21 @@
     margin-top: 10px;
 }
 
+.errorChat-body {
+    background-image: url(../../img/backgrounds/Backtothefuture.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+}
+
 .title {
     text-decoration: none;
     border: none;
     color: #fff;
 }
 
-.error-body img {
-    min-height: 400px;
+.error-body img, .errorChat-body img {
+    min-height: 350px;
 }
 
 .user-text {

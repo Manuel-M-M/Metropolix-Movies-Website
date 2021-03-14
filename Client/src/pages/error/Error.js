@@ -2,7 +2,6 @@ import './Error.css';
 
 function Error () {
 
-
     return (
         
         <div className="container">
@@ -17,7 +16,6 @@ function Error () {
                     an account or <a href="/Signin">Sign in</a> if you already have one.
                 </h5>
             </div>
-
         </div>
     );
 }

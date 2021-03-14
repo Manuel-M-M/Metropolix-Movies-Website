@@ -30,6 +30,16 @@ function Header() {
 
     }
 
+    const handleGoToErrorChat = (e) => {
+        e.preventDefault();
+         if (isLogin === true) {
+        history.push("/Chat")
+         } else {
+             history.push("/ErrorChat")
+         }
+
+    }
+
     // const handleTopRatedM = () => {
     //     setActualPage(1);
     //     history.push("/TopRated")
@@ -103,6 +113,9 @@ function Header() {
                             <option id="fa" value="#" onClick={handleFavourites}>Favourites</option>
                         </select> */}
                         </nav>
+                        <div className="wrapChatHeader">
+                            <NavLink to="/ErrorChat" exact className="chatHeader" activeClassName="active"><p className="signupP" onClick={(e) =>handleGoToErrorChat(e)}>Chat</p></NavLink>
+                        </div>
                         <div className="userAccount">
                             <a href="#w34243"><img className="headerAccount" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
                             alt="User avatar" onClick={(e) =>
