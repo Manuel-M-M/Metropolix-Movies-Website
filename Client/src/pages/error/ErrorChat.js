@@ -5,7 +5,7 @@ function ErrorChat () {
     return (
         
         <div className="container">
-            <h3 className="title">You're in trouble !!!</h3>
+            <h3 className="title">You're in trouble !!! <span>&#160;</span></h3>
             <div className="errorChat-body">
                 <img src="../../img/backgrounds/Backtothefuture.jpg" alt=""/>
             </div>

@@ -3,6 +3,10 @@
     --fondo: #141414;
 }
 
+.container {
+    margin-top: 10px;
+}
+
 .error-body {
     background-image: url(../../img/backgrounds/naranja_mecanica.jpg);
     background-position: center;
@@ -21,6 +25,27 @@
     text-decoration: none;
     border: none;
     color: #fff;
+}
+
+.title { 
+	position: relative; 
+	float: left;
+	background: var(--fondo);
+	font-size: 2.5em;
+}
+
+.title span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: var(--fondo);
+    border-left: 3px solid var(--verde);
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
 }
 
 .error-body img, .errorChat-body img {

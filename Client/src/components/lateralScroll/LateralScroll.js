@@ -1,156 +1,156 @@
-import { useState, useEffect, useRef } from "react";
-import './LateralScroll.css';
+// import { useState, useEffect, useRef } from "react";
+// import './LateralScroll.css';
 
-function LateralScroll () {
+// function LateralScroll () {
 
-    const films = document.querySelectorAll(".film");
-    const row = document.querySelector(".container_carousel");
+//     const films = document.querySelectorAll(".film");
+//     const row = document.querySelector(".container_carousel");
     
-    // const leftArrow = document.getElementById("left_arrow");
-    // const rightArrow = document.getElementById("right_arrow")
+//     // const leftArrow = document.getElementById("left_arrow");
+//     // const rightArrow = document.getElementById("right_arrow")
 
-    let leftArrowRef = useRef();
+//     let leftArrowRef = useRef();
 
-    useEffect(() => {
+//     useEffect(() => {
 
-    }, )
+//     }, )
     
-    const [actualPage, setActualPage] = useState(Math.ceil(films.length / 5));
-
-    
+//     const [actualPage, setActualPage] = useState(Math.ceil(films.length / 5));
 
     
 
-    const handleLeftArrow = () => {
-        setActualPage(row.scrollLeft -= row.offsetWidth) 
-
-        const indicatorActive = document.querySelector(".indicators .active");
-
-        if (indicatorActive.previousSibling) {
-            indicatorActive.previousSibling.classList.add("active");
-            indicatorActive.classList.remove("active");
-    }
-    }
     
-    const handleRightArrow = () => {
-        setActualPage(row.scrollLeft += row.offsetWidth)  
 
-        const indicatorActive = document.querySelector(".indicators .active");
+//     const handleLeftArrow = () => {
+//         setActualPage(row.scrollLeft -= row.offsetWidth) 
 
-        if (indicatorActive.nextSibling) {
-            indicatorActive.nextSibling.classList.add("active");
-            indicatorActive.classList.remove("active");
-        }
-    }
+//         const indicatorActive = document.querySelector(".indicators .active");
 
-    for(let i = 0; i < actualPage; i++){
-        const indicator = document.createElement("button");
+//         if (indicatorActive.previousSibling) {
+//             indicatorActive.previousSibling.classList.add("active");
+//             indicatorActive.classList.remove("active");
+//     }
+//     }
     
-        if (i === 0) {
-            indicator.classList.add("active");
-        }
-    
-        document.querySelector(".indicators").appendChild(indicator);
-        indicator.addEventListener("click", (e) => {
-            setActualPage( row.scrollLeft = i * row.offsetWidth) 
-    
-            document.querySelector(".indicators .active").classList.remove("active");
-            e.target.classList.add("active");
-        })
-    }
+//     const handleRightArrow = () => {
+//         setActualPage(row.scrollLeft += row.offsetWidth)  
 
-    films.forEach((film) => {
-        film.addEventListener("mouseenter", (e) => {
-            const element = e.currentTarget;
-            setTimeout(() => {
-                films.forEach(film => film.classList.remove("hover"));
-                element.classList.add("hover");
-            }, 300);
-        })
-    })
+//         const indicatorActive = document.querySelector(".indicators .active");
+
+//         if (indicatorActive.nextSibling) {
+//             indicatorActive.nextSibling.classList.add("active");
+//             indicatorActive.classList.remove("active");
+//         }
+//     }
+
+//     for(let i = 0; i < actualPage; i++){
+//         const indicator = document.createElement("button");
+    
+//         if (i === 0) {
+//             indicator.classList.add("active");
+//         }
+    
+//         document.querySelector(".indicators").appendChild(indicator);
+//         indicator.addEventListener("click", (e) => {
+//             setActualPage( row.scrollLeft = i * row.offsetWidth) 
+    
+//             document.querySelector(".indicators .active").classList.remove("active");
+//             e.target.classList.add("active");
+//         })
+//     }
+
+//     films.forEach((film) => {
+//         film.addEventListener("mouseenter", (e) => {
+//             const element = e.currentTarget;
+//             setTimeout(() => {
+//                 films.forEach(film => film.classList.remove("hover"));
+//                 element.classList.add("hover");
+//             }, 300);
+//         })
+//     })
 
 
     
-    return (
+//     return (
         
-        <div className="container">
-            <div className="recomended_movies _container">
-                <div className="container_title_control">
-                    <h3>Recommended Movies</h3>
-                    <div className="indicators"></div>
-                </div>
-                <div className="principal_container">
-                    <button role="button" id="left_arrow" className="left_arrow"><i className="fas fa-angle-left" onClick={handleLeftArrow}></i></button>
-                    <div className="container_carousel">
-                        <div className="carousel">
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2j.pg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                            <div className="film">
-                                <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
-                            </div>
-                        </div>
-                    </div>
-                    <button role="button" id="right_arrow" className="right_arrow"><i className="fas fa-angle-right" onClick={handleRightArrow}></i></button>
-                </div>
-            </div>
-        </div>
+//         <div className="container">
+//             <div className="recomended_movies _container">
+//                 <div className="container_title_control">
+//                     <h3>Recommended Movies</h3>
+//                     <div className="indicators"></div>
+//                 </div>
+//                 <div className="principal_container">
+//                     <button role="button" id="left_arrow" className="left_arrow"><i className="fas fa-angle-left" onClick={handleLeftArrow}></i></button>
+//                     <div className="container_carousel">
+//                         <div className="carousel">
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2j.pg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                             <div className="film">
+//                                 <img src="../../img/lateralScroll/pulp2.jpg" alt="Pulp Fiction"></img>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <button role="button" id="right_arrow" className="right_arrow"><i className="fas fa-angle-right" onClick={handleRightArrow}></i></button>
+//                 </div>
+//             </div>
+//         </div>
         
-    );
-};
+//     );
+// };
 
-export default LateralScroll;
+// export default LateralScroll;

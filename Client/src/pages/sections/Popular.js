@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Context } from '../../context/Context';
 import { ModalContext } from '../../context/ModalContext';
 // import { useHistory } from 'react-router-dom';
-import FlexBody from '../../components/flexBody/FlexBody';
 import Movie from '../../components/movie/Movie';
 import Searcher from '../../components/searcher/Searcher';
 import '../../css/sections.css';

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ModalContext } from "../../context/ModalContext";
+import { Context } from "../../context/Context";
 import { MovieContext } from "../../context/movie/MovieContext";
 import { useHistory } from 'react-router-dom';
 import "./Movie.css";
@@ -19,7 +19,7 @@ function Movie ({movie}) {
     // console.log(movie);
 
       const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
-      open, setOpen, classes} = useContext(ModalContext);
+      open, setOpen, classes} = useContext(Context);
 
     // const { handleGoToDetails, api_key, MovieId, saveMovieId, MovieDetails, saveMovieDetails,
     //     topRatedMoviesArray, setTopRatedMoviesArray } = useContext(MovieContext);
@@ -31,6 +31,7 @@ function Movie ({movie}) {
             <img className="clickable" src={(movie.poster_path)} onClick={() => {
                 saveMovieId(movie.id);
                 handleGoToDetails();
+                console.log(movie.id);
             }}
             />
                 

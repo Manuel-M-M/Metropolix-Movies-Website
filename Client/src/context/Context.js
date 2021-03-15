@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 export const Context = createContext();
 
@@ -8,7 +9,7 @@ const api_key = "73335406cba0f2d2b6be748d34df365b";
 const ContextProvider = (props) => {
 
     const [show, setShow] = useState(false);
-    const [searchPath, setSearchPath] = useState(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=original_title&page=1`);
+    const [searchPath, setSearchPath] = useState(`http://localhost:8000/getMovies?`);
     const [searchArray, setSearchArray] = useState([]);
     const [isLogin, setIslogin] = useState(false);
 
@@ -76,6 +77,26 @@ const ContextProvider = (props) => {
         }
       };
 
+
+    const [MovieId, saveMovieId] = useState(null);
+    const [MovieDetails, saveMovieDetails] = useState({});
+    
+    console.log(MovieId);
+    useEffect(() => {
+
+        const getMovieDetails = async () => {
+            if (!MovieId) return; 
+            console.log(MovieId);
+            const url = `http://localhost:8000/getMovies?id=${MovieId}`;    
+                    
+            const result = await axios.get(url);
+        
+            saveMovieDetails(result.data);
+        }
+        getMovieDetails();
+    
+    }, [MovieId]);
+
     
 
     
@@ -97,7 +118,8 @@ const ContextProvider = (props) => {
     return (
         <Context.Provider value={{api_key, show, setShow, searchPath, setSearchPath, searchArray,
         setSearchArray, getImage, actualPage, setActualPage, isLogin, setIslogin, moviesPath, setMoviesPath, homeMoviesArray, 
-        setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages}}>
+        setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages, api_key, MovieId, 
+        saveMovieId, MovieDetails, saveMovieDetails,}}>
             {props.children}
         </Context.Provider>
     )

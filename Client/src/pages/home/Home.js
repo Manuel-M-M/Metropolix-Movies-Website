@@ -102,8 +102,10 @@ function Home() {
                 {/* <div id="lateralScroll" className="lateralScrollDisplayActive">
                     <LateralScroll />
                 </div> */}
-                
-                <div className="container">
+                <div className="container-home">
+                <div class="contenedor">
+			        <h2>MOVIES: <span>&#160; </span> </h2>
+		        </div>
                     <div id="movie-container-display" className="movie-container home-margin">
                         <div id="searchDiv" className="flex">
                             {homeMoviesArray.map((movie) => {

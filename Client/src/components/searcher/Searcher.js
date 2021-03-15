@@ -31,7 +31,7 @@ function Searcher () {
             // history.push("/Searchs")
             setShow(true);
             setSearchPath(`'http://localhost:8000/getDetails?title=${e.target.value}`);
-            
+            console.log(e.target.value);
             // document.getElementById("carousel").classList.add("carouselDisplayNone")
             // document.getElementById("searchDiv").classList.remove("carouselDisplayNone")
             // document.getElementById("lateralScroll").classList.add("lateralScrollDisplayNone")

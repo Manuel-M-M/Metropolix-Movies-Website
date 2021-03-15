@@ -242,6 +242,7 @@ header nav a.active {
 
     .chatHeader {
       font-size: x-small;
+      margin-bottom: 10px;
     }
 }
 

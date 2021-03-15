@@ -1,3 +1,8 @@
+:root {
+    --verde:  #21c470;
+	--fondo: #141414; 
+}
+
 .modal-container {
    display: flex;
    /* flex-flow: column; */
@@ -20,4 +25,35 @@
 
 .movie-container-display-none {
     display: none;
+}
+
+.container-home {
+    margin-top: 30px;
+}
+
+.contenedor {
+	margin: auto;
+	display: table;
+}
+
+h2 { 
+	position: relative; 
+	float: left;
+	background: var(--fondo);
+	color: var(--verde);
+	font-size: 2.5em;
+}
+
+h2 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: var(--fondo);
+    border-left: 2px solid #fff;
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
 }
