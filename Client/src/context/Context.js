@@ -3,8 +3,8 @@ import axios from 'axios';
 
 export const Context = createContext();
 
-const api_key = "73335406cba0f2d2b6be748d34df365b";
- const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+// const api_key = "73335406cba0f2d2b6be748d34df365b";
+//  const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
 const ContextProvider = (props) => {
 
@@ -77,24 +77,38 @@ const ContextProvider = (props) => {
         }
       };
 
-
     const [MovieId, saveMovieId] = useState(null);
     const [MovieDetails, saveMovieDetails] = useState({});
+
+    // useEffect(() => {
+        
+        
+    // }, [MovieId])
+
+    // let detailsId = MovieId;
+
+    // const [detailsPath, setDetailsPath] = useState('http://localhost:8000/getDetails?id=${MovieId}');
+    let detailPath = '';
     
     console.log(MovieId);
     useEffect(() => {
-
-        const getMovieDetails = async () => {
-            if (!MovieId) return; 
-            console.log(MovieId);
-            const url = `http://localhost:8000/getMovies?id=${MovieId}`;    
-                    
-            const result = await axios.get(url);
-        
-            saveMovieDetails(result.data);
-        }
-        getMovieDetails();
-    
+        console.log(detailPath);
+        detailPath = `http://localhost:8000/getDetails?id=${MovieId}`;
+        console.log(detailPath);
+        //const newUrl = URL + "&page=${}"
+        fetch(detailPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                saveMovieDetails(data);
+                //setMaxPages(data.total_pages);
+            })
+            .catch(error => alert("Algo no funciona..."))
+            console.log(MovieDetails);
     }, [MovieId]);
 
     
@@ -116,10 +130,10 @@ const ContextProvider = (props) => {
 
     
     return (
-        <Context.Provider value={{api_key, show, setShow, searchPath, setSearchPath, searchArray,
-        setSearchArray, getImage, actualPage, setActualPage, isLogin, setIslogin, moviesPath, setMoviesPath, homeMoviesArray, 
-        setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages, api_key, MovieId, 
-        saveMovieId, MovieDetails, saveMovieDetails,}}>
+        <Context.Provider value={{show, setShow, searchPath, setSearchPath, searchArray,
+        setSearchArray, actualPage, setActualPage, isLogin, setIslogin, moviesPath, setMoviesPath, homeMoviesArray, 
+        setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages, MovieId, 
+        saveMovieId, MovieDetails, saveMovieDetails, detailPath}}>
             {props.children}
         </Context.Provider>
     )

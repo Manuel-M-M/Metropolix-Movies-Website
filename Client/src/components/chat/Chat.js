@@ -5,15 +5,16 @@ import 'firebase/firestore';
 import Button from './Button.js';
 import Channel from './Channel.js';
 
-// firebase.initializeApp({  
-//     apiKey: "AIzaSyD13daBMdlDdGkoDiYfjmvVwvuSpUFId5g",
-//     authDomain: "rt-metropolix-chat.firebaseapp.com",
-//     projectId: "rt-metropolix-chat",
-//     storageBucket: "rt-metropolix-chat.appspot.com",
-//     messagingSenderId: "277745636705",
-//     appId: "1:277745636705:web:0023cdfea3751b560de120"
+//  firebase.initializeApp({  
+//     apiKey: "AIzaSyDSxvaoK61bf3wmxD6nI7wEV0dPmgVegvk",
+//     authDomain: "metropolix-chat.firebaseapp.com",
+//     databaseURL: "https://metropolix-chat-default-rtdb.europe-west1.firebasedatabase.app",
+//     projectId: "metropolix-chat",
+//     storageBucket: "metropolix-chat.appspot.com",
+//     messagingSenderId: "610836054578",
+//     appId: "1:610836054578:web:a06321e0d797758005b22b"
 
-// });
+//  });
 
 // const auth = firebase.auth();
 
