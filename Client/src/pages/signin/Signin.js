@@ -1,4 +1,5 @@
 import {useState, useContext} from 'react';
+import { Context } from '../../context/Context';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
@@ -6,6 +7,8 @@ import AuthContext from "../../context/auth/AuthContext";
 import './Signup-Signin.css';
 
 const Signin = () => {
+
+    const { isLogin, setIslogin } = useContext(Context);
 
     const history = useHistory();
     let email= "";
@@ -39,7 +42,9 @@ const Signin = () => {
                 console.log('hola');
                 localStorage.setItem('token', response.token); // guardar token en localstorage
                 console.log('adios');
+                setIslogin(true);
                 history.push("/User");
+                
 
                 // var decoded = jwt_decode(response.token); //decodificar el token con la librería jwt_decode
                 // console.log(decoded);

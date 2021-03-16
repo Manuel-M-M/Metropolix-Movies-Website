@@ -56,6 +56,14 @@ function User () {
         
      }
 
+     const handleLogout = (e) => {
+        e.preventDefault();
+
+        setIslogin(false);
+        localStorage.removeItem('token');
+        history.push("/Home")
+     }
+
     return (
         <>
             <div className="container">
@@ -68,7 +76,12 @@ function User () {
                         }}
                         >Delete your account
                         </button>
-                        <button className="btn btn-transparent mr-2">Sign Out</button>
+                        <button className="btn btn-transparent mr-2"
+                        onClick={(e) => {
+                            handleLogout(e);
+                        }}
+                        >Sign Out
+                        </button>
                     </div>
                 {/* </div> */}
                 <div className="img-head">
@@ -77,7 +90,7 @@ function User () {
                 <div className="user-text">
                     <h6>
                     Welcome to the temple of cinema. Now you can manage your movies and comment on them.
-                    If you really are a lover of the seventh art, enter our <a href="#">REAL TIME CHAT</a> and
+                    If you really are a lover of the seventh art, enter our <a href="/MChat">REAL TIME CHAT</a> and
                     participate in our cinephile community.
                     </h6>
                     <h5>

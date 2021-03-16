@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import Message from './Message';
 
-// const db = firebase.firestore();
+ 
 
                              
 const Channel = ({ chatUser = null,  db = null }) => {
@@ -35,11 +35,13 @@ const Channel = ({ chatUser = null,  db = null }) => {
 
     const handleOnChange = e => {
         setNewMessage(e.target.value);
+        console.log(e.target.value);
     };
 
     const handleOnSubmit = e => {
         e.preventDefault();
-
+        
+        console.log("hola");
         // const trimmedMessage = newMessage.trim();
         // if (trimmedMessage) {
         //     //Add new message in Firestore
@@ -61,6 +63,7 @@ const Channel = ({ chatUser = null,  db = null }) => {
                 displayName,
                 // photoURL
             })
+            console.log(newMessage);
         }
     };
 

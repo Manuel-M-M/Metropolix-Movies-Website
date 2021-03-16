@@ -71,6 +71,10 @@
     text-align: start;
 }
 
+.video-details {
+    margin-top: 20px;
+}
+
 .linkDetails {
     display: flex;
     flex-flow: row wrap;

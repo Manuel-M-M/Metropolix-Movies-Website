@@ -7,19 +7,19 @@ import CommentBox from "../commentBox/CommentBox";
 import StarRating from "../starRating/StarRating";
 import '../../css/sections.css';
 
-const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+// const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
 
 
 function DetailsMovie () {
 
-    const {searchPath, setSearchPath, searchArray, setSearchArray} = useContext(Context);
-    const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
-          open, setOpen, classes, handleOpen} = useContext(ModalContext);
+    const {searchPath, setSearchPath, MovieDetails, searchArray, setSearchArray} = useContext(Context);
+    // const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
+    //       open, setOpen, classes, handleOpen} = useContext(ModalContext);
 
     return(
         <div className="mainDetails">
             <div className="containerDetails details">
-               <img className="imgDetails" src={getImage(MovieDetails.backdrop_path)} alt={MovieDetails.title}/>
+               <img className="imgDetails" src={MovieDetails.backdrop_path} alt={MovieDetails.title}/>
                
                     <h2 className="mt-2">{MovieDetails.title}</h2>
                     <div className="overview">
@@ -27,16 +27,36 @@ function DetailsMovie () {
                     </div>
                     <div className="movieDates">
                         <p>
-                            <span className="head">Original title: </span>
-                            <span>{MovieDetails.original_title}</span>
+                            <span className="head">Release date: </span>
+                            <span>{MovieDetails.release_date}</span>
+                        </p>
+                        <p>
+                            <span className="head">Runtime: </span>
+                            <span>{MovieDetails.runtime}</span>
+                        </p>
+                        <p>
+                            <span className="head">Origin country: </span>
+                            <span>{MovieDetails.origin_country}</span>
                         </p>
                         <p>
                             <span className="head">Original language: </span>
                             <span>{MovieDetails.original_language}</span>
                         </p>
                         <p>
-                            <span className="head">Release date: </span>
-                            <span>{MovieDetails.release_date}</span>
+                            <span className="head">Director: </span>
+                            <span>{MovieDetails.director}</span>
+                        </p>
+                        <p>
+                            <span className="head">Screenwriter: </span>
+                            <span>{MovieDetails.writer}</span>
+                        </p>
+                        <p>
+                            <span className="head">Cast: </span>
+                            <span>{MovieDetails.cast}</span>
+                        </p>
+                        <p>
+                            <span className="head">Genre: </span>
+                            <span>{MovieDetails.genre}</span>
                         </p>
                         <p>
                             <span className="head">Popularity: </span>
@@ -64,7 +84,11 @@ function DetailsMovie () {
                         </p>
                         <StarRating />
                         <CommentBox />
-                        <div className="linkDetails">
+
+                        <div className="video-details">
+                                <iframe src={MovieDetails.video_path} frameborder="0"></iframe>
+                        </div>
+                        <div className="linkDetails">  
                             <p>
                                 <Link to={'/Media'} className="account-link">
                                     Go to Video/Images
@@ -77,11 +101,11 @@ function DetailsMovie () {
                             </p>
                         </div>
                         <button className="btn btn-transparent mr-5"
-                onClick={() => {
-                    window.history.back();
-                }}
-                >Go Back
-                </button>
+                        onClick={() => {
+                            window.history.back();
+                        }}
+                        >Go Back
+                        </button>
                     </div>
                         
             </div>

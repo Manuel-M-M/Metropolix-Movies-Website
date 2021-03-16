@@ -30,7 +30,7 @@ function Searcher () {
         if (e.target.value !== "") {
             // history.push("/Searchs")
             setShow(true);
-            setSearchPath(`'http://localhost:8000/Search?title=${e.target.value}`);
+            setSearchPath(`http://localhost:8000/Search?title=${e.target.value}`);
             console.log(e.target.value);
             // document.getElementById("carousel").classList.add("carouselDisplayNone")
             // document.getElementById("searchDiv").classList.remove("carouselDisplayNone")

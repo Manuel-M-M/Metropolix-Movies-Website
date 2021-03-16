@@ -74,7 +74,7 @@ function Chat() {
                 {chatUser ? (
                     <>
                         <Button onClick={signOut}>Sign out</Button>
-                        <Channel chatUser={chatUser} />
+                        <Channel chatUser={chatUser} db={db} />
                     </>
                 ) : (
                     <Button onClick={signInWithGoogle}>Sign in with Google</Button>

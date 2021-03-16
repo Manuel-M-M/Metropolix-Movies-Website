@@ -15,6 +15,7 @@ import User from './pages/user/User';
 import Error from './pages/error/Error';
 import ErrorChat from './pages/error/ErrorChat';
 import MChat from './pages/mchat/MChat';
+import Trailer from './pages/trailer/Trailer';
 import Header from './components/header/Header';
 import Searcher from './components/searcher/Searcher';
 import Footer from './components/footer/Footer';
@@ -53,6 +54,7 @@ function App() {
           <Route path="/Error" exact component={Error} />
           <Route path="/ErrorChat" exact component={ErrorChat} />
           <Route path="/MChat" exact component={MChat} />
+          <Route path="/Trailer" exact component={Trailer} />
 
           <Footer />
         </BrowserRouter>

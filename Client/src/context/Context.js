@@ -23,7 +23,7 @@ const ContextProvider = (props) => {
                 return response.json();
             })
             .then(data => {
-                setSearchArray(data.results);
+                setSearchArray(data);
                     
             })
             .catch(error => alert("Algo no funciona correctamente..."))
@@ -78,7 +78,7 @@ const ContextProvider = (props) => {
       };
 
     const [MovieId, saveMovieId] = useState(null);
-    const [MovieDetails, saveMovieDetails] = useState({});
+    const [MovieDetails, saveMovieDetails] = useState([]);
 
     // useEffect(() => {
         
@@ -106,12 +106,13 @@ const ContextProvider = (props) => {
             .then(data => {
                 saveMovieDetails(data);
                 //setMaxPages(data.total_pages);
+                
             })
             .catch(error => alert("Algo no funciona..."))
-            console.log(MovieDetails);
+            
     }, [MovieId]);
 
-    
+    console.log(MovieDetails);
 
     
 
