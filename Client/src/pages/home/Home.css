@@ -49,7 +49,7 @@ h2 span {
     right:0;
     width:0;
     background: var(--fondo);
-    border-left: 2px solid #fff;
+    border-left: 3px solid #fff;
     animation: escribir 5s steps(30) infinite alternate;
 }
 

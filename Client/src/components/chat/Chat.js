@@ -5,78 +5,84 @@ import 'firebase/firestore';
 import Button from './Button.js';
 import Channel from './Channel.js';
 
-//  firebase.initializeApp({  
-//     apiKey: "AIzaSyDSxvaoK61bf3wmxD6nI7wEV0dPmgVegvk",
-//     authDomain: "metropolix-chat.firebaseapp.com",
-//     databaseURL: "https://metropolix-chat-default-rtdb.europe-west1.firebasedatabase.app",
-//     projectId: "metropolix-chat",
-//     storageBucket: "metropolix-chat.appspot.com",
-//     messagingSenderId: "610836054578",
-//     appId: "1:610836054578:web:a06321e0d797758005b22b"
+ firebase.initializeApp({  
+    apiKey: "AIzaSyDSxvaoK61bf3wmxD6nI7wEV0dPmgVegvk",
+    authDomain: "metropolix-chat.firebaseapp.com",
+    databaseURL: "https://metropolix-chat-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "metropolix-chat",
+    storageBucket: "metropolix-chat.appspot.com",
+    messagingSenderId: "610836054578",
+    appId: "1:610836054578:web:f35c15936f71f2ef05b22b"
 
-//  });
+ });
 
-// const auth = firebase.auth();
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-// function Chat() {
+function Chat() {
 
-//     const [chatUser, setChatUser] = useState(() => auth.currentChatUser);
-//     const [initializing, setInitializing] = useState(true);
+    const [chatUser, setChatUser] = useState(() => auth.currentChatUser);
+    const [initializing, setInitializing] = useState(true);
 
-//     useEffect(() => {
-//        const unsubscribe = auth.onAuthStateChanged(chatUser => {
-//            if (chatUser) {
-//                setChatUser(chatUser);
-//            } else {
-//                setChatUser(null)
-//            }
-//            if (initializing) {
-//                setInitializing(false);
-//            }
-//        })
+    useEffect(() => {
+       const unsubscribe = auth.onAuthStateChanged(chatUser => {
+           if (chatUser) {
+               setChatUser(chatUser);
+           } else {
+               setChatUser(null)
+           }
+           if (initializing) {
+               setInitializing(false);
+           }
+       })
 
-//        //Clean up subscription
-//        return unsubscribe;
-//     }, [initializing])
+       //Clean up subscription
+       return unsubscribe;
+    }, [initializing])
 
-//     const signInWithGoogle = async () => {
-//         //Retrieve Google provider object
-//         const provider = new firebase.auth.GoogleAuthProvider();
+    const signInWithGoogle = async () => {
+        //Retrieve Google provider object
+        const provider = new firebase.auth.GoogleAuthProvider();
 
-//         //Set language in the default browser preferrence
-//         auth.useDeviceLanguage();
+        //Set language in the default browser preferrence
+        auth.useDeviceLanguage();
 
-//         //Start sign in process
-//         try {
-//             await auth.signInWithPopup(provider);
-//         } catch(error) {
-//             console.error(error);
-//         }
-//     };
+        //Start sign in process
+        try {
+            await auth.signInWithPopup(provider);
+        } catch(error) {
+            console.error(error);
+        }
+    };
 
-//     const signOut = async () => {
-//         try {
-//             await firebase.auth().signOut();
-//         } catch(error) {
-//             console.log(error.message);
-//         }
-//     };
+    const signOut = async () => {
+        try {
+            await firebase.auth().signOut();
+        } catch(error) {
+            console.log(error.message);
+        }
+    };
 
-//     if (initializing) return "Loading...";
+    if (initializing) return "Loading...";
 
-//     return (
-//         <div>
-//             {chatUser ? (
-//                 <>
-//                     <Button onClick={signOut}>Sign out</Button>
-//                     <Channel chatUser={chatUser} />
-//                 </>
-//             ) : ( 
-//                 <Button onClick={signInWithGoogle}>Sign in with Google</Button>
-//             )}
-//         </div>
-//     );
+    return (
+        <div className="wrapper-chat">
+            <div className="title-chat">
+                <h3 className="title">Real Time Chat: <span> &#160; </span></h3>
+            </div>
+            <div className="container-chat">
+                {chatUser ? (
+                    <>
+                        <Button onClick={signOut}>Sign out</Button>
+                        <Channel chatUser={chatUser} />
+                    </>
+                ) : (
+                    <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+                )}
+            </div>
+        </div>
+    );
 
-// }
+}
 
-// export default Chat;
+export default Chat;

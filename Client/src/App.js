@@ -52,7 +52,7 @@ function App() {
           <Route path="/User" exact component={User} />
           <Route path="/Error" exact component={Error} />
           <Route path="/ErrorChat" exact component={ErrorChat} />
-          {/* <Route path="/MChat" exact component={MChat} /> */}
+          <Route path="/MChat" exact component={MChat} />
 
           <Footer />
         </BrowserRouter>
