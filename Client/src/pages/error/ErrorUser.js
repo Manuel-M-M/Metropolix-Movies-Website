@@ -1,9 +1,8 @@
 import './Error.css';
 
-function Error () {
+function ErrorUser () {
 
-    return (
-        
+    return (      
         <div className="container">
             <h3 className="title">You're in trouble !!! <span>&#160;</span></h3>
             <div className="error-body">
@@ -20,4 +19,4 @@ function Error () {
     );
 }
 
-export default Error;
+export default ErrorUser;

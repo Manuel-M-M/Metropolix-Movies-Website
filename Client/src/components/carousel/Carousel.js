@@ -182,9 +182,7 @@ function Carousel() {
                         <h5>Synecdoche, New York. Charlie Kaufman</h5>
                         <p>2008</p>
                     </div>
-                </div>
-                
-                
+                </div>   
             </div>
             <a className="carousel-control-prev" href="#carouselHeaderControls" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>

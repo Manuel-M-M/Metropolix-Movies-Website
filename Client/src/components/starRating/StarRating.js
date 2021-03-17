@@ -1,5 +1,6 @@
 import "./StarRating.css";
 
+
 function StarRating () {
     return(
         <div className="detailsStars">

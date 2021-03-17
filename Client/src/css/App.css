@@ -28,35 +28,6 @@ background: var(--fondo);
   color: #fff;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-a .header_logo {
-  height: 80px;
-  width: 80px;
-
-}
-
-.grid {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin: 20px 20px 20px 20px;
-} */
-
-/* .grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  align-items: center;
-  justify-content: center;
-  padding-top: 100px;
-} */
-
 .btn-transparent {
   background-color: var(--verde);
   opacity: 0.9;

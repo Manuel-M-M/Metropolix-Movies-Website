@@ -5,6 +5,7 @@ import Seens from '../../pages/user/pages/Seens';
 import Pendings from '../../pages/user/pages/Pendings';
 import './UserHeader.css';
 
+
 function UserHeader () {
 
     const [toggle, setToggle] = useState(true);
@@ -25,7 +26,6 @@ function UserHeader () {
                 <NavLink to="/Seens" onClick={handleRoute} exact className="font-weight-bold  text-decoration-none userLink" activeClassName="active">Seens</NavLink>
                 <NavLink to="/Pendings" onClick={handleRoute} exact className="font-weight-bold  text-decoration-none userLink" activeClassName="active">Pendings</NavLink>
             </nav>
-
             <Route path="/Favourites" exact component={Favourites} />
             <Route path="/Seens" exact component={Seens} />
             <Route path="/Pendings" exact component={Pendings} />

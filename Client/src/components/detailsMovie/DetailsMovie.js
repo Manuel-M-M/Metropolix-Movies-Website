@@ -1,26 +1,39 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "./DetailsMovie.css";
-import { ModalContext } from '../../context/ModalContext';
 import { Context } from '../../context/Context';
 import CommentBox from "../commentBox/CommentBox";
 import StarRating from "../starRating/StarRating";
 import '../../css/sections.css';
 
-// const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
-
 
 function DetailsMovie () {
 
-    const {searchPath, setSearchPath, MovieDetails, searchArray, setSearchArray} = useContext(Context);
-    // const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
-    //       open, setOpen, classes, handleOpen} = useContext(ModalContext);
+    const { saveMovieDetails, MovieDetails, MovieId } = useContext(Context);
 
-    return(
+    let detailPath = '';
+    
+    useEffect(() => {
+        detailPath = `http://localhost:8000/getDetails?id=${MovieId}`;
+        
+        fetch(detailPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                saveMovieDetails(data);
+            })
+            .catch(error => alert("Algo no funciona..."))         
+    }, [MovieId]);
+
+
+    return (
         <div className="mainDetails">
             <div className="containerDetails details">
-               <img className="imgDetails" src={MovieDetails.backdrop_path} alt={MovieDetails.title}/>
-               
+               <img className="imgDetails" src={MovieDetails.backdrop_path} alt={MovieDetails.title}/>            
                     <h2 className="mt-2">{MovieDetails.title}</h2>
                     <div className="overview">
                         <p>{MovieDetails.overview}</p>
@@ -106,8 +119,7 @@ function DetailsMovie () {
                         }}
                         >Go Back
                         </button>
-                    </div>
-                        
+                    </div>        
             </div>
         </div>
     )

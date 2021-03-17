@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.title-page {
+    margin: 0 auto;
+    padding: 0 auto;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.movie-container {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.h1 {
+    font-size: large;
+    font-family: 'Bebas Neue', sans-serif;
+    color: whitesmoke;
+}
+
+.flex {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    box-sizing: border-box;
+}
+
+.wrap {
+    background-size: cover;
+  background-position: center;
+  flex: 0 0 30vh;
+}
+
+.wrap h4 {
+    word-break: break-all;
+}
+
+.wrap img {
+    width: 150px;
+    
+}
+
+.movie_list_title {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: x-small;
+    margin-top: 5px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.movie_list_date {
+    color: whitesmoke;
+    font-weight:bold;
+    font-size: x-small;
+}
+
+.clickable {
+    cursor:pointer;
+}

@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
 import './Footer.css'
 import Logo from '../../img/logos/cuadrado_verdeNegro.png';
@@ -18,14 +17,6 @@ function Footer() {
                     }}
             ><h3 className="footerH3">Metropoli<span>X</span></h3>
             </a>
-		    
-		    {/* <p className="footer-links">
-                
-                <a href="#">Blog</a>
-                <a href="#">About</a>
-                <a href="#">Faq</a>
-                <a href="#">Contact</a>
-		    </p> */}
 		    <p className="footer-company-name"><span>Created by:</span> Manuel Moraga Molina &copy; 2021</p>
 		</div>
 		<div className="footer-center">
@@ -41,9 +32,6 @@ function Footer() {
 		<div className="footer-right">
 		    <div className="footer-icons">
                 <a href="https://www.themoviedb.org" target="_blank"><img id="footerLogo" src={Logo} alt=""/></a>
-                {/* <a href="#" classNameName="facebookLogo"></a>
-                <a href="#" className="twitterLogo"></a>
-                <a href="#" className="githubLogo"></a> */}
 		    </div>
 		</div>
 		</footer>
