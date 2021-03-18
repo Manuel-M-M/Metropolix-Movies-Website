@@ -16,19 +16,32 @@ const Message = ({
     createdAt = null,
     text = '',
     displayName = '',
-    // photoURL = '',
+    photoURL = '',
 }) => {
     if (!text) return null;
 
     return ( 
         <div className="container-message">
-            {displayName ? <p className="name">{displayName}</p> : null}
-            {createdAt?.seconds ? (
-                <span className ="date">
-                    {formatDate(new Date(createdAt.seconds * 1000), new Date())}
-                </span>
-            ) : null }
-            <p className="message-text">{text}</p>
+            <div className="wrap-data">
+                {photoURL ? (
+                    <img
+                    src={photoURL}
+                    alt="Avatar"
+                    className="rounded-full mr-4"
+                    width={45}
+                    height={45}
+                    />
+                ) : null}
+                {displayName ? <p className="name">{displayName}</p> : null}
+                {createdAt?.seconds ? (
+                    <span className ="date">
+                        {formatDate(new Date(createdAt.seconds * 1000), new Date())}
+                    </span>
+                ) : null }
+            </div>
+            <div className="wrap-message">
+                <p className="message-text">{text}</p>
+            </div>
         </div>
     );
 };

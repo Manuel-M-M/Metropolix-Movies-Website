@@ -73,7 +73,7 @@ function Chat() {
             <div className="container-chat">
                 {chatUser ? (
                     <>
-                        <Button onClick={signOut}>Sign out</Button>
+                        <Button className="btn-chat" onClick={signOut}>Sign out</Button>
                         <Channel chatUser={chatUser} db={db} />
                     </>
                 ) : (

@@ -10,7 +10,7 @@ const Channel = ({ chatUser = null,  db = null }) => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
 
-    const { uid, displayName } = chatUser;
+    const { uid, displayName, photoURL } = chatUser;
 
     useEffect (() => {
         if (db) {
@@ -61,7 +61,7 @@ const Channel = ({ chatUser = null,  db = null }) => {
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                 uid,
                 displayName,
-                // photoURL
+                photoURL
             })
             console.log(newMessage);
         }
@@ -69,7 +69,7 @@ const Channel = ({ chatUser = null,  db = null }) => {
 
     return (
         <>
-            <ul>
+            <ul className="channel-ul">
                 {messages.map(message => (
                     <li key={message.id}>
                         <Message {...message}/>
@@ -85,7 +85,7 @@ const Channel = ({ chatUser = null,  db = null }) => {
                         onChange={handleOnChange}
                         placeholder="Type your message here ..."
                     />
-                    <button className="btn btn-transparent ml-1" type="submit" disabled={!newMessage}>
+                    <button className="btn btn-transparent ml-1 btn-channel" type="submit" disabled={!newMessage}>
                         Send
                     </button>
             </form>

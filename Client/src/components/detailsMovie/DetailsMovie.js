@@ -97,7 +97,7 @@ function DetailsMovie () {
                         </p>
                         <StarRating />
                         <CommentBox />
-
+                        
                         <div className="video-details">
                                 <iframe src={MovieDetails.video_path} frameborder="0"></iframe>
                         </div>
