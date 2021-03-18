@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import "./DetailsMovie.css";
 import { Context } from '../../context/Context';
@@ -28,6 +28,27 @@ function DetailsMovie () {
             })
             .catch(error => alert("Algo no funciona..."))         
     }, [MovieId]);
+
+    
+    const [checked, setChecked] = useState(false);
+
+    const handleFavourites = () => {
+        
+        var token = localStorage.getItem('token');
+
+        if (checked === false) {
+        fetch(`http://localhost:8000/addFavourites/${MovieId}`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(response  => response.json())
+        // setChecked(true)
+        .catch( error => console.log(error) ); 
+        }    
+    }
 
 
     return (
@@ -85,15 +106,38 @@ function DetailsMovie () {
                         </p>
                         <p>
                             <span>Favourite: </span>
-                            <input type="checkbox" id="favourite" name="favourite" value="favourite"></input>
+                            <input 
+                                type="checkbox" 
+                                id="favourite" 
+                                name="favourite" 
+                                value="favourite"
+                                checked={checked}
+                                onChange={() => { 
+                                    handleFavourites();
+                                    setChecked(true)
+                                }}
+                            >
+                            </input>
                         </p>
                         <p>
                             <span>Seen: </span>
-                            <input type="checkbox" id="favourite" name="favourite" value="favourite"></input>
+                            <input 
+                                type="checkbox" 
+                                id="favourite" 
+                                name="favourite" 
+                                value="favourite"
+                            >
+                            </input>
                         </p>
                         <p>
                             <span>See later: </span>
-                            <input type="checkbox" id="favourite" name="favourite" value="favourite"></input>
+                            <input 
+                                type="checkbox" 
+                                id="favourite" 
+                                name="favourite" 
+                                value="favourite"
+                            >
+                            </input>
                         </p>
                         <StarRating />
                         <CommentBox />

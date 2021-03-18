@@ -46,12 +46,40 @@ const ContextProvider = (props) => {
     const [MovieId, saveMovieId] = useState(null);
     const [MovieDetails, saveMovieDetails] = useState([]);
 
+    const [FavouritesArray, saveFavouritesArray] = useState([]);
+
+    let favouritesPath = "";
+
+    const handleGetFavourites = () => {
+        
+        var token = localStorage.getItem('token');
+
+        favouritesPath = `http://localhost:8000/getFavourites`;
+            
+        fetch(favouritesPath, {
+            headers: {
+            'Authorization': 'Bearer ' + token
+        }})
+        
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                    saveFavouritesArray(data);
+            })
+            .catch(error => alert("Algo no funciona..."))              
+    }
+
     
     return (
         <Context.Provider value={{show, setShow, searchArray, setSearchArray,
         actualPage, setActualPage, isLogin, setIslogin, moviesPath, setMoviesPath, homeMoviesArray, 
         setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages, MovieId, 
-        saveMovieId, MovieDetails, saveMovieDetails}}>
+        saveMovieId, MovieDetails, saveMovieDetails, FavouritesArray, saveFavouritesArray,
+        handleGetFavourites}}>
             {props.children}
         </Context.Provider>
     )

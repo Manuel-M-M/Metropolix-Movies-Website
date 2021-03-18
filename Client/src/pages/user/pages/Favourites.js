@@ -1,8 +1,11 @@
-// import './UserPages.css';
+import { useContext } from 'react';
+import { Context } from '../../../context/Context';
 import '../User.css';
 
 
 function Favourites () {
+
+    const { FavouritesArray } = useContext(Context);
 
     return (
         <div className="container">
@@ -11,19 +14,17 @@ function Favourites () {
             </div>
             <div className="userList">
                 <div className="ul">
-                    <ul>
-                        <li>The godfather</li>
-                        <li>Taxi driver</li>
-                        <li>In the mood for love</li>
-                        <li>Waking life</li>
-                        <li>Wings of desire</li>
-                        <li>Ran</li>
-                        <li>Fargo</li>
-                        <li>The return of the jedi</li>
-                        <li>Trainspotting</li>
-                        <li>Easy ryder</li>
-                        <li>Memento</li>
-                        <li>Simón del desierto</li>
+                    <ul>{FavouritesArray.map((movie) => {
+                        return (
+                            <li>
+                                <div className="poster-fav">
+                                    <img src={movie.poster_path} alt=""/>
+                                </div>
+                                <div className="title-fav">
+                                    {movie.title}
+                                </div>
+                            </li>
+                        )})}
                     </ul>
                 </div>
             </div>

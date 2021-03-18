@@ -17,11 +17,6 @@ function User () {
 
         var token = localStorage.getItem('token');
 
-        // var tokenDecoded = jwt_decode(token)
-
-        // console.log(tokenDecoded);
-
-        // const email = encodeURIComponent(tokenDecoded.username);
         fetch(`http://localhost:8000/deleteUser`, {
             method: 'DELETE',
             mode: 'cors',

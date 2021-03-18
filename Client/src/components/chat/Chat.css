@@ -62,6 +62,8 @@
     justify-content: center;
     align-items: flex-end;
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .name {
@@ -78,11 +80,15 @@
 }
 
 .wrap-message {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .message-text {
+    width: 200px;
     color: #fff;
+    text-align: justify;
     font-family: 'Railway';
 }
 
