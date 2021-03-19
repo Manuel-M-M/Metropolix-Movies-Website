@@ -12,14 +12,14 @@ function Header() {
     const { isLogin } = useContext(Context);
     const history = useHistory();
 
-    const handleGoToUser = (e) => {
-        e.preventDefault();
-         if (isLogin === true) {
-        history.push("/User")
-         } else {
-             history.push("/Error")
-         }
-    }
+    // const handleGoToUser = (e) => {
+    //     e.preventDefault();
+    //      if (isLogin === true) {
+    //     history.push("/User")
+    //      } else {
+    //          history.push("/ErrorUser")
+    //      }
+    // }
 
     // const handleGoToErrorChat = (e) => {
     //     e.preventDefault();
@@ -49,9 +49,9 @@ function Header() {
                 </div>
                 <div className="userAccount">
                     <a href="#w34243"><img className="headerAccount" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-                        alt="User avatar" onClick={(e) =>
-                            handleGoToUser(e)
-                        }      
+                        // alt="User avatar" onClick={(e) =>
+                        //     handleGoToUser(e)
+                        // }      
                     />
                     </a>
                 </div>

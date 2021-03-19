@@ -1,10 +1,15 @@
 import {useState, useContext, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import AlertContext from '../../context/alerts/AlertContext';
 import '../signin/Signup-Signin.css';
 
 
- function Signup({setUser}){
+ function Signup({setUser}) {
+
+    const alertaContext = useContext(AlertContext);
+    const { alerta, mostrarAlerta } = alertaContext;
+
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,6 +19,23 @@ import '../signin/Signup-Signin.css';
 
     const handleSubmit = (event)=>{
         event.preventDefault();
+
+        if ( username.trim() === '' ||
+             email.trim() === '' ||
+             password.trim() === '' ||
+             confirm.trim() === '' ) {
+                 mostrarAlerta("All fields are required");
+                 return;
+        }
+        
+        if ( password.length < 4 ) {
+            mostrarAlerta("Password requires 4 characters at least.")
+            return;
+        }
+
+        if ( password !== confirm ) {
+            mostrarAlerta("Password and confirm are diferents", "alerta-error")
+        }
 
         const formData = new FormData();
         formData.append('username', username);
@@ -53,7 +75,7 @@ import '../signin/Signup-Signin.css';
     
     return (
         <div className="form-usuario">
-            { alert ? (<div className={`alert ${alert.category}`}>{alert.message}</div>) : null }
+            { alerta ? (<div className={`alert ${mostrarAlerta}`}>{mostrarAlerta}</div>) : null }
             <div className="contenedor-form sombra-dark">
                 <h1>Sign up</h1>
                 <form onSubmit={handleSubmit}> 

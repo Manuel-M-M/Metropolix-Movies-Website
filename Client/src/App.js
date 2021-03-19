@@ -17,12 +17,14 @@ import Trailer from './pages/trailer/Trailer';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import ContextProvider from './context/Context';
+import AlertState from './context/alerts/AlertState';
 
 
 function App() {
   
   return (
     <ContextProvider>
+      <AlertState>
         <BrowserRouter>
           <Header />        
           <Route exact path="/">
@@ -43,6 +45,7 @@ function App() {
           <Route path="/Trailer" exact component={Trailer} />
           <Footer />
         </BrowserRouter>
+      </AlertState>
     </ContextProvider>
   );
 }

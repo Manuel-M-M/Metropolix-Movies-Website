@@ -73,13 +73,70 @@ const ContextProvider = (props) => {
             .catch(error => alert("Algo no funciona..."))              
     }
 
+    const [SeensArray, saveSeensArray] = useState([]);
+
+    let seensPath = "";
+
+    const handleGetSeens = () => {
+        
+        var token = localStorage.getItem('token');
+
+        seensPath = `http://localhost:8000/getSeens`;
+            
+        fetch(seensPath, {
+            headers: {
+            'Authorization': 'Bearer ' + token
+        }})
+        
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                saveSeensArray(data);
+            })
+            .catch(error => alert("Algo no funciona..."))              
+    }
+
+    const [PendingsArray, savePendingsArray] = useState([]);
+
+    let pendingsPath = "";
+
+    const handleGetPendings = () => {
+        
+        var token = localStorage.getItem('token');
+
+        pendingsPath = `http://localhost:8000/getPendings`;
+            
+        fetch(pendingsPath, {
+            headers: {
+            'Authorization': 'Bearer ' + token
+        }})
+        
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                savePendingsArray(data);
+            })
+            .catch(error => alert("Algo no funciona..."))              
+    }
+
+
+
     
     return (
         <Context.Provider value={{show, setShow, searchArray, setSearchArray,
         actualPage, setActualPage, isLogin, setIslogin, moviesPath, setMoviesPath, homeMoviesArray, 
         setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages, MovieId, 
         saveMovieId, MovieDetails, saveMovieDetails, FavouritesArray, saveFavouritesArray,
-        handleGetFavourites}}>
+        handleGetFavourites, SeensArray, saveSeensArray, handleGetSeens, PendingsArray, savePendingsArray,
+        handleGetPendings}}>
             {props.children}
         </Context.Provider>
     )

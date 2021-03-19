@@ -5,12 +5,30 @@ import '../User.css';
 
 function Favourites () {
 
-    const { FavouritesArray } = useContext(Context);
+    const { FavouritesArray, MovieId } = useContext(Context);
+
+    const handleDeleteFavourites = (e)=>{
+        e.preventDefault();
+
+       var token = localStorage.getItem('token');
+
+       fetch(`http://localhost:8000/deleteFavourite${MovieId}`, {
+           method: 'DELETE',
+           mode: 'cors',
+           headers: {
+               'Authorization': 'Bearer ' + token
+           }
+       })
+       .then(response => response.json())
+       
+       .catch( error => console.log(error) );      
+    }
+    
 
     return (
         <div className="container">
             <div className="title">
-                <h2>Favourites</h2>
+                <h3>Favourites</h3>
             </div>
             <div className="userList">
                 <div className="ul">
@@ -22,6 +40,15 @@ function Favourites () {
                                 </div>
                                 <div className="title-fav">
                                     {movie.title}
+                                </div>
+                                <div className="btn-user-movies">
+                                    <button 
+                                        className="btn btn-danger btn-transparent btn-u-list"
+                                        onClick={(e) => {
+                                            handleDeleteFavourites(e);
+                                         }}
+                                    >X
+                                    </button>
                                 </div>
                             </li>
                         )})}

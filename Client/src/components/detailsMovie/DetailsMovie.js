@@ -50,6 +50,42 @@ function DetailsMovie () {
         }    
     }
 
+    const handleSeens = () => {
+        
+        var token = localStorage.getItem('token');
+
+        if (checked === false) {
+        fetch(`http://localhost:8000/addSeens/${MovieId}`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(response  => response.json())
+        // setChecked(true)
+        .catch( error => console.log(error) ); 
+        }    
+    }
+
+    const handlePendings = () => {
+        
+        var token = localStorage.getItem('token');
+
+        if (checked === false) {
+        fetch(`http://localhost:8000/addPendings/${MovieId}`, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(response  => response.json())
+        // setChecked(true)
+        .catch( error => console.log(error) ); 
+        }    
+    }
+
 
     return (
         <div className="mainDetails">
@@ -126,6 +162,11 @@ function DetailsMovie () {
                                 id="favourite" 
                                 name="favourite" 
                                 value="favourite"
+                                checked={checked}
+                                onChange={() => { 
+                                    handleSeens();
+                                    setChecked(true)
+                                }}
                             >
                             </input>
                         </p>
@@ -136,6 +177,11 @@ function DetailsMovie () {
                                 id="favourite" 
                                 name="favourite" 
                                 value="favourite"
+                                checked={checked}
+                                onChange={() => { 
+                                    handlePendings();
+                                    setChecked(true)
+                                }}
                             >
                             </input>
                         </p>
