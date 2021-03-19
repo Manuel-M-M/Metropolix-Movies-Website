@@ -8,7 +8,7 @@
     display: inline-block;
 }
 
-.ec-stars-wrapper a {
+.ec-stars-wrapper span {
 	text-decoration: none;
 	display: inline-block;
 	/* Volver a dar tamaño al texto */
@@ -18,12 +18,12 @@
 	color: #888;
 }
 
-.ec-stars-wrapper:hover a {
+.ec-stars-wrapper:hover span {
 	color: var(--verde);
 }
 /*
  * El selector de hijo, es necesario para aumentar la especifidad
  */
-.ec-stars-wrapper > a:hover ~ a {
+.ec-stars-wrapper > span:hover ~span {
 	color: #888;
 }

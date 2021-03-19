@@ -1,7 +1,7 @@
 import "./CommentBox.css";
 
 
-function CommentBox () {
+function CommentBox ({value, onChange}) {
     return(
         
         <div className="wrap-comment">
@@ -11,10 +11,11 @@ function CommentBox () {
                     id="textareaComent"
                     cols="25" rows="4"
                     placeholder="Add your comment"
+                    value={value}
+                    onChange={onChange}
                 >
                 </textarea>
             </div>
-            <div className="btn-comment"><button className="btn btn-transparent mt-2 mr-5">Send comment</button></div>
         </div>
         
     )

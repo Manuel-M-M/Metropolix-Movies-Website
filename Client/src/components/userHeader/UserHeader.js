@@ -9,7 +9,7 @@ import './UserHeader.css';
 
 function UserHeader () {
 
-    const { handleGetFavourites } = useContext(Context);
+    const { handleGetFavourites, handleGetSeens, handleGetPendings } = useContext(Context);
 
     const [toggle, setToggle] = useState(true);
 
@@ -39,6 +39,7 @@ function UserHeader () {
                     to="/Seens" 
                     onClick={() => {
                         handleRoute()
+                        handleGetSeens()
                     }} 
                     exact className="font-weight-bold  text-decoration-none userLink" 
                     activeClassName="active"
@@ -48,6 +49,7 @@ function UserHeader () {
                     to="/Pendings" 
                     onClick={() => {
                         handleRoute()
+                        handleGetPendings()
                     }}
                     exact className="font-weight-bold  text-decoration-none userLink" 
                     activeClassName="active"

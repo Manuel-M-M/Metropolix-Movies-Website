@@ -1,5 +1,5 @@
-// import {useContext} from "react";
-import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import { useEffect } from "react";
+import { BrowserRouter, Redirect, Route, useLocation } from 'react-router-dom';
 import './css/App.css';
 import Home from './pages/home/Home';
 import TopRated from './pages/sections/TopRated';
@@ -17,15 +17,25 @@ import Trailer from './pages/trailer/Trailer';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import ContextProvider from './context/Context';
-import AlertState from './context/alerts/AlertState';
+
+
+  function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 
 function App() {
-  
+
   return (
     <ContextProvider>
-      <AlertState>
         <BrowserRouter>
+        <ScrollToTop />
           <Header />        
           <Route exact path="/">
             <Redirect to="/home" />
@@ -45,7 +55,6 @@ function App() {
           <Route path="/Trailer" exact component={Trailer} />
           <Footer />
         </BrowserRouter>
-      </AlertState>
     </ContextProvider>
   );
 }

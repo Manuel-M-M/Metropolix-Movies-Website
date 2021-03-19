@@ -9,7 +9,7 @@ import '../../css/sections.css';
 
 function DetailsMovie () {
 
-    const { saveMovieDetails, MovieDetails, MovieId } = useContext(Context);
+    const { saveMovieDetails, MovieDetails, MovieId, isLogin } = useContext(Context);
 
     let detailPath = '';
     
@@ -30,13 +30,15 @@ function DetailsMovie () {
     }, [MovieId]);
 
     
-    const [checked, setChecked] = useState(false);
+    const [checkedFav, setCheckedFav] = useState(false);
+    const [checkedSeens, setCheckedSeens] = useState(false);
+    const [checkedPendings, setCheckedPendings] = useState(false);
 
     const handleFavourites = () => {
         
         var token = localStorage.getItem('token');
 
-        if (checked === false) {
+        if (checkedFav === false) {
         fetch(`http://localhost:8000/addFavourites/${MovieId}`, {
             method: 'POST',
             mode: 'cors',
@@ -54,7 +56,7 @@ function DetailsMovie () {
         
         var token = localStorage.getItem('token');
 
-        if (checked === false) {
+        if (checkedSeens === false) {
         fetch(`http://localhost:8000/addSeens/${MovieId}`, {
             method: 'POST',
             mode: 'cors',
@@ -72,7 +74,7 @@ function DetailsMovie () {
         
         var token = localStorage.getItem('token');
 
-        if (checked === false) {
+        if (checkedPendings === false) {
         fetch(`http://localhost:8000/addPendings/${MovieId}`, {
             method: 'POST',
             mode: 'cors',
@@ -85,6 +87,43 @@ function DetailsMovie () {
         .catch( error => console.log(error) ); 
         }    
     }
+
+    const [text, saveText] = useState("");
+    // const [rate, saveRate] = useState(null);
+
+    const handleCommentSubmit = (event) => {
+        event.preventDefault();
+
+        if ( isLogin === false && text.trim() === "" ) {
+            alert("You need to sign in or the comment box are empty")
+        } else {
+            var token = localStorage.getItem('token');
+
+            const formData = new FormData();
+            formData.append('text', text);
+            // formData.append('rate', rate);
+
+            fetch(`http://localhost:8000/addComments/${MovieId}`, {
+            method: 'POST',
+            mode: 'cors',
+            body: formData,
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+            })
+            .then(response => response.json())
+            
+            .catch( error => console.log(error) );
+        }
+    }
+
+    const handleText = (event)=>{
+        saveText(event.target.value);
+    }
+
+    // const handleRate = (event)=>{
+    //     saveRate(event.target.value);
+    // }
 
 
     return (
@@ -147,10 +186,10 @@ function DetailsMovie () {
                                 id="favourite" 
                                 name="favourite" 
                                 value="favourite"
-                                checked={checked}
+                                checked={checkedFav}
                                 onChange={() => { 
                                     handleFavourites();
-                                    setChecked(true)
+                                    setCheckedFav(true)
                                 }}
                             >
                             </input>
@@ -159,13 +198,13 @@ function DetailsMovie () {
                             <span>Seen: </span>
                             <input 
                                 type="checkbox" 
-                                id="favourite" 
-                                name="favourite" 
-                                value="favourite"
-                                checked={checked}
+                                id="seen" 
+                                name="seen" 
+                                value="seen"
+                                checked={checkedSeens}
                                 onChange={() => { 
                                     handleSeens();
-                                    setChecked(true)
+                                    setCheckedSeens(true)
                                 }}
                             >
                             </input>
@@ -174,22 +213,38 @@ function DetailsMovie () {
                             <span>See later: </span>
                             <input 
                                 type="checkbox" 
-                                id="favourite" 
-                                name="favourite" 
-                                value="favourite"
-                                checked={checked}
+                                id="pending" 
+                                name="pending" 
+                                value="pending"
+                                checked={checkedPendings}
                                 onChange={() => { 
                                     handlePendings();
-                                    setChecked(true)
+                                    setCheckedPendings(true)
                                 }}
                             >
                             </input>
                         </p>
-                        <StarRating />
-                        <CommentBox />
+                        <form 
+                            onSubmit={(e) => {
+                                handleCommentSubmit(e);
+                             }} 
+                            className="comment-form"
+                        >
+                            <StarRating 
+                                // value={rate}
+                                // onChange={handleRate}
+                            />
+                            <CommentBox 
+                                value={text}
+                                onChange={handleText}
+                            />
+                            <div className="btn-comment">
+                                <button className="btn btn-transparent mt-2 mr-5">Send comment</button>
+                            </div>
+                        </form>
                         
                         <div className="video-details">
-                                <iframe src={MovieDetails.video_path} frameborder="0"></iframe>
+                                <iframe src={MovieDetails.video_path} frameborder="1"></iframe>
                         </div>
                         <div className="linkDetails">  
                             <p>

@@ -5,14 +5,14 @@ import '../User.css';
 
 function Seens () {
 
-    const { SeensArray, MovieId } = useContext(Context);
+    const { SeensArray, saveSeensArray } = useContext(Context);
 
-    const handleDeleteSeens = (e)=>{
+    const handleDeleteSeens = (e, id)=>{
         e.preventDefault();
 
        var token = localStorage.getItem('token');
 
-       fetch(`http://localhost:8000/deleteSeen${MovieId}`, {
+       fetch(`http://localhost:8000/removeSeens/${id}`, {
            method: 'DELETE',
            mode: 'cors',
            headers: {
@@ -20,7 +20,7 @@ function Seens () {
            }
        })
        .then(response => response.json())
-       
+       .then(seens => saveSeensArray(seens))
        .catch( error => console.log(error) );      
     }
 
@@ -43,9 +43,9 @@ function Seens () {
                                 </div>
                                 <div className="btn-user-movies">
                                     <button 
-                                        className="btn btn-danger btn-transparent btn-u-list"
+                                        className="btn btn-danger btn-u-list"
                                         onClick={(e) => {
-                                            handleDeleteSeens(e);
+                                            handleDeleteSeens(e, movie.id);
                                          }}
                                     >X
                                     </button>

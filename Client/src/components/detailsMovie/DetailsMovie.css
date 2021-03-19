@@ -72,7 +72,13 @@
 }
 
 .video-details {
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.video-details iframe {
+    height: 230px;
+    width: 380px;
+    max-width: 500px;
 }
 
 .linkDetails {

@@ -5,14 +5,14 @@ import '../User.css';
 
 function Pendings () {
 
-    const { PendingsArray, MovieId } = useContext(Context);
+    const { PendingsArray, savePendingsArray } = useContext(Context);
 
-    const handleDeletePendings = (e)=>{
+    const handleDeletePendings = (e, id)=>{
         e.preventDefault();
 
        var token = localStorage.getItem('token');
 
-       fetch(`http://localhost:8000/deletePending${MovieId}`, {
+       fetch(`http://localhost:8000/removePending/${id}`, {
            method: 'DELETE',
            mode: 'cors',
            headers: {
@@ -20,7 +20,7 @@ function Pendings () {
            }
        })
        .then(response => response.json())
-       
+       .then(pendings => savePendingsArray(pendings))
        .catch( error => console.log(error) );      
     }
     
@@ -44,9 +44,9 @@ function Pendings () {
                                 </div>
                                 <div className="btn-user-movies">
                                     <button 
-                                        className="btn btn-danger btn-transparent btn-u-list"
+                                        className="btn btn-danger btn-u-list"
                                         onClick={(e) => {
-                                            handleDeletePendings(e);
+                                            handleDeletePendings(e, movie.id);
                                          }}
                                     >X
                                     </button>
