@@ -77,8 +77,12 @@ const Signin = () => {
                         />
                     </div>
                     <div className="campo-form">
-                        <input type="submit" className="btn-sign btn-primario btn-block"
-                        value="Sign In" onClick={(e)=>handleLogin(e)} />
+                        <input 
+                            type="submit" 
+                            className="btn-sign btn-primario btn-block"
+                            value="Sign In" 
+                            onClick={(e)=>handleLogin(e)} 
+                        />
                     </div>
                 </form>               
                 <Link to={'/Signup'} className="account-link">

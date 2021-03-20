@@ -1,10 +1,11 @@
-import { useState, useContext } from 'react';
-import UserHeader from '../../components/userHeader/UserHeader';
+import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import './User.css';
+import UserHeader from '../../components/userHeader/UserHeader';
 import HeaderBody from '../../components/headerBody/HeaderBody';
 import jwt_decode from 'jwt-decode';
-import { useHistory } from 'react-router-dom';
+
 
 function User () {
 
@@ -27,28 +28,11 @@ function User () {
         .then(response => response.json())
         .then(
             resp => {
-
                 setIslogin(true);
 
-                history.push("/Home")
-
-
-                // console.log(resp);
-                // setUser(users => {
-                //     const newArray = users.slice();
-                //     newArray.push(resp);
-                //     return newArray;
-                // });
-
-                // // vaciar los campos:
-                // setUsername("");
-                // setEmail("");
-                // setPassword("");
-                // setConfirm("");
-                
+                history.push("/Home")               
             } 
-        ).catch( error => console.log(error) );
-        
+        ).catch( error => console.log(error) ); 
      }
 
      const handleLogout = (e) => {
@@ -63,22 +47,22 @@ function User () {
         <>
             <div className="container">
                 <HeaderBody title="User Space"/>
-                {/* <div className="wrap-btn"> */}
-                    <div className="btn-delete">
-                        <button className="btn btn-transparent mr-2"
+                <div className="btn-delete">
+                    <button 
+                        className="btn btn-transparent mr-2"
                         onClick={(e) => {
-                           handleSubmit(e);
+                            handleSubmit(e);
                         }}
-                        >Delete your account
-                        </button>
-                        <button className="btn btn-transparent mr-2"
+                    >Delete your account
+                    </button>
+                    <button 
+                        className="btn btn-transparent mr-2"
                         onClick={(e) => {
                             handleLogout(e);
                         }}
-                        >Sign Out
-                        </button>
-                    </div>
-                {/* </div> */}
+                    >Sign Out
+                    </button>
+                </div>
                 <div className="img-head">
                     <img src="../../img/backgrounds/Collage.jpg" alt=""/>
                 </div>
@@ -95,14 +79,7 @@ function User () {
                 </div>
                 <div className="user-header">
                     <UserHeader />
-                </div>
-               
-                
-                {/* <div className="row justify-content-center mt-3 mb-3">
-                    <button className="btn btn-transparent mr-1" >-</button>
-                    <button className="btn btn-transparent ml-1" >+</button>
-                </div> */}
-                
+                </div>           
             </div>
         </>
         

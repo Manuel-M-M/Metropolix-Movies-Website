@@ -7,7 +7,7 @@ function Trailer () {
 
     return (
         <div className="trailer-container">
-            <iframe src={MovieDetails.video_path} frameborder="0"></iframe>
+            <iframe src={MovieDetails.video_path} frameborder="1"></iframe>
         </div>
     );
 };

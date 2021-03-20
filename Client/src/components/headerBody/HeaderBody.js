@@ -5,7 +5,6 @@ function HeaderBody (headerBody) {
         <div className="title-page d-flex justify-content-center align-items-center mt-4">
             <button className="btn btn-transparent mr-5"
                 onClick={() => {
-                    console.log('hola');
                     window.history.back();
                 }}
             >Go Back

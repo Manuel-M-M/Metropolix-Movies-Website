@@ -43,7 +43,7 @@ function UserHeader () {
                     }} 
                     exact className="font-weight-bold  text-decoration-none userLink" 
                     activeClassName="active"
-                    >Seens
+                >Seens
                 </NavLink>
                 <NavLink 
                     to="/Pendings" 

@@ -1,0 +1,95 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414; 
+}
+
+.container-comments {
+    min-width: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.header_comments {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap_title_comments {
+    margin: auto;
+	display: table;
+}
+
+.wrap_body_comments {
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/almuerzoNewYork.jpg);
+    background-position: center center;
+    background-size:cover;
+    margin: 20px;
+}
+
+h4 { 
+    margin-top: 20px;
+	position: relative; 
+	float: left;
+	background: transparent;
+	color: var(--verde);
+	font-size: 2.5em;
+}
+
+h4 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: var(--fondo);
+    border-left: 3px solid #fff;
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
+.wrap_cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    text-align: justify;
+}
+
+.card_comments {
+    max-width: 300px;
+    background: rgb(20, 20, 20, 0.5);
+    margin: 20px;
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+}
+
+.card_comments h6 {
+    color: var(--verde);
+    font-family: 'Railway';
+    font-weight: bold;
+    font-size: small;
+    margin: 20px 20px 0px 20px;
+    border-bottom: 1px solid var(--verde);
+}
+
+.card_comments p {
+    list-style: none;;
+    color: #fff;
+    margin: 20px;
+    font-family: 'Roboto';
+    font-size: x-small;
+}
+
+
+
+.card_comments h6 span {
+    margin-left: 10px;
+    font-family: 'Railway';
+    font-size: x-small;
+}

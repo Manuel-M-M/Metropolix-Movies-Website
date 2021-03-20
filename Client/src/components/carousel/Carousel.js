@@ -13,7 +13,13 @@ function Carousel() {
 
 
     return (
-        <div id="carouselHeaderControls" className="carousel slide" data-interval="4000" data-ride="carousel" data-pause="false">
+        <div 
+            id="carouselHeaderControls" 
+            className="carousel slide" 
+            data-interval="4000" 
+            data-ride="carousel" 
+            data-pause="false"
+        >
             <div className="carousel-inner h-100">
                 <div className="carousel-item h-100 active">
                     <div className="carousel-caption d-md-block">
@@ -184,11 +190,21 @@ function Carousel() {
                     </div>
                 </div>   
             </div>
-            <a className="carousel-control-prev" href="#carouselHeaderControls" role="button" data-slide="prev">
+            <a 
+                className="carousel-control-prev" 
+                href="#carouselHeaderControls" 
+                role="button" 
+                data-slide="prev"
+            >
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="sr-only">Previous</span>
             </a>
-            <a className="carousel-control-next" href="#carouselHeaderControls" role="button" data-slide="next">
+            <a 
+                className="carousel-control-next" 
+                href="#carouselHeaderControls" 
+                role="button" 
+                data-slide="next"
+            >
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
             </a>

@@ -61,7 +61,8 @@ function Searcher () {
         </div>
         <div 
             className="modal-container" 
-            onClick={() => setShow(false)}>
+            onClick={() => setShow(false)}
+        >
             <ModalSearchs onClose={() => setShow(false)} show={show} />
         </div>
         </>

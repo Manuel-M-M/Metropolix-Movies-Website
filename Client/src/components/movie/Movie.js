@@ -17,11 +17,13 @@ function Movie ({movie}) {
     
     return(
         <div key={movie.id} className="wrap">
-            <img className="clickable" src={(movie.poster_path)} onClick={() => {
-                saveMovieId(movie.id);
-                handleGoToDetails();
-                console.log(movie.id);
-            }}
+            <img 
+                className="clickable" 
+                src={(movie.poster_path)} 
+                onClick={() => {
+                    saveMovieId(movie.id);
+                    handleGoToDetails();
+                }}
             />               
             <div className="cardData">
                 <h4 className="movie_list_title">{movie.title}</h4>

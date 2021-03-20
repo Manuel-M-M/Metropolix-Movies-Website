@@ -15,9 +15,13 @@ function Footer() {
                     onClick={() => {
                         history.push("/Home")
                     }}
-            ><h3 className="footerH3">Metropoli<span>X</span></h3>
+            ><h3 className="footerH3">Metropoli
+                <span>X</span>
+            </h3>
             </a>
-		    <p className="footer-company-name"><span>Created by:</span> Manuel Moraga Molina &copy; 2021</p>
+		    <p className="footer-company-name">
+                <span>Created by:</span> Manuel Moraga Molina &copy; 2021
+            </p>
 		</div>
 		<div className="footer-center">
             <div>
@@ -31,7 +35,16 @@ function Footer() {
 		</div>
 		<div className="footer-right">
 		    <div className="footer-icons">
-                <a href="https://www.themoviedb.org" target="_blank"><img id="footerLogo" src={Logo} alt=""/></a>
+                <a
+                    href="https://www.themoviedb.org" 
+                    target="_blank"
+                >
+                    <img 
+                        id="footerLogo" 
+                        src={Logo} 
+                        alt=""
+                    />
+                </a>
 		    </div>
 		</div>
 		</footer>

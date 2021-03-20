@@ -14,6 +14,7 @@ import ErrorUser from './pages/error/ErrorUser';
 import ErrorChat from './pages/error/ErrorChat';
 import MChat from './pages/mchat/MChat';
 import Trailer from './pages/trailer/Trailer';
+import Comments from "./pages/comments/Comments";
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import ContextProvider from './context/Context';
@@ -53,6 +54,7 @@ function App() {
           <Route path="/ErrorChat" exact component={ErrorChat} />
           <Route path="/MChat" exact component={MChat} />
           <Route path="/Trailer" exact component={Trailer} />
+          <Route path="/Comments" exact component={Comments} />
           <Footer />
         </BrowserRouter>
     </ContextProvider>
