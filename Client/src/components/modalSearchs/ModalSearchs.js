@@ -20,7 +20,7 @@ const ModalSearchs = props => {
                 </div>
                 <div className="container">
                     <div id="movie-container-display" className="movie-container home-margin">
-                        <div id="searchDiv" className="flex">
+                        <div id="searchDiv-modal" className="flex-modal">
                             {searchArray.map((movie) => {
                                 return (
                                     <Movie movie={movie}/>

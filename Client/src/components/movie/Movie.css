@@ -6,7 +6,7 @@
 .wrap {
     background-size: cover;
     background-position: center;
-    flex: 0 0 30vh;
+    flex: 1 1 30vh;
 }
 
 .wrap h4 {
@@ -16,6 +16,13 @@
 .wrap img {
     width: 150px;
     
+}
+
+.cardData {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .movie_list_title {

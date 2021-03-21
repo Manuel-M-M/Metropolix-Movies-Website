@@ -35,3 +35,10 @@
     border-top: 1px solid #373737;
     border-bottom: 1px solid #373737;
 }
+
+.flex-modal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 30px 50px 30px 50px;
+}

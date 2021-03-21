@@ -12,7 +12,7 @@
 
 .header_comments {
     display: flex;
-    flex-flow: row;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
 }
@@ -23,6 +23,7 @@
 }
 
 .wrap_body_comments {
+    min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/almuerzoNewYork.jpg);
     background-position: center center;
     background-size:cover;
@@ -57,7 +58,7 @@ h4 span {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
+    margin: 40px;
     text-align: justify;
 }
 
@@ -86,10 +87,22 @@ h4 span {
     font-size: x-small;
 }
 
-
-
 .card_comments h6 span {
     margin-left: 10px;
     font-family: 'Railway';
     font-size: x-small;
+}
+
+@media (max-width: 880px) {
+    .wrap_cards {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        margin: 0;
+        overflow: visible;
+    }
+
+    .card_comments {
+        margin: 20px 0;
+    }
 }

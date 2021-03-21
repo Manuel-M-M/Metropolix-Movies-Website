@@ -14,6 +14,7 @@
 footer{
 	
 	bottom: 0;
+	
 }
 .footer-distributed{
 	background-color: #000;
@@ -23,7 +24,7 @@ footer{
 	text-align: left;
 	font: bold 10px sans-serif;
  
-	padding: 5px 50px;
+	padding: 0px 50px;
 	margin-top: 0px;
 }
  
