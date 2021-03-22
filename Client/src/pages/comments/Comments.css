@@ -30,7 +30,7 @@
     margin: 20px;
 }
 
-h4 { 
+.h4_comments { 
     margin-top: 20px;
 	position: relative; 
 	float: left;
@@ -45,7 +45,7 @@ h4 span {
     width:0;
     background: var(--fondo);
     border-left: 3px solid #fff;
-    animation: escribir 5s steps(30) infinite alternate;
+    animation: escribir 4s steps(30) infinite alternate;
 }
 
 @keyframes escribir {
@@ -93,16 +93,36 @@ h4 span {
     font-size: x-small;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 680px) {
     .wrap_cards {
         display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        margin: 0;
+        flex-flow: row wrap;
+        justify-content: start;
+        margin-left: 20px;
+        
         overflow: visible;
     }
 
     .card_comments {
         margin: 20px 0;
+    }
+
+    .header_comments_btn {
+        margin-left: 10px;
+    }
+
+    .h4_comments {
+        margin-right: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    .wrap_cards {
+        width: 200px;
+    }
+
+    .h4_comments {
+        margin-right: 240px;
+        font-size: xx-large;
     }
 }

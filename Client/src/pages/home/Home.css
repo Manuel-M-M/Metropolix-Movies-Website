@@ -56,7 +56,7 @@ h2 span {
     width:0;
     background: var(--fondo);
     border-left: 3px solid #fff;
-    animation: escribir 5s steps(30) infinite alternate;
+    animation: escribir 3s steps(30) infinite alternate;
 }
 
 @keyframes escribir {

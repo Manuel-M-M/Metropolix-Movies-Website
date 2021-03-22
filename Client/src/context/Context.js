@@ -127,6 +127,33 @@ const ContextProvider = (props) => {
             .catch(error => alert("Algo no funciona..."))              
     }
 
+    const [CommentsArray, saveCommentsArray] = useState([]);
+
+    let commentsPath = "";
+
+    const handleGetComments = () => {
+        
+        var token = localStorage.getItem('token');
+
+        commentsPath = `http://localhost:8000/getComments/${MovieId}`;
+            
+        fetch(commentsPath, {
+            headers: {
+            'Authorization': 'Bearer ' + token
+        }})
+        
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                saveCommentsArray(data);
+            })
+            .catch(error => alert("Algo no funciona..."))              
+    }
+
 
 
     
@@ -136,7 +163,7 @@ const ContextProvider = (props) => {
         setHomeMoviesArray, handleIncrementMovies, handleDecrementMovies, maxPages, MovieId, 
         saveMovieId, MovieDetails, saveMovieDetails, FavouritesArray, saveFavouritesArray,
         handleGetFavourites, SeensArray, saveSeensArray, handleGetSeens, PendingsArray, savePendingsArray,
-        handleGetPendings}}>
+        handleGetPendings, CommentsArray, saveCommentsArray, handleGetComments}}>
             {props.children}
         </Context.Provider>
     )

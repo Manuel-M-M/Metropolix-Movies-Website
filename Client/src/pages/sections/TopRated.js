@@ -1,96 +1,47 @@
-import { useContext, useState, useEffect } from "react";
-// import { Context } from '../../context/Context';
-import { ModalContext } from '../../context/ModalContext';
-import { useHistory } from 'react-router-dom';
+import {useState, useEffect } from "react";
 import './Sections.css';
 import Movie from "../../components/movie/Movie";
 import HeaderBody from "../../components/headerBody/HeaderBody";
-
-// import MovieDetailsModal from '../../components/modal/MovieDetailsModal';
-
-// const api_key = "73335406cba0f2d2b6be748d34df365b";
-// const getImage = (path) => `https://image.tmdb.org/t/p/w300/${path}`;
+import Searcher from "../../components/searcher/Searcher";
 
 
 function TopRated() {
 
-    // const {topRatedMoviesPath, setTopRatedMoviesPath, topRatedMoviesArray, setTopRatedMoviesArray,
-    // maxPages, setMaxPages, actualPage, setActualPage, handleIncrementTopRatedMovies, handleDecrementTopRatedMovies} = useContext(Context);
+    const topRatedMoviesPath = 'http://localhost:8000/topRated';
+    const [topRatedMoviesArray, setTopRatedMoviesArray] = useState([]);
 
-    // const { MovieId, saveMovieId, MovieDetails, saveMovieDetails, MovieDetailsPath, setMovieDetailsPath, modalStyle,
-    // open, setOpen, classes} = useContext(ModalContext);
+    useEffect(() => {
+
+        fetch(topRatedMoviesPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Algo no funciona...");
+                }
+                return response.json();
+            })
+            .then(data => {
+                setTopRatedMoviesArray(data);
+            })
+            .catch(error => alert("Algo no funciona..."))
+    }, [topRatedMoviesPath]);
+
     
-    // const history = useHistory();
-
-    // const handleGoToDetails = () => {
-    //     history.push("/Details")
-    // }
-
-    // // const handleOpen = () => {
-    // //     setOpen(true);
-    // // }
-
-    // const [topRatedMoviesPath, setTopRatedMoviesPath] = useState(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=1`) 
-    // const [topRatedMoviesArray, setTopRatedMoviesArray] = useState([]);
-    // const [actualPage, setActualPage] = useState(1);
-
-    // const maxPages = 16
-
-    // useEffect(() => {
-    //     console.log(topRatedMoviesPath);
-
-    //     //const newUrl = URL + "&page=${}"
-    //     fetch(topRatedMoviesPath)
-    //         .then(response => {
-    //             if (!response.ok) {
-    //                 throw new Error("Algo no funciona...");
-    //             }
-    //             return response.json();
-    //         })
-    //         .then(data => {
-    //             setTopRatedMoviesArray(data.results);
-    //             //setMaxPages(data.total_pages);
-    //         })
-    //         .catch(error => alert("Algo no funciona..."))
-    // }, [topRatedMoviesPath]);
-
-    // const handleIncrementTopRatedMovies = () => {
-    //     if (actualPage<maxPages) {
-    //         let nextPage = actualPage +1
-    //         setActualPage(nextPage);
-    //         setTopRatedMoviesPath(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=${nextPage}`);
-    //     }
-    //   };
-
-    // const handleDecrementTopRatedMovies = () => {
-    //     if (actualPage>1) {
-    //         let nextPage = actualPage -1
-    //         setActualPage(actualPage-1);
-    //         setTopRatedMoviesPath(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&language=en-US&page=${nextPage}`);
-    //     }
-    //   };
-    
-    // return (
-    //     <>
-    //         <div className="container">
-    //             <HeaderBody title="Top Rated Movies"/>
-    //             <div className="movie-container">
-    //                 <div className="flex">
-    //                     {topRatedMoviesArray.map((movie) => {
-    //                         return (                              
-    //                             <Movie movie={movie}/>                                   
-    //                         )})}                      
-    //                 </div>
-    //             </div>
-                
-    //             <div className="row justify-content-center mt-3 mb-3">
-    //                 <button className="btn btn-transparent mr-1" onClick={handleDecrementTopRatedMovies}>-</button>
-    //                 <button className="btn btn-transparent ml-1" onClick={handleIncrementTopRatedMovies}>+</button>
-    //             </div>
-                
-    //         </div>
-    //     </>
-    // );
+    return (
+        <>
+            <Searcher />
+            <div className="container">
+                <HeaderBody title="Top 20 Top Rated Movies"/>
+                <div className="movie-container">
+                    <div className="flex">
+                        {topRatedMoviesArray.map((movie) => {
+                            return (                              
+                                <Movie movie={movie}/>                                   
+                            )})}                      
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default TopRated;

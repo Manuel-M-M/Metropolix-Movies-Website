@@ -9,7 +9,7 @@ import '../../css/sections.css';
 
 function DetailsMovie () {
 
-    const { saveMovieDetails, MovieDetails, MovieId, isLogin } = useContext(Context);
+    const { saveMovieDetails, MovieDetails, MovieId, isLogin, handleGetComments } = useContext(Context);
 
     let detailPath = '';
     
@@ -133,33 +133,6 @@ function DetailsMovie () {
         } else {
             setToggleComments(true)
         }
-    }
-
-    const [CommentsArray, saveCommentsArray] = useState([]);
-
-    let commentsPath = "";
-
-    const handleGetComments = () => {
-        
-        var token = localStorage.getItem('token');
-
-        commentsPath = `http://localhost:8000/getComments`;
-            
-        fetch(commentsPath, {
-            headers: {
-            'Authorization': 'Bearer ' + token
-        }})
-        
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Algo no funciona...");
-                }
-                return response.json();
-            })
-            .then(data => {
-                saveCommentsArray(data);
-            })
-            .catch(error => alert("Algo no funciona..."))              
     }
 
 

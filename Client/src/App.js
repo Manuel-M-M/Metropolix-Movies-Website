@@ -3,7 +3,6 @@ import { BrowserRouter, Redirect, Route, useLocation } from 'react-router-dom';
 import './css/App.css';
 import Home from './pages/home/Home';
 import TopRated from './pages/sections/TopRated';
-import Upcomings from './pages/sections/Upcomings';
 import Popular from './pages/sections/Popular';
 import Details from './pages/details/Details';
 import Signin from './pages/signin/Signin';
@@ -44,7 +43,6 @@ function App() {
           <Route path="/Home" exact component={Home} />
           <Route path="/TopRated" exact component={TopRated} />
           <Route path="/Popular" exact component={Popular} />
-          <Route path="/Upcomings" exact component={Upcomings} />
           <Route path="/Details" exact component={Details} />
           <Route path="/Signin" exact component={Signin} />
           <Route path="/Signup" exact component={Signup} />

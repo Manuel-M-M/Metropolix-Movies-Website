@@ -28,12 +28,6 @@ const DropDown = () => {
         history.push("/Popular")
     };
 
-    const handleUpcomingM = (e) => {
-        e.preventDefault();
-        setActualPage(1);
-        history.push("/Upcomings")
-    };
-
   
     return (
         
@@ -51,9 +45,6 @@ const DropDown = () => {
             </li>
             <li>
               <a href="#" onClick={handlePopularM}>Popular</a>
-            </li>
-            <li>
-              <a href="#" onClick={handleUpcomingM}>Upcomings</a>
             </li>
           </ul>
         </nav>
