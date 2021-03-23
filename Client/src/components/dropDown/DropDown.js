@@ -41,10 +41,10 @@ const DropDown = () => {
         >
           <ul>
             <li>
-              <a href="#" onClick={handleTopRatedM}>Top Rated</a>
+              <a href="123" onClick={handleTopRatedM}>Top Rated</a>
             </li>
             <li>
-              <a href="#" onClick={handlePopularM}>Popular</a>
+              <a href="456" onClick={handlePopularM}>Popular</a>
             </li>
           </ul>
         </nav>

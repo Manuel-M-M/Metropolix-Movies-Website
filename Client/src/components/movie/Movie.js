@@ -19,7 +19,8 @@ function Movie ({movie}) {
         <div key={movie.id} className="wrap">
             <img 
                 className="clickable" 
-                src={(movie.poster_path)} 
+                src={(movie.poster_path)}
+                alt="movie" 
                 onClick={() => {
                     saveMovieId(movie.id);
                     handleGoToDetails();

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "./DetailsMovie.css";
 import { Context } from '../../context/Context';
 import CommentBox from "../commentBox/CommentBox";
-import StarRating from "../starRating/StarRating";
 import '../../css/sections.css';
 
 
@@ -47,7 +46,7 @@ function DetailsMovie () {
             }
         })
         .then(response  => response.json())
-        // setChecked(true)
+        setCheckedFav(true)
         .catch( error => console.log(error) ); 
         }    
     }
@@ -65,7 +64,7 @@ function DetailsMovie () {
             }
         })
         .then(response  => response.json())
-        // setChecked(true)
+        setCheckedSeens(true)
         .catch( error => console.log(error) ); 
         }    
     }
@@ -83,13 +82,13 @@ function DetailsMovie () {
             }
         })
         .then(response  => response.json())
-        // setChecked(true)
+        setCheckedPendings(true)
         .catch( error => console.log(error) ); 
         }    
     }
 
     const [text, saveText] = useState("");
-    // const [rate, saveRate] = useState(null);
+    
 
     const handleCommentSubmit = (event) => {
         event.preventDefault();
@@ -101,7 +100,6 @@ function DetailsMovie () {
 
             const formData = new FormData();
             formData.append('text', text);
-            // formData.append('rate', rate);
 
             fetch(`http://localhost:8000/addComments/${MovieId}`, {
             method: 'POST',
@@ -120,10 +118,6 @@ function DetailsMovie () {
     const handleText = (event)=>{
         saveText(event.target.value);
     }
-
-    // const handleRate = (event)=>{
-    //     saveRate(event.target.value);
-    // }
 
     const [toggleComments, setToggleComments] = useState(true);
 
@@ -240,10 +234,6 @@ function DetailsMovie () {
                                 }} 
                                 className="comment-form"
                             >
-                                <StarRating 
-                                    // value={rate}
-                                    // onChange={handleRate}
-                                />
                                 <CommentBox 
                                     value={text}
                                     onChange={handleText}

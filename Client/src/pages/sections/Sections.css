@@ -1,13 +1,18 @@
+.main_section {
+    min-height: 100vh;
+}
+
 .container {
     display: flex;
     flex-flow: column nowrap;
 }
 
 .title-page {
-    margin: 0 auto;
+    /* margin: 0 ; */
     padding: 0 auto;
     display: flex;
     margin-bottom: 40px;
+    margin-top: 0px;
 }
 
 .movie-container {
@@ -22,6 +27,7 @@
     font-size: large;
     font-family: 'Bebas Neue', sans-serif;
     color: whitesmoke;
+    margin-top: 10px;
 }
 
 .flex {

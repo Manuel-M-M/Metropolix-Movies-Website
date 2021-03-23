@@ -5,7 +5,7 @@ import "./Comments.css";
 
 function Comments () {
 
-    const { CommentsArray, saveCommentsArray } = useContext(Context);
+    const { CommentsArray } = useContext(Context);
 
     return (
         <div className="container-comments">

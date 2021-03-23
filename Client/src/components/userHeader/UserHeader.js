@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { Context } from '../../context/Context';
-import { BrowserRouter, NavLink, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 import Favourites from '../../pages/user/pages/Favourites';
 import Seens from '../../pages/user/pages/Seens';
 import Pendings from '../../pages/user/pages/Pendings';

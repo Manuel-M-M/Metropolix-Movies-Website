@@ -27,20 +27,21 @@ function TopRated() {
 
     
     return (
-        <>
-            <Searcher />
-            <div className="container">
-                <HeaderBody title="Top 20 Top Rated Movies"/>
-                <div className="movie-container">
-                    <div className="flex">
-                        {topRatedMoviesArray.map((movie) => {
-                            return (                              
-                                <Movie movie={movie}/>                                   
-                            )})}                      
+            <div className="main_section">
+                <Searcher />
+                <div className="container_section">
+                    <HeaderBody title="Top 20 Rated Movies"/>
+                    <div className="movie-container">
+                        <div className="flex">
+                            {topRatedMoviesArray.map((movie) => {
+                                return (
+                                    <Movie movie={movie}/>
+                                )})}
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
+        
     );
 }
 

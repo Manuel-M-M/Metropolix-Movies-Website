@@ -4,7 +4,6 @@ import { Context } from '../../context/Context';
 import './User.css';
 import UserHeader from '../../components/userHeader/UserHeader';
 import HeaderBody from '../../components/headerBody/HeaderBody';
-import jwt_decode from 'jwt-decode';
 
 
 function User () {

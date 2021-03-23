@@ -11,7 +11,7 @@ function Footer() {
        <footer className="footer-distributed">
  
 		<div className="footer-left">
-            <a href="#" 
+            <a href="123" 
                     onClick={() => {
                         history.push("/Home")
                     }}
@@ -38,6 +38,7 @@ function Footer() {
                 <a
                     href="https://www.themoviedb.org" 
                     target="_blank"
+                    rel="noreferrer"
                 >
                     <img 
                         id="footerLogo" 

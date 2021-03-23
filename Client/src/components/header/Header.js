@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { Context } from '../../context/Context';
@@ -94,4 +94,3 @@ function Header() {
 };
 
 export default Header;
-
