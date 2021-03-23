@@ -8,15 +8,19 @@ function Trailer () {
 
     return (
         <div className="trailer-container">
-            {/* <div className="trailer-wrap"> */}
                 <div className="wrap-title">
-                    <h3 className="trailer-title">Pulp Fiction</h3>
+                    <button className="btn btn-transparent mr-5 header_comments_btn"
+                        onClick={() => {
+                            window.history.back();
+                        }}
+                    >Go Back
+                    </button>
+                    <h3 className="trailer-title">{MovieDetails.title}</h3>
                 </div>
                 <div className="box-wrap">
-                    <iframe className="trailer-box" src={MovieDetails.video_path} frameborder="1"></iframe>
+                    <iframe title={MovieDetails.id} className="trailer-box" src={MovieDetails.video_path} frameBorder="0"></iframe>
                 </div>
             </div>
-        // </div>
     );
 };
 

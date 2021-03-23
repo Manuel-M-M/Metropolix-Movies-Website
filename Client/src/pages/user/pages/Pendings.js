@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../../context/Context';
 import '../User.css';
+import './UserList.css';
 
 
 function Pendings () {
@@ -26,35 +27,35 @@ function Pendings () {
     
 
     return (
-        <div className="container">
-            <div className="title">
+        <div className="container-userList">
+            <div className="title-userList">
                 <h3>Pendings</h3>
             </div>
             <div className="userList">
-                <div className="ul">
-                    <div className="ul">
-                    <ul>{PendingsArray.map((movie) => {
+                <div className="ul-userList">
+                    <ul className="userList-ul">{PendingsArray.map((movie) => {
                         return (
-                            <li>
-                                <div className="poster-fav">
-                                    <img src={movie.poster_path} alt=""/>
-                                </div>
-                                <div className="title-fav">
-                                    {movie.title}
-                                </div>
-                                <div className="btn-user-movies">
-                                    <button 
-                                        className="btn btn-danger btn-u-list"
-                                        onClick={(e) => {
-                                            handleDeletePendings(e, movie.id);
-                                         }}
-                                    >X
-                                    </button>
-                                </div>
-                            </li>
+                            <div className="userList-li">
+                                <li>
+                                    <div className="poster-fav">
+                                        <img src={movie.poster_path} alt=""/>
+                                    </div>
+                                    <div className="title-fav">
+                                            {movie.title}
+                                    </div>
+                                    <div className="btn-user-movies">
+                                        <button 
+                                            className="btn btn-danger btn-u-list"
+                                            onClick={(e) => {
+                                                handleDeletePendings(e, movie.id);
+                                            }}
+                                        >X
+                                        </button>
+                                    </div>
+                                </li>
+                            </div>
                         )})}
                     </ul>
-                    </div>
                 </div>
             </div>
         </div>

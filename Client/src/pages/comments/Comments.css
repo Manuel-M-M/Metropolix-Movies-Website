@@ -17,8 +17,12 @@
     align-items: center;
 }
 
+.header_comments_btn {
+    margin-right: 30px;
+}
+
 .wrap_title_comments {
-    margin: auto;
+    
 	display: table;
 }
 
@@ -97,7 +101,7 @@ h4 span {
     .wrap_cards {
         display: flex;
         flex-flow: row wrap;
-        justify-content: start;
+        justify-content: flex-start;
         margin-left: 20px;
         
         overflow: visible;
@@ -116,13 +120,21 @@ h4 span {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 4500px) {
+
+    .header_comments {
+        margin-right: 50px;
+    }
+
     .wrap_cards {
         width: 200px;
     }
 
     .h4_comments {
-        margin-right: 240px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
         font-size: xx-large;
     }
 }

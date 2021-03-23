@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../../context/Context';
 import '../User.css';
+import './UserList.css';
 
 
 function Seens () {
@@ -26,33 +27,35 @@ function Seens () {
 
 
     return (
-        <div className="container">
-            <div className="title">
+        <div className="container-userList">
+            <div className="title-userList">
                 <h3>Seens</h3>
             </div>
             <div className="userList">
-                <div className="ul">
-                <ul>{SeensArray.map((movie) => {
-                        return (
-                            <li>
-                                <div className="poster-fav">
-                                    <img src={movie.poster_path} alt=""/>
+                <div className="ul-userList">
+                    <ul className="userList-ul">{SeensArray.map((movie) => {
+                            return (
+                                <div className="userList-li">
+                                    <li>
+                                        <div className="poster-fav">
+                                            <img src={movie.poster_path} alt=""/>
+                                        </div>
+                                        <div className="title-fav">
+                                            {movie.title}
+                                        </div>
+                                        <div className="btn-user-movies">
+                                            <button 
+                                                className="btn btn-danger btn-u-list"
+                                                onClick={(e) => {
+                                                    handleDeleteSeens(e, movie.id);
+                                                }}
+                                            >X
+                                            </button>
+                                        </div>
+                                    </li>
                                 </div>
-                                <div className="title-fav">
-                                    {movie.title}
-                                </div>
-                                <div className="btn-user-movies">
-                                    <button 
-                                        className="btn btn-danger btn-u-list"
-                                        onClick={(e) => {
-                                            handleDeleteSeens(e, movie.id);
-                                         }}
-                                    >X
-                                    </button>
-                                </div>
-                            </li>
-                        )})}
-                    </ul>
+                            )})}
+                        </ul>
                 </div>
             </div>
         </div>

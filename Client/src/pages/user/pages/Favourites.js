@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../../context/Context';
 import '../User.css';
+import './UserList.css';
 
 
 function Favourites () {
@@ -26,31 +27,33 @@ function Favourites () {
     
 
     return (
-        <div className="container">
-            <div className="title">
+        <div className="container-userList">
+            <div className="title-userList">
                 <h3>Favourites</h3>
             </div>
             <div className="userList">
-                <div className="ul">
-                    <ul>{FavouritesArray.map((movie) => {
+                <div className="ul-userList">
+                    <ul className="userList-ul">{FavouritesArray.map((movie) => {
                         return (
-                            <li>
-                                <div className="poster-fav">
-                                    <img src={movie.poster_path} alt=""/>
-                                </div>
-                                <div className="title-fav">
-                                    {movie.title}
-                                </div>
-                                <div className="btn-user-movies">
-                                    <button 
-                                        className="btn btn-danger btn-u-list"
-                                        onClick={(e) => {
-                                            handleDeleteFavourites(e, movie.id);
-                                         }}
-                                    >X
-                                    </button>
-                                </div>
-                            </li>
+                            <div key={movie.id} className="userList-li">
+                                <li>
+                                    <div className="poster-fav">
+                                        <img src={movie.poster_path} alt=""/>
+                                    </div>
+                                    <div className="title-fav">
+                                        {movie.title}
+                                    </div>
+                                    <div className="btn-user-movies">
+                                        <button 
+                                            className="btn btn-danger btn-u-list"
+                                            onClick={(e) => {
+                                                handleDeleteFavourites(e, movie.id);
+                                             }}
+                                        >X
+                                        </button>
+                                    </div>
+                                </li>
+                            </div>
                         )})}
                     </ul>
                 </div>

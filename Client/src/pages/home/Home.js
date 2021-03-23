@@ -19,7 +19,7 @@ function Home() {
                 <Carousel />
             </div>
             <div className="container-home">
-                <div class="contenedor">
+                <div className="contenedor">
 			        <h2>MOVIES: <span>&#160; </span> </h2>
 		        </div>
                 <div id="movie-container-display" className="movie-container home-margin">
@@ -27,7 +27,7 @@ function Home() {
                         {homeMoviesArray.map((movie) => {
                             return (
                              
-                                <Movie movie={movie}/>
+                                <Movie key={movie.id} movie={movie}/>
                         
                             )})}
                     </div>

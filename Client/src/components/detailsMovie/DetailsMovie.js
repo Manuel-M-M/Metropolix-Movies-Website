@@ -37,54 +37,61 @@ function DetailsMovie () {
         
         var token = localStorage.getItem('token');
 
-        if (checkedFav === false) {
-        fetch(`http://localhost:8000/addFavourites/${MovieId}`, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(response  => response.json())
-        setCheckedFav(true)
-        .catch( error => console.log(error) ); 
-        }    
+        if (checkedFav === false && isLogin === true) {
+            fetch(`http://localhost:8000/addFavourites/${MovieId}`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(response  => response.json())
+            // setCheckedFav(true)
+            .catch( error => console.log(error) ); 
+        } else {
+            alert("Error. Try to sign in or create an account")
+        }   
+
     }
 
     const handleSeens = () => {
         
         var token = localStorage.getItem('token');
 
-        if (checkedSeens === false) {
-        fetch(`http://localhost:8000/addSeens/${MovieId}`, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(response  => response.json())
-        setCheckedSeens(true)
-        .catch( error => console.log(error) ); 
-        }    
+        if (checkedSeens === false && isLogin === true) {
+            fetch(`http://localhost:8000/addSeens/${MovieId}`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(response  => response.json())
+            // setCheckedSeens(true)
+            .catch( error => console.log(error) ); 
+        } else {
+            alert("Error. Try to sign in or create an account")
+        }      
     }
 
     const handlePendings = () => {
         
         var token = localStorage.getItem('token');
 
-        if (checkedPendings === false) {
-        fetch(`http://localhost:8000/addPendings/${MovieId}`, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(response  => response.json())
-        setCheckedPendings(true)
-        .catch( error => console.log(error) ); 
-        }    
+        if (checkedPendings === false && isLogin === true) {
+            fetch(`http://localhost:8000/addPendings/${MovieId}`, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(response  => response.json())
+            // setCheckedPendings(true)
+            .catch( error => console.log(error) ); 
+        } else {
+            alert("Error. Try to sign in or create an account")
+        }   
     }
 
     const [text, saveText] = useState("");
@@ -93,8 +100,8 @@ function DetailsMovie () {
     const handleCommentSubmit = (event) => {
         event.preventDefault();
 
-        if ( isLogin === false && text.trim() === "" ) {
-            alert("You need to sign in or the comment box are empty")
+        if ( isLogin === false || text.trim() === "" ) {
+            alert("You need to sign in or create and account or the comment box are empty")
         } else {
             var token = localStorage.getItem('token');
 
@@ -127,6 +134,14 @@ function DetailsMovie () {
         } else {
             setToggleComments(true)
         }
+    }
+
+    const handleGocomments = () => {
+        if (isLogin === true) {
+            window.history.back();
+        }else {
+            alert("Error. Try to login or create an account")
+        }  
     }
 
 
@@ -244,25 +259,26 @@ function DetailsMovie () {
                             </form>
                             
                             <div className="video-details">
-                                    <iframe src={MovieDetails.video_path} frameborder="1"></iframe>
+                                    <iframe title={MovieDetails.id} src={MovieDetails.video_path} frameBorder="0"></iframe>
                             </div>
                             <div className="linkDetails">  
                                 <p>
-                                    <Link to={'/Media'} className="account-link">
+                                    <Link to={'/Trailer'} className="account-link">
                                         Go to big screen trailer
                                     </Link>
                                 </p>
                                 <p>
-                                    <Link 
-                                        to={'/Comments'} 
+                                    <a 
+                                        src="123" 
                                         className="account-link"
                                         onClick={() => {
                                             handleRouteComments()
                                             handleGetComments()
+                                            handleGocomments()
                                         }} 
                                     >
                                         Show comments
-                                    </Link>
+                                    </a>
                                 </p>
                             </div>
                             <button className="btn btn-transparent mr-5"

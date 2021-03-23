@@ -20,7 +20,6 @@ function Searcher () {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
                 setSearchArray([...data]);                  
             })
             .catch(error => alert("Algo no funciona correctamente..."))
@@ -41,7 +40,7 @@ function Searcher () {
 
     return (
         <>
-        <div className="container mt-3">
+        <div className="container-searcher mt-3">
             <div className="row justify-content-center align-items-center wrapSearcher">
                 <div className="div-searcher col-6">
                     <input 
