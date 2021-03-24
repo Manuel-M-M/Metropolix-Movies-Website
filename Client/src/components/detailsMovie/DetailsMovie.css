@@ -8,6 +8,13 @@
     --negro: #000000; 
 }
 
+.empty-details {
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/cinema-scaled.jpg);
+    background-position: center center;
+    background-size:cover;
+    height: 100vh;
+}
+
 .mainDetails {
     background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/cinema-scaled.jpg);
     background-position: center center;

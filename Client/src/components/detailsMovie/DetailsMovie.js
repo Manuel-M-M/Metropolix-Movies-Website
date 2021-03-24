@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 import "./DetailsMovie.css";
 import { Context } from '../../context/Context';
 import CommentBox from "../commentBox/CommentBox";
@@ -24,6 +24,7 @@ function DetailsMovie () {
             })
             .then(data => {
                 saveMovieDetails(data);
+                //frame.contentWindow.location.replace(data.video_path);
             })
             .catch(error => alert("Algo no funciona..."))         
     }, [MovieId]);
@@ -147,6 +148,14 @@ function DetailsMovie () {
 
     return (
             <div className="mainDetails">
+
+                         {/* {
+                !MovieDetails &&
+                <div></div>
+                         } */}
+
+                {
+                MovieDetails &&
                 <div className="containerDetails details">
                 <img className="imgDetails" src={MovieDetails.backdrop_path} alt={MovieDetails.title}/>            
                         <h2 className="mt-2">{MovieDetails.title}</h2>
@@ -258,9 +267,12 @@ function DetailsMovie () {
                                 </div>
                             </form>
                             
-                            <div className="video-details">
+                            {
+                              MovieDetails?.video_path &&  
+                              <div className="video-details">
                                     <iframe title={MovieDetails.id} src={MovieDetails.video_path} frameBorder="0"></iframe>
-                            </div>
+                              </div>
+                            }
                             <div className="linkDetails">  
                                 <p>
                                     <Link to={'/Trailer'} className="account-link">
@@ -283,12 +295,17 @@ function DetailsMovie () {
                             </div>
                             <button className="btn btn-transparent mr-5"
                             onClick={() => {
+                                
                                 window.history.back();
+                                console.log('después del history.back');
+                                saveMovieDetails({...MovieDetails, video_path: ''});
+                                // saveMovieDetails(null);
                             }}
                             >Go Back
                             </button>
                         </div>        
                 </div>
+                }
             </div>            
     )
 }

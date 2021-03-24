@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-// import jwt_decode from 'jwt-decode';
 import './Signup-Signin.css';
 
 const Signin = () => {
@@ -38,11 +37,13 @@ const Signin = () => {
             .then( response => response.json()
             .then(
                 response => {
-                console.log('hola');
-                localStorage.setItem('token', response.token); // guardar token en localstorage
-                console.log('adios');
+                if (response.code === 401) {
+                    alert("Invalid credentials. Try again.")
+                } else {
+                    localStorage.setItem('token', response.token); 
                 setIslogin(true);
                 history.push("/User");
+                }
             }
             )
             .catch(
