@@ -12,27 +12,31 @@ function User () {
 
     const history = useHistory();
 
-    const handleSubmit = (e)=>{
-         e.preventDefault();
+    const handleSubmit = (e) => {
+        
 
-        var token = localStorage.getItem('token');
+        if (window.confirm('Are you sure you want to remove your account?')) {
+            e.preventDefault();
 
-        fetch(`http://localhost:8000/deleteUser`, {
-            method: 'DELETE',
-            mode: 'cors',
-            headers: {
-                'Authorization': 'Bearer ' + token
-            }
-        })
-        .then(response => response.json())
-        .then(
-            resp => {
-                setIslogin(true);
+            var token = localStorage.getItem('token');
 
-                history.push("/Home")               
-            } 
-        ).catch( error => console.log(error) ); 
-     }
+            fetch(`http://localhost:8000/deleteUser`, {
+                method: 'DELETE',
+                mode: 'cors',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(response => response.json())
+            .then(
+                resp => {
+                    setIslogin(true);
+
+                    history.push("/Home")               
+                } 
+            ).catch( error => console.log(error) );
+        } 
+    }
 
      const handleLogout = (e) => {
         e.preventDefault();

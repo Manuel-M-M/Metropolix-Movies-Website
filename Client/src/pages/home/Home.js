@@ -1,4 +1,5 @@
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
+import { useLocation } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import "./Home.css";
 import "../../css/sections.css";
@@ -6,6 +7,16 @@ import Carousel from '../../components/carousel/Carousel';
 import Searcher from "../../components/searcher/Searcher";
 import Movie from "../../components/movie/Movie";
 
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+}
 
 function Home() {
 
@@ -18,6 +29,7 @@ function Home() {
             <div id="carousel" className="carouselDisplayActive">
                 <Carousel />
             </div>
+            <ScrollToTop />
             <div className="container-home">
                 <div className="contenedor">
 			        <h2>MOVIES: <span>&#160; </span> </h2>

@@ -1,15 +1,25 @@
 import { useContext } from 'react';
 import { Context } from '../../../context/Context';
+import { useHistory, Link } from 'react-router-dom';
 import '../User.css';
 import './UserList.css';
 
 
 function Favourites () {
 
-    const { FavouritesArray, saveFavouritesArray } = useContext(Context);
+    const { FavouritesArray, saveFavouritesArray, saveMovieId, MovieId, saveMovieDetails } = useContext(Context);
 
+    const history = useHistory();
+
+    const handleGoToDetails = () => {
+        history.push("/Details");
+    }
+
+    
+    console.log();
     const handleDeleteFavourites = (e, id)=>{
         e.preventDefault();
+        console.log('hola');
 
        var token = localStorage.getItem('token');
 
@@ -38,7 +48,17 @@ function Favourites () {
                             <div key={movie.id} className="userList-li">
                                 <li>
                                     <div className="poster-fav">
-                                        <img src={movie.poster_path} alt=""/>
+                                        {/* <Link to="/Details"> */}
+                                            <img
+                                                className="click" 
+                                                src={movie.poster_path} 
+                                                alt=""
+                                                onClick={() => {
+                                                    saveMovieId(movie.id);
+                                                    handleGoToDetails();
+                                                }}
+                                            />
+                                        {/* </Link> */}
                                     </div>
                                     <div className="title-fav">
                                         {movie.title}

@@ -1,4 +1,4 @@
-.userList-ul {
+/* .userList-ul {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -17,6 +17,10 @@
     height: 200px;
 }
 
+.click {
+    cursor: pointer;
+}
+
 .title-fav {
     display: flex;
     flex-flow: column;
@@ -27,4 +31,4 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-}
+} */
