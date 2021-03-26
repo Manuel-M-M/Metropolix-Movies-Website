@@ -27,6 +27,8 @@
 }
 
 .wrap_body_comments {
+    display: flex;
+    flex-flow: row;
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/almuerzoNewYork.jpg);
     background-position: center center;
@@ -67,7 +69,20 @@ h4 span {
 }
 
 .card_comments {
-    max-width: 300px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    /* max-width: 300px; */
+    /* background: rgb(20, 20, 20, 0.5);
+    margin: 20px;
+    border: 2px solid var(--verde);
+    border-radius: 10px; */
+}
+
+.wrap_card_body {
+    width: 300px;
+    margin-right: 20px; 
     background: rgb(20, 20, 20, 0.5);
     margin: 20px;
     border: 2px solid var(--verde);

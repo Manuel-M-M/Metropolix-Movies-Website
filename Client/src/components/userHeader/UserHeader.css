@@ -1,13 +1,7 @@
-/* :root {
+root {
     --verde:  #21c470;
     --fondo: #141414;
-}
-
-/* nav {
-    display: flex;
-    flex-flow: column;
-    
-} */
+} 
 
 .ul-user {
     display: flex;
@@ -17,7 +11,9 @@
 }
 
 .ul-user li {
-    cursor:pointer
+    cursor:pointer;
+    color: var(--verde);
+    list-style: none;
 }
 
 .userList-li li {
@@ -30,56 +26,5 @@
 
 .poster-fav img {
     height: 200px;
-}
-
-/* .wrap-list-user {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .container-userList {
-    width: 90%;
-} */
-
-/* .main-container-header-list {
-    display: flex;
-    flex-flow: row ;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-/* .nav-userlist {
-    position: static;
-    display: flex;
-    flex-flow: row;
-} */
-
-/* .title-fav, .title-seens,
-.title-pendings {
-    position: static;
-} */
-
-/* .main-container-header-list .userLink {
-    margin-top: 30px;
-    color: var(--verde);
     cursor: pointer;
-    position: static;
 }
-
-.container-wrap-list {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    position: static;
-}
-
-.wrap-list-fav, .wrap-list-seens, .wrap-list-pendings {
-    width: 100vh;
-}
-
-.container-userList {
-    min-width: 100vh;
-}  */

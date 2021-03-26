@@ -21,16 +21,17 @@ function Comments () {
                 </div>
             </div>
             <div className="wrap_body_comments">
-                    <div className="wrap_cards">
-                        <div className="card_comments">{CommentsArray.map((comments) => {
-                            return (
-                                <div className="wrap_card_body">
-                                    <h6>{comments.user} <span> {comments.date}</span></h6>
-                                    <p>{comments.text}</p>
-                                </div>
-                            )})}
-                        </div>
-                    </div>
+                    {/* <div className="wrap_cards"> */}
+                            <div className="card_comments">{CommentsArray.map((comments) => {
+                                return (
+                                    <div className="wrap_card_body">
+                                        <h6>{comments.user} <span> {comments.date}</span></h6>
+                                        <p>{comments.text}</p>
+                                    </div>
+                                )})}
+                              
+                            </div>
+                     {/* </div>   */}
             </div>
         </div>
     )

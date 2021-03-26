@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, Router } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import "./DetailsMovie.css";
 import { Context } from '../../context/Context';
 import CommentBox from "../commentBox/CommentBox";
-import '../../css/sections.css';
+
 
 
 function DetailsMovie () {
@@ -24,7 +24,6 @@ function DetailsMovie () {
             })
             .then(data => {
                 saveMovieDetails(data);
-                //frame.contentWindow.location.replace(data.video_path);
             })
             .catch(error => alert("Algo no funciona..."))         
     }, [MovieId]);
@@ -47,7 +46,7 @@ function DetailsMovie () {
                 }
             })
             .then(response  => response.json())
-            // setCheckedFav(true)
+            
             .catch( error => console.log(error) ); 
         } else {
             alert("Error. Try to sign in or create an account")
@@ -68,7 +67,7 @@ function DetailsMovie () {
                 }
             })
             .then(response  => response.json())
-            // setCheckedSeens(true)
+            
             .catch( error => console.log(error) ); 
         } else {
             alert("Error. Try to sign in or create an account")
@@ -88,7 +87,7 @@ function DetailsMovie () {
                 }
             })
             .then(response  => response.json())
-            // setCheckedPendings(true)
+            
             .catch( error => console.log(error) ); 
         } else {
             alert("Error. Try to sign in or create an account")
@@ -120,6 +119,8 @@ function DetailsMovie () {
             .then(response => response.json())
             
             .catch( error => console.log(error) );
+
+            saveText("")
         }
     }
 
@@ -137,9 +138,11 @@ function DetailsMovie () {
         }
     }
 
+    const history = useHistory();
+
     const handleGocomments = () => {
         if (isLogin === true) {
-            window.history.back();
+            history.push("/Comments");
         }else {
             alert("Error. Try to login or create an account")
         }  
@@ -148,12 +151,6 @@ function DetailsMovie () {
 
     return (
             <div className="mainDetails">
-
-                         {/* {
-                !MovieDetails &&
-                <div></div>
-                         } */}
-
                 {
                 MovieDetails &&
                 <div className="containerDetails details">
@@ -164,48 +161,48 @@ function DetailsMovie () {
                         </div>
                         <div className="movieDates">
                             <p>
-                                <span className="head">Release date: </span>
-                                <span>{MovieDetails.release_date}</span>
+                                <span className="details-span-head">Release date: </span>
+                                <span className="details-last-span">{MovieDetails.release_date}</span>
                             </p>
                             <p>
-                                <span className="head">Runtime: </span>
-                                <span>{MovieDetails.runtime}</span>
+                                <span className="details-span-head">Runtime: </span>
+                                <span className="details-last-span">{MovieDetails.runtime}</span>
                             </p>
                             <p>
-                                <span className="head">Origin country: </span>
-                                <span>{MovieDetails.origin_country}</span>
+                                <span className="details-span-head">Origin country: </span>
+                                <span className="details-last-span">{MovieDetails.origin_country}</span>
                             </p>
                             <p>
-                                <span className="head">Original language: </span>
-                                <span>{MovieDetails.original_language}</span>
+                                <span className="details-span-head">Original language: </span>
+                                <span className="details-last-span">{MovieDetails.original_language}</span>
                             </p>
                             <p>
-                                <span className="head">Director: </span>
-                                <span>{MovieDetails.director}</span>
+                                <span className="details-span-head">Director: </span>
+                                <span className="details-last-span">{MovieDetails.director}</span>
                             </p>
                             <p>
-                                <span className="head">Screenwriter: </span>
-                                <span>{MovieDetails.writer}</span>
+                                <span className="details-span-head">Screenwriter: </span>
+                                <span className="details-last-span">{MovieDetails.writer}</span>
                             </p>
                             <p>
-                                <span className="head">Cast: </span>
-                                <span>{MovieDetails.cast}</span>
+                                <span className="details-span-head">Cast: </span>
+                                <span className="details-last-span">{MovieDetails.cast}</span>
                             </p>
                             <p>
-                                <span className="head">Genre: </span>
-                                <span>{MovieDetails.genre}</span>
+                                <span className="details-span-head">Genre: </span>
+                                <span className="details-last-span">{MovieDetails.genre}</span>
                             </p>
                             <p>
-                                <span className="head">Popularity: </span>
-                                <span>{MovieDetails.popularity}</span>
+                                <span className="details-span-head">Popularity: </span>
+                                <span className="details-last-span">{MovieDetails.popularity}</span>
                             </p>
                             <p>
-                                <span className="head">Vote count: </span>
-                                <span>{MovieDetails.vote_count}</span>
+                                <span className="details-span-head">Vote count: </span>
+                                <span className="details-last-span">{MovieDetails.vote_count}</span>
                             </p>
                             <p>
-                                <span className="head">Vote average: </span>
-                                <span>{MovieDetails.vote_average}</span>
+                                <span className="details-span-head">Vote average: </span>
+                                <span className="details-last-span">{MovieDetails.vote_average}</span>
                             </p>
                             <p>
                                 <span>Favourite: </span>
@@ -263,7 +260,13 @@ function DetailsMovie () {
                                     onChange={handleText}
                                 />
                                 <div className="btn-comment">
-                                    <button className="btn btn-transparent mt-2 mr-5">Send comment</button>
+                                    <button 
+                                        className="btn btn-transparent mt-2 mr-5"
+                                        // onClick={() => { 
+                                        //     saveText("")
+                                        // }}
+                                    >Send comment
+                                    </button>
                                 </div>
                             </form>
                             
@@ -275,14 +278,13 @@ function DetailsMovie () {
                             }
                             <div className="linkDetails">  
                                 <p>
-                                    <Link to={'/Trailer'} className="account-link">
+                                    <Link to={'/Trailer'} className="account-link-details">
                                         Go to big screen trailer
                                     </Link>
                                 </p>
-                                <p>
-                                    <a 
-                                        src="123" 
-                                        className="account-link"
+                                <p className= "last-details-p">
+                                    <span  
+                                        className="account-link-details"
                                         onClick={() => {
                                             handleRouteComments()
                                             handleGetComments()
@@ -290,7 +292,7 @@ function DetailsMovie () {
                                         }} 
                                     >
                                         Show comments
-                                    </a>
+                                    </span>
                                 </p>
                             </div>
                             <button className="btn btn-transparent mr-5"
@@ -299,7 +301,6 @@ function DetailsMovie () {
                                 window.history.back();
                                 console.log('después del history.back');
                                 saveMovieDetails({...MovieDetails, video_path: ''});
-                                // saveMovieDetails(null);
                             }}
                             >Go Back
                             </button>

@@ -12,6 +12,7 @@ const ContextProvider = (props) => {
     const [actualPage, setActualPage] = useState(1);
     const maxPages = 9
 
+
     useEffect(() => {
 
         fetch(moviesPath)

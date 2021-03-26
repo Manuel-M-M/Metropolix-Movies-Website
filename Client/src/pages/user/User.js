@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import './User.css';
 import UserHeader from '../../components/userHeader/UserHeader';
@@ -72,7 +72,7 @@ function User () {
                 <div className="user-text">
                     <h6>
                     Welcome to the temple of cinema. Now you can manage your movies and comment on them.
-                    If you really are a lover of the seventh art, enter our <a href="/MChat">REAL TIME CHAT</a> and
+                    If you really are a lover of the seventh art, enter our <NavLink to="/MChat">REAL TIME CHAT</NavLink> and
                     participate in our cinephile community.
                     </h6>
                     <h5>

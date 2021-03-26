@@ -24,7 +24,7 @@ function Header() {
     const handleGoToErrorChat = (e) => {
         e.preventDefault();
          if (isLogin === true) {
-        history.push("/Chat")
+        history.push("/MChat")
          } else {
              history.push("/ErrorChat")
          }

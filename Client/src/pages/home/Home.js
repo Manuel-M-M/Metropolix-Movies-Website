@@ -2,7 +2,6 @@ import {useContext, useEffect} from "react";
 import { useLocation } from 'react-router-dom';
 import { Context } from '../../context/Context';
 import "./Home.css";
-import "../../css/sections.css";
 import Carousel from '../../components/carousel/Carousel';
 import Searcher from "../../components/searcher/Searcher";
 import Movie from "../../components/movie/Movie";
