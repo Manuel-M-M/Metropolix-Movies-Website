@@ -21,7 +21,7 @@ de los usuarios.
 ## Starting / Comenzando 🚀
 
 ```
-1. Clone repo: git clone https://github.com/Manuel-M-M/MetropolixServer.git  
+1. Clone repo: git clone https://github.com/Manuel-M-M/Metropolix-Movies-Website.git  
 2. Run npm install to install the components. 
 3. Run npm start to start app
 ```
