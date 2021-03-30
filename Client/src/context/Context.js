@@ -12,9 +12,7 @@ const ContextProvider = (props) => {
     const [actualPage, setActualPage] = useState(1);
     const maxPages = 9
 
-
     useEffect(() => {
-
         fetch(moviesPath)
             .then(response => {
                 if (!response.ok) {
@@ -46,15 +44,11 @@ const ContextProvider = (props) => {
 
     const [MovieId, saveMovieId] = useState(null);
     const [MovieDetails, saveMovieDetails] = useState([]);
-
     const [FavouritesArray, saveFavouritesArray] = useState([]);
-
     let favouritesPath = "";
 
     const handleGetFavourites = () => {
-        
         var token = localStorage.getItem('token');
-
         favouritesPath = `http://localhost:8000/getFavourites`;
             
         fetch(favouritesPath, {
@@ -75,13 +69,10 @@ const ContextProvider = (props) => {
     }
 
     const [SeensArray, saveSeensArray] = useState([]);
-
     let seensPath = "";
 
     const handleGetSeens = () => {
-        
         var token = localStorage.getItem('token');
-
         seensPath = `http://localhost:8000/getSeens`;
             
         fetch(seensPath, {
@@ -102,13 +93,10 @@ const ContextProvider = (props) => {
     }
 
     const [PendingsArray, savePendingsArray] = useState([]);
-
     let pendingsPath = "";
 
     const handleGetPendings = () => {
-        
         var token = localStorage.getItem('token');
-
         pendingsPath = `http://localhost:8000/getPendings`;
             
         fetch(pendingsPath, {
@@ -129,13 +117,10 @@ const ContextProvider = (props) => {
     }
 
     const [CommentsArray, saveCommentsArray] = useState([]);
-
     let commentsPath = "";
 
     const handleGetComments = () => {
-        
         var token = localStorage.getItem('token');
-
         commentsPath = `http://localhost:8000/getComments/${MovieId}`;
             
         fetch(commentsPath, {
@@ -156,8 +141,6 @@ const ContextProvider = (props) => {
     }
 
 
-
-    
     return (
         <Context.Provider value={{show, setShow, searchArray, setSearchArray,
         actualPage, setActualPage, isLogin, setIslogin, moviesPath, setMoviesPath, homeMoviesArray, 

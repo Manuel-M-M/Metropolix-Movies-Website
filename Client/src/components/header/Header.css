@@ -163,8 +163,6 @@ header .logo a {
   font-weight: normal;
 }
 
-/* ---- ------- ----- Media Queries---- ------ -------- */
-
  @media screen and (min-width:1100px) {
     .Container{
         width: 96%;
@@ -174,7 +172,6 @@ header .logo a {
 @media screen and (max-width:600px) {
     header .logo {
         margin-top: 0px;
-        
         font-size: 30px;
     }
 

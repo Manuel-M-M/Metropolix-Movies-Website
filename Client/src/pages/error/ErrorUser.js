@@ -1,7 +1,7 @@
 import './Error.css';
 
-function ErrorUser () {
 
+function ErrorUser () {
     return (      
         <div className="container">
             <h3 className="title">You're in trouble !!! <span>&#160;</span></h3>

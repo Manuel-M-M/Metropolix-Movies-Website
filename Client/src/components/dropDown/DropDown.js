@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 import { Context } from '../../context/Context';
 
 
-
 const DropDown = () => {
 
     const { setActualPage} = useContext(Context);
@@ -29,8 +28,7 @@ const DropDown = () => {
     };
 
   
-    return (
-        
+    return (   
         <div className="menu-container">
         <button onClick={onClick} className="menu-trigger">
           <span>Sections</span>
@@ -48,10 +46,8 @@ const DropDown = () => {
             </li>
           </ul>
         </nav>
-      </div>
-    
+      </div> 
     )
-
 }
 
 export default DropDown;

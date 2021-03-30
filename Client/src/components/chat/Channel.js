@@ -35,25 +35,10 @@ const Channel = ({ chatUser = null,  db = null }) => {
 
     const handleOnChange = e => {
         setNewMessage(e.target.value);
-        console.log(e.target.value);
     };
 
     const handleOnSubmit = e => {
         e.preventDefault();
-        
-        console.log("hola");
-        // const trimmedMessage = newMessage.trim();
-        // if (trimmedMessage) {
-        //     //Add new message in Firestore
-        //     messagesRef.add({
-        //         text: trimmedMessage,
-        //         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        //         uid,
-        //         displayName
-        //     });
-        //     //Clear input field
-        //     setNewMessage('');
-        // }
 
         if (db) {
             db.collection('messages').add({
@@ -63,7 +48,7 @@ const Channel = ({ chatUser = null,  db = null }) => {
                 displayName,
                 photoURL
             })
-            console.log(newMessage);
+            setNewMessage("")
         }
     };
 
@@ -78,7 +63,6 @@ const Channel = ({ chatUser = null,  db = null }) => {
             </ul>
             <form className="form-channel" onSubmit={handleOnSubmit}>
                     <input
-                        // ref={inputRef}
                         className="input-channel" 
                         type="text"
                         value={newMessage}

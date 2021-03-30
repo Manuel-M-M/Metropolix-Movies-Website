@@ -2,10 +2,12 @@ import { useHistory } from 'react-router-dom';
 import './Footer.css'
 import Logo from '../../img/logos/cuadrado_verdeNegro.png';
 
+
 function Footer() {
 
     const history = useHistory();
 
+    
     return (
         <>
        <footer className="footer-distributed">

@@ -5,7 +5,6 @@ import { Context } from '../../context/Context';
 import CommentBox from "../commentBox/CommentBox";
 
 
-
 function DetailsMovie () {
 
     const { saveMovieDetails, MovieDetails, MovieId, isLogin, handleGetComments } = useContext(Context);
@@ -96,12 +95,12 @@ function DetailsMovie () {
 
     const [text, saveText] = useState("");
     
-
     const handleCommentSubmit = (event) => {
         event.preventDefault();
 
         if ( isLogin === false || text.trim() === "" ) {
             alert("You need to sign in or create and account or the comment box are empty")
+            saveText("")
         } else {
             var token = localStorage.getItem('token');
 
@@ -262,14 +261,10 @@ function DetailsMovie () {
                                 <div className="btn-comment">
                                     <button 
                                         className="btn btn-transparent mt-2 mr-5"
-                                        // onClick={() => { 
-                                        //     saveText("")
-                                        // }}
                                     >Send comment
                                     </button>
                                 </div>
-                            </form>
-                            
+                            </form>                    
                             {
                               MovieDetails?.video_path &&  
                               <div className="video-details">
@@ -296,8 +291,7 @@ function DetailsMovie () {
                                 </p>
                             </div>
                             <button className="btn btn-transparent mr-5"
-                            onClick={() => {
-                                
+                            onClick={() => {           
                                 window.history.back();
                                 console.log('después del history.back');
                                 saveMovieDetails({...MovieDetails, video_path: ''});

@@ -15,11 +15,8 @@ function Favourites () {
         history.push("/Details");
     }
 
-    
-    console.log();
     const handleDeleteFavourites = (e, id)=>{
         e.preventDefault();
-        console.log('hola');
 
        var token = localStorage.getItem('token');
 
@@ -48,7 +45,6 @@ function Favourites () {
                             <div key={movie.id} className="userList-li">
                                 <li>
                                     <div className="poster-fav">
-                                        {/* <Link to="/Details"> */}
                                             <img
                                                 className="click" 
                                                 src={movie.poster_path} 
@@ -58,7 +54,6 @@ function Favourites () {
                                                     handleGoToDetails();
                                                 }}
                                             />
-                                        {/* </Link> */}
                                     </div>
                                     <div className="title-fav">
                                         {movie.title}

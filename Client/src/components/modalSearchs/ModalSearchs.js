@@ -23,7 +23,7 @@ const ModalSearchs = props => {
                         <div id="searchDiv-modal" className="flex-modal">
                             {searchArray.map((movie) => {
                                 return (
-                                    <Movie movie={movie}/>
+                                    <Movie key={movie.id} movie={movie}/>
                                 )})}
                         </div>
                     </div>

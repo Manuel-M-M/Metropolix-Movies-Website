@@ -37,9 +37,7 @@ function Home() {
                     <div id="searchDiv" className="flex">
                         {homeMoviesArray.map((movie) => {
                             return (
-                             
                                 <Movie key={movie.id} movie={movie}/>
-                        
                             )})}
                     </div>
                 </div>

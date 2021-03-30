@@ -2,10 +2,12 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 import './Trailer.css'
 
+
 function Trailer () {
 
     const {MovieDetails} = useContext(Context);
 
+    
     return (
         <div className="trailer-container">
                 <div className="wrap-title">

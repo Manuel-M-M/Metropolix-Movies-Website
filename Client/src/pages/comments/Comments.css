@@ -69,19 +69,14 @@ h4 span {
 }
 
 .card_comments {
-    display: flex;
+    display: inline-flex;
     flex-flow: row wrap;
     justify-content: space-between;
-
-    /* max-width: 300px; */
-    /* background: rgb(20, 20, 20, 0.5);
-    margin: 20px;
-    border: 2px solid var(--verde);
-    border-radius: 10px; */
 }
 
 .wrap_card_body {
     width: 300px;
+    height: fit-content;
     margin-right: 20px; 
     background: rgb(20, 20, 20, 0.5);
     margin: 20px;
@@ -104,6 +99,7 @@ h4 span {
     margin: 20px;
     font-family: 'Roboto';
     font-size: x-small;
+    text-align: justify;
 }
 
 .card_comments h6 span {

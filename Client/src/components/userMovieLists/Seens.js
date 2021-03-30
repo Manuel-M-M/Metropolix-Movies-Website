@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import { useHistory } from 'react-router-dom';
 import '../../pages/user/User.css';
-import './UserList.css';
 
 
 function Seens () {

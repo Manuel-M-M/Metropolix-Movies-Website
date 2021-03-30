@@ -11,8 +11,7 @@
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, .30) 0%, rgb(0, 0, 0, .30) 100%), url(../../img/backgrounds/shining.jpg);
     background-position: center center;
-    background-size:cover;
-    
+    background-size:cover; 
 }
 
 .trailer-wrap {

@@ -40,8 +40,7 @@ function TopRated() {
                         </div>
                     </div>
                 </div>
-            </div>
-        
+            </div>  
     );
 }
 

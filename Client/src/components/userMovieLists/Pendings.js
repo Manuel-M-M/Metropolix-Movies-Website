@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import { useHistory } from 'react-router-dom';
 import '../../pages/user/User.css';
-import './UserList.css';
 
 
 function Pendings () {
@@ -42,7 +41,7 @@ function Pendings () {
                 <div className="ul-userList">
                     <ul className="userList-ul">{PendingsArray.map((movie) => {
                         return (
-                            <div className="userList-li">
+                            <div key={movie.id} className="userList-li">
                                 <li>
                                     <div className="poster-fav">
                                         <img 

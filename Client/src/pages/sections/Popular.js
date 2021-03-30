@@ -27,7 +27,6 @@ function Popular() {
 
 
     return (
-       
             <div className="main_section">
                 <Searcher />
                  <div className="container_section">
@@ -42,7 +41,6 @@ function Popular() {
                     </div>
                 </div>
             </div>
-       
     );
 }
 

@@ -11,7 +11,6 @@ function Searcher () {
     const [searchPath, setSearchPath] = useState('http://localhost:8000/getMovies?page=1');
     
     useEffect(() => {
-        
         fetch(searchPath)
             .then(response => {              
                 if (!response.ok) {

@@ -20,7 +20,6 @@ const Signin = () => {
     }
 
     function handleLogin(e) {
-
         e.preventDefault();
 
         const config = {

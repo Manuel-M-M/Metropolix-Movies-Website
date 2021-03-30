@@ -1,9 +1,9 @@
 import './Error.css';
 
+
 function ErrorChat () {
 
-    return (
-        
+    return (  
         <div className="container">
             <h3 className="title">You're in trouble !!! <span>&#160;</span></h3>
             <div className="errorChat-body">

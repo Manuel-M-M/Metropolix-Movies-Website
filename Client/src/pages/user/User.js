@@ -14,7 +14,6 @@ function User () {
 
     const handleSubmit = (e) => {
         
-
         if (window.confirm('Are you sure you want to remove your account?')) {
             e.preventDefault();
 
@@ -84,8 +83,7 @@ function User () {
                     <UserHeader />
                 </div>           
             </div>
-        </>
-        
+        </> 
     );
 }
 

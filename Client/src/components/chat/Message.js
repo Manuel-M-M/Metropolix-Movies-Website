@@ -20,6 +20,7 @@ const Message = ({
 }) => {
     if (!text) return null;
 
+    
     return ( 
         <div className="container-message">
             <div className="wrap-data">

@@ -18,7 +18,6 @@ body{
 
 .form-usuario {
     background:url(../../img/backgrounds/twinStatue.jpg);
-    /* background-position: center center; */
     background-size: cover;
     height: 100vh;
     min-height: 800px;
@@ -60,6 +59,7 @@ body{
   font-size: smaller;
   color: var(--verde);
 }
+
 .campo-form input[type="password"],
 .campo-form input[type="email"], 
 .campo-form input[type="text"] {
@@ -95,19 +95,21 @@ body{
     font-weight: bolder;
     padding: 0.5rem;
     font-size:small;
-    /* font-weight: 400; */
     border-radius: .5rem;
     border: none;
     transition: background-color .3s ease;
   }
+
   .btn:hover {
     cursor: pointer;
   }
+
   .btn-primario {
     background-color: var(--verde);
     opacity: 0.6;
     color: var(--blanco);
   }
+  
   .btn-primario:hover {
     background: var(--verde);
     color: var(--blanco);

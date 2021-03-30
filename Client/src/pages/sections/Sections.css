@@ -8,7 +8,6 @@
 }
 
 .title-page {
-    /* margin: 0 ; */
     padding: 0 auto;
     display: flex;
     margin-bottom: 40px;
@@ -19,8 +18,7 @@
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
 .h1 {
@@ -50,8 +48,7 @@
 }
 
 .wrap img {
-    width: 150px;
-    
+    width: 150px;  
 }
 
 .movie_list_title {

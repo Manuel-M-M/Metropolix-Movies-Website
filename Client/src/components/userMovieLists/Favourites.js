@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import { useHistory } from 'react-router-dom';
 import '../../pages/user/User.css';
-import './UserList.css';
 
 
 function Favourites () {
@@ -15,8 +14,6 @@ function Favourites () {
         history.push("/Details");
     }
 
-    
-    console.log();
     const handleDeleteFavourites = (e, id)=>{
         e.preventDefault();
         console.log('hola');
@@ -48,7 +45,6 @@ function Favourites () {
                             <div key={movie.id} className="userList-li">
                                 <li>
                                     <div className="poster-fav">
-                                        {/* <Link to="/Details"> */}
                                             <img
                                                 className="click" 
                                                 src={movie.poster_path} 
@@ -58,7 +54,6 @@ function Favourites () {
                                                     handleGoToDetails();
                                                 }}
                                             />
-                                        {/* </Link> */}
                                     </div>
                                     <div className="title-fav">
                                         {movie.title}
