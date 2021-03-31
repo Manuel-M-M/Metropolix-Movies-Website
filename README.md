@@ -1,4 +1,4 @@
-# MetropolixServer
+# Metropolix-Movies-Website
 
 ```
 CLIENT CODE. Web for lovers of good cinema. Movie search engine, filtered sections for the most popular  
@@ -39,7 +39,6 @@ Mira Despliegue para conocer como desplegar el proyecto.
 
 ## Deployment / Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Built with / Construido con 🛠️
 
