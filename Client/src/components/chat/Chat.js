@@ -6,7 +6,7 @@ import Button from './Button.js';
 import Channel from './Channel.js';
 
  firebase.initializeApp({  
-    apiKey: "AIzaSyDSxvaoK61bf3wmxD6nI7wEV0dPmgVegvk",
+    apiKey: "your api key",
     authDomain: "metropolix-chat.firebaseapp.com",
     databaseURL: "https://metropolix-chat-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "metropolix-chat",
