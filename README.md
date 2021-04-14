@@ -22,11 +22,7 @@ $npm install
 $npm start
 ````
 
-## Deployment  📦
-
-
 ## Built with  🛠️
-
 
 #### HTML5, CSS3, REACTJS (HOOKS), JAVASCRIPT
 
