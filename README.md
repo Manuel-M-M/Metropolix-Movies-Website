@@ -33,11 +33,7 @@ $npm start
 
 ## Author  ✒️
 
-```
 Manuel Moraga Molina
-``` 
-
----
 
 ⌨️ with ❤️ by [Manuel-M-M](https://github.com/Manuel-M-M) 😊
 
