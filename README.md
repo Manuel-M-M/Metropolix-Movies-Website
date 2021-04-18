@@ -13,7 +13,7 @@ and access to the Metropolix real-time chat with Firebase to exchange impression
 $git clone https://github.com/Manuel-M-M/Metropolix-Movies-Website.git
 ````
 ````
-$cd Client
+$cd Metropolix-Movies-Website
 ````
 ````
 $npm install
