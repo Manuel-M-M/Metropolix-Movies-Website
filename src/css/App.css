@@ -1,0 +1,44 @@
+:root {
+    --verde:  #21c470;
+	--fondo: #141414; 
+}
+
+body {
+background: var(--fondo);	
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.alert-ok {
+  background-color: var(--verde);
+  color: #fff;
+}
+
+.alert-error {
+  position: absolute;
+  margin-top: 300px;
+  background-color: rgb(230, 78, 78);
+  color: #fff;
+}
+
+.btn-transparent {
+  background-color: var(--verde);
+  opacity: 0.9;
+  color: black;
+  font-family: "Railway", sans-serif;
+  font-size: x-small;
+}
+
+.btn-transparent:hover {
+  background-color: var(--verde);
+  opacity: 1;
+  font-weight: bold;
+}
+

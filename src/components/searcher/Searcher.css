@@ -1,0 +1,17 @@
+.container-searcher {
+    z-index: 1;
+}
+
+.wrapSearcher {
+    z-index: 1;
+}
+
+.home-margin {
+    margin-top: 20px;
+}
+
+.div-searcher input {
+    font-size:xx-small;
+    font-weight: bold;
+    opacity:initial;
+}

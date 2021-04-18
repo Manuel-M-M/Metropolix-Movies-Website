@@ -1,0 +1,30 @@
+root {
+    --verde:  #21c470;
+    --fondo: #141414;
+} 
+
+.ul-user {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ul-user li {
+    cursor:pointer;
+    color: var(--verde);
+    list-style: none;
+}
+
+.userList-li li {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.poster-fav img {
+    height: 200px;
+    cursor: pointer;
+}

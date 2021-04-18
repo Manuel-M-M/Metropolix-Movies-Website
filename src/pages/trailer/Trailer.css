@@ -1,0 +1,51 @@
+:root {
+    --verde:  hsl(149, 71%, 45%);
+    --fondo: #141414; 
+}
+
+.trailer-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .30) 0%, rgb(0, 0, 0, .30) 100%), url(../../img/backgrounds/shining.jpg);
+    background-position: center center;
+    background-size:cover; 
+}
+
+.trailer-wrap {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.wrap-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.trailer-title {
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    font-family: 'Railway';
+    font-weight: bold;
+}
+
+.box-wrap {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.trailer-box {
+    width: 90%;
+    height: 75vh; 
+}

@@ -1,0 +1,219 @@
+:root {
+    --verde:  #21c470;
+	--fondo: #141414; 
+}
+
+.main {
+	max-height: 100px;;
+	background-color:   #000;
+	color: white;
+	font-size: 28pt;
+	text-align: center;
+	line-height: 550px;
+}
+footer{	
+	bottom: 0;	
+}
+
+.footer-distributed{
+	background-color: #000;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 10px sans-serif;
+	padding: 0px 50px;
+	margin-top: 0px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+ 
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+.footer-left a {
+	text-decoration: none;
+	font-family: "Raleway";
+}
+
+.footer-distributed h3{
+	color:  var(--verde);
+	font: normal 25px 'Cookie', cursive;
+	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+ 
+.footer-distributed h3 span{
+	color:  #fff;
+}
+ 
+.footer-distributed .footer-links{
+	color: var(--verde);
+	margin: 0px 0 12px;
+	padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+	display:inline-block;
+	font-size: smaller;
+	font-weight: bold;
+	line-height: 1.8;
+	text-decoration: none;
+    color:  inherit;
+    margin-right: 8px;
+}
+ 
+.footer-distributed .footer-company-name {
+	margin-top: 20px;
+	color:  var(--verde);
+	font-size: 10px;
+	font-weight: normal;
+	font-family: "Roboto";
+	margin: 0;
+}
+
+.footer-distributed .footer-company-name span {
+	margin-top: 20px;
+	color: #fff;
+	font-family: "Roboto";
+}
+ 
+.footer-distributed .footer-center{
+	width: 35%;
+}
+ 
+.footer-distributed .footer-center i{
+	background-color:  #ffffff;
+	color: var(--verde);
+	font-size: 12px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 24px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 15px;
+	line-height: 24px;
+}
+ 
+.footer-distributed .footer-center p{
+	display: inline-block;
+	font-family: "Roboto";
+	font-size: x-small;
+	color: var(--verde);
+	vertical-align: middle;
+	margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:10px;
+	line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+	color:   #21c470;
+	text-decoration: none;
+	font-size: x-small;
+}
+ 
+.footer-distributed .footer-right{
+	width: 20%;
+}
+ 
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+	margin-top: 10px;
+}
+ 
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+#footerLogo {
+	width: 70px;
+}
+
+.facebookLogo {
+	background: url(../../img/logos/facebook.svg);
+}
+
+.twitterLogo {
+	background: url(../../img/logos/gorjeo.svg);
+}
+
+.githubLogo {
+	background: url(../../img/logos/github.svg);	
+}
+
+#pl {
+	color: white;
+}
+ 
+@media (max-width: 880px) {
+	#carousel {
+		margin: 0%;
+	}
+ 
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed {
+		display: block;
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.footer-right {
+		margin-bottom: 40px;
+	}
+ 
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+	.footer-center {
+		margin-bottom: 0;
+	}
+
+	.footer-icons {
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}
+}

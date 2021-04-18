@@ -1,0 +1,151 @@
+:root {
+    --verde:  #21c470;
+    --fondo: #141414; 
+}
+
+.container-comments {
+    min-width: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.header_comments {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_comments_btn {
+    margin-right: 30px;
+}
+
+.wrap_title_comments {
+    
+	display: table;
+}
+
+.wrap_body_comments {
+    display: flex;
+    flex-flow: row;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgb(0, 0, 0, .50) 100%), url(../../img/backgrounds/almuerzoNewYork.jpg);
+    background-position: center center;
+    background-size:cover;
+    margin: 20px;
+}
+
+.h4_comments { 
+    margin-top: 20px;
+	position: relative; 
+	float: left;
+	background: transparent;
+	color: var(--verde);
+	font-size: 2.5em;
+}
+
+h4 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background: var(--fondo);
+    border-left: 3px solid #fff;
+    animation: escribir 4s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
+.wrap_cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px;
+    text-align: justify;
+}
+
+.card_comments {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.wrap_card_body {
+    width: 300px;
+    height: fit-content;
+    margin-right: 20px; 
+    background: rgb(20, 20, 20, 0.5);
+    margin: 20px;
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+}
+
+.card_comments h6 {
+    color: var(--verde);
+    font-family: 'Railway';
+    font-weight: bold;
+    font-size: small;
+    margin: 20px 20px 0px 20px;
+    border-bottom: 1px solid var(--verde);
+}
+
+.card_comments p {
+    list-style: none;;
+    color: #fff;
+    margin: 20px;
+    font-family: 'Roboto';
+    font-size: x-small;
+    text-align: justify;
+}
+
+.card_comments h6 span {
+    margin-left: 10px;
+    font-family: 'Railway';
+    font-size: x-small;
+}
+
+@media (max-width: 680px) {
+    .wrap_cards {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        margin-left: 20px;
+        
+        overflow: visible;
+    }
+
+    .card_comments {
+        margin: 20px 0;
+    }
+
+    .header_comments_btn {
+        margin-left: 10px;
+    }
+
+    .h4_comments {
+        margin-right: 180px;
+    }
+}
+
+@media (max-width: 4500px) {
+
+    .header_comments {
+        margin-right: 50px;
+    }
+
+    .wrap_cards {
+        width: 200px;
+    }
+
+    .h4_comments {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: xx-large;
+    }
+}
