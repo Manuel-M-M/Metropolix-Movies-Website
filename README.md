@@ -12,13 +12,13 @@ as well as the possibility of adding comments on the films, which will be visibl
 and access to the Metropolix real-time chat with Firebase to exchange impressions with the rest of the users.
 ```
 
-#### Everything you can do in Metropolix...
+### Everything you can do in Metropolix...
 
-👉 **Search:** Search for movies in our database.
-👉 **Details:** Click on a movie to access its details. All the necessary information so that you know the film. Image and trailer. 
-👉 **Register and Login:**  Create accounts with your details and having access to them.
-👉 **Manage movie lists as a register user:** Add and remove movies to your favourites, watched and to watch lists. 
-👉 **Comments:** Add comments to any movie and read comments from other members.
+👉 **Search:** Search for movies in our database.  
+👉 **Details:** Click on a movie to access its details. All the necessary information so that you know the film. Image and trailer.  
+👉 **Register and Login:**  Create accounts with your details and having access to them.  
+👉 **Manage movie lists as a register user:** Add and remove movies to your favourites, watched and to watch lists.  
+👉 **Comments:** Add comments to any movie and read comments from other members.  
 👉 **Chat:** Participate in conversations with Metropolix members.
 
 ## Starting...  🚀
