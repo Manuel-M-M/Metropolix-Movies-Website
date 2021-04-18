@@ -18,8 +18,8 @@ and access to the Metropolix real-time chat with Firebase to exchange impression
 👉 **Details:** Click on a movie to access its details. All the necessary information so that you know the film. Image and trailer.  
 👉 **Register and Login:**  Create accounts with your details and having access to them.  
 👉 **Manage movie lists as a register user:** Add and remove movies to your favourites, watched and to watch lists.  
-👉 **Comments:** Add comments to any movie and read comments from other members.  
-👉 **Chat:** Participate in conversations with Metropolix members.
+👉 **Comments a register user:** Add comments to any movie and read comments from other members.  
+👉 **Chat a register user:** Participate in conversations with Metropolix members.
 
 ## Starting...  🚀
  Clone the project to your local directory:
