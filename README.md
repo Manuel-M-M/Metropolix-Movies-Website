@@ -36,6 +36,8 @@ $npm start
 The real-time chat has been built using [Firebase](https://en.wikipedia.org/wiki/Firebase) with the intention that the Metropolix community can communicate. There is only one channel so that all members can join the conversation as a forum.  
 You can create your own firebase project [here](https://firebase.google.com/)
 
+#### DEMO:
+
 ![DEMO](src/img/resources/chat2.gif)
 
 ## Author  ✒️
